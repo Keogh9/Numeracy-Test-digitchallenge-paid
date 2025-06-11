@@ -96,6 +96,27 @@ header {
 .wrong   { color: red; }
 #retake-btn {
   background: var(--secondary-color); color: white;
+  /* Make the instructions popup wider */
+#instructions-overlay .overlay-content {
+  max-width: 600px;    /* up from 420px */
+  width: 90%;          /* so it’s responsive on mobile */
+}
+
+/* Left-align just the instruction list */
+#instructions-overlay .overlay-content ul {
+  text-align: left;    /* override the default center */
+  margin: 1rem 0;      /* a little breathing room */
+  padding-left: 1.25rem; /* indent bullets */
+}
+
+/* Keep titles and logo centered */
+#instructions-overlay .overlay-content h1,
+#instructions-overlay .overlay-content h2,
+#instructions-overlay .overlay-content .logo,
+#instructions-overlay .overlay-content button {
+  text-align: center;
+}
+
   border: none; padding: .5rem 1rem; margin-top: 1rem;
   border-radius: 4px; cursor: pointer;
 }
