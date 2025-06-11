@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Elements
   const instructionsOverlay = document.getElementById('instructions-overlay');
   const testContainer      = document.getElementById('test-container');
   const resultsContainer   = document.getElementById('results-container');
@@ -10,23 +11,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const equationDiv        = document.getElementById('equation');
   const padDiv             = document.getElementById('digit-pad');
   const timerDisplay       = document.getElementById('timer');
-  const currentSpan        = document.getElementById('current');
-  const totalSpan          = document.getElementById('total');
+  const completedSpan      = document.getElementById('completed');
   const scoreSpan          = document.getElementById('score');
   const totalQSpan         = document.getElementById('total-questions');
   const percentSpan        = document.getElementById('percent');
   const resultsList        = document.getElementById('results-list');
 
-  let questions = [], selected = [], userAnswers = [], current = 0, timerId;
+  let bank = [], currentIndex = 0, userAnswers = {}, answeredSet = new Set(), answeredCount = 0, timerId;
 
-  // 1) Load full bank and pick 10 random
+  // 1) Load full bank & shuffle
   fetch('questions.json')
     .then(res => res.json())
     .then(qs => {
-      questions = qs;
-      selected  = shuffleArray(questions).slice(0, 10);
-      totalSpan.textContent  = selected.length;
-      totalQSpan.textContent = selected.length;
+      bank = shuffleArray(qs);
     });
 
   // 2) Button handlers
@@ -37,20 +34,26 @@ document.addEventListener('DOMContentLoaded', () => {
     startTimer(300);
   });
   prevBtn.addEventListener('click', () => {
-    if (current > 0) { current--; renderQuestion(); }
+    if (currentIndex > 0) {
+      currentIndex--;
+      renderQuestion();
+    }
   });
   nextBtn.addEventListener('click', nextQuestion);
   clearBtn.addEventListener('click', clearLast);
   retakeBtn.addEventListener('click', () => location.reload());
 
-  // 3) Timer logic
+  // 3) Timer
   function startTimer(sec) {
     let rem = sec;
     timerDisplay.textContent = formatTime(rem);
     timerId = setInterval(() => {
       rem--;
       timerDisplay.textContent = formatTime(rem);
-      if (rem <= 0) { clearInterval(timerId); showResults(); }
+      if (rem <= 0) {
+        clearInterval(timerId);
+        showResults();
+      }
     }, 1000);
   }
   function formatTime(sec) {
@@ -61,19 +64,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 4) Render question
   function renderQuestion() {
-    const q = selected[current];
+    const q = bank[currentIndex];
     equationDiv.innerHTML = '';
     padDiv.innerHTML = '';
-    currentSpan.textContent = current + 1;
-
-    // Split on blanks
+    // Build equation with blanks
     let bi = 0;
     q.expr.split(/(__)/g).forEach(part => {
       if (part === '__') {
         const span = document.createElement('span');
         span.className = 'blank';
         span.dataset.idx = bi;
-        span.textContent = (userAnswers[current]||[])[bi] || '';
+        const ua = userAnswers[currentIndex] || [];
+        span.textContent = ua[bi] || '';
         span.addEventListener('click', () => clearBlank(bi));
         equationDiv.appendChild(span);
         bi++;
@@ -81,57 +83,64 @@ document.addEventListener('DOMContentLoaded', () => {
         equationDiv.insertAdjacentText('beforeend', part);
       }
     });
-
     // Build keypad
     for (let d = 1; d <= 9; d++) {
       const btn = document.createElement('div');
       btn.className = 'digit';
       btn.textContent = d;
-      if ((userAnswers[current]||[]).includes(d)) btn.classList.add('used');
+      const ua = userAnswers[currentIndex] || [];
+      if (ua.includes(d)) btn.classList.add('used');
       btn.addEventListener('click', () => pickDigit(d));
       padDiv.appendChild(btn);
     }
-
-    prevBtn.disabled = current === 0;
-    nextBtn.textContent = current === selected.length - 1 ? 'Submit' : 'Next';
+    // Update completed count
+    completedSpan.textContent = answeredCount;
   }
 
   function pickDigit(d) {
-    userAnswers[current] = userAnswers[current] || [];
+    if (!userAnswers[currentIndex]) userAnswers[currentIndex] = [];
     const blanks = equationDiv.querySelectorAll('.blank');
     for (let i = 0; i < blanks.length; i++) {
-      if (!userAnswers[current][i]) {
-        userAnswers[current][i] = d;
+      if (!userAnswers[currentIndex][i]) {
+        userAnswers[currentIndex][i] = d;
         break;
       }
     }
     renderQuestion();
   }
   function clearBlank(i) {
-    if (!userAnswers[current]) return;
-    userAnswers[current][i] = null;
+    if (!userAnswers[currentIndex]) return;
+    userAnswers[currentIndex][i] = null;
     renderQuestion();
   }
   function clearLast() {
-    const arr = userAnswers[current];
-    if (!arr) return;
-    const last = arr.map((v,i)=> v ? i : -1).filter(i=>i>=0).pop();
-    if (last >= 0) arr[last] = null;
-    renderQuestion();
+    const arr = userAnswers[currentIndex] || [];
+    const last = arr.map((v,i)=> v? i : -1).filter(i=>i>=0).pop();
+    if (last >= 0) {
+      arr[last] = null;
+      renderQuestion();
+    }
   }
 
   function nextQuestion() {
     const blanks = equationDiv.querySelectorAll('.blank');
-    const ua = userAnswers[current] || [];
-    if (ua.length < blanks.length || ua.some(v => !v)) {
+    const ua = userAnswers[currentIndex] || [];
+    if (ua.length < blanks.length || ua.some(v=>!v)) {
       alert('Please fill all blanks before proceeding.');
       return;
     }
-    if (current < selected.length - 1) {
-      current++;
-      renderQuestion();
-    } else {
+    // First-time answer?
+    if (!answeredSet.has(currentIndex)) {
+      answeredSet.add(currentIndex);
+      answeredCount++;
+    }
+    // Move on
+    currentIndex++;
+    // If somehow we exhaust bank, end test
+    if (currentIndex >= bank.length) {
       showResults();
+    } else {
+      renderQuestion();
     }
   }
 
@@ -142,32 +151,36 @@ document.addEventListener('DOMContentLoaded', () => {
     resultsContainer.style.display = 'flex';
 
     let score = 0;
-    selected.forEach((q, idx) => {
+    // Iterate through answered questions in order
+    Array.from(answeredSet).sort((a,b)=>a-b).forEach(idx => {
+      const q = bank[idx];
       const ua = userAnswers[idx] || [];
       const correct = q.answers.some(ans =>
-        ans.length === ua.length && ans.every((n,i) => n === ua[i])
+        ans.length===ua.length && ans.every((n,i)=>n===ua[i])
       );
       if (correct) score++;
       const li = document.createElement('li');
       li.innerHTML = `
         <strong>Q${idx+1}:</strong> ${q.expr}<br>
         Your answer: <span class="${correct?'correct':'wrong'}">${ua.join(', ')}</span>
-        ${!correct? `<br>Correct answer: ${q.answers[0].join(', ')}` : ''}
+        ${!correct? `<br>Correct: ${q.answers[0].join(', ')}` : ''}
       `;
       resultsList.appendChild(li);
     });
 
     scoreSpan.textContent   = score;
-    percentSpan.textContent = Math.round(score / selected.length * 100);
+    totalQSpan.textContent  = answeredCount;
+    percentSpan.textContent = Math.round(score/answeredCount*100);
   }
 
-  // Utility: shuffle
-  function shuffleArray(arr) {
-    const a = arr.slice();
-    for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
+  // Utils
+  function shuffleArray(a) {
+    const arr = a.slice();
+    for (let i = arr.length-1; i>0; i--) {
+      const j = Math.floor(Math.random()*(i+1));
+      [arr[i],arr[j]] = [arr[j],arr[i]];
     }
-    return a;
+    return arr;
   }
 });
+
