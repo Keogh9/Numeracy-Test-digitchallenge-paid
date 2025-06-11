@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Numeracy Digit‐Challenge</title>
+  <title>Numeracy Digit-Challenge</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -26,15 +26,16 @@
     </div>
   </div>
 
-  <!-- Header with timer & progress -->
+  <!-- Header with logo, test name, timer & progress -->
   <header>
-    <img src="logo.png" alt="Logo" class="logo-header"/>
+    <img src="logo-header.png" alt="Company Logo" class="logo-header"/>
+    <h1 class="test-name">Numeracy Test</h1>
     <div class="timer" id="timer">05:00</div>
-    <div class="progress">Question <span id="current">1</span> of <span id="total">10</span></div>
+    <div class="progress">Q <span id="current">1</span> of <span id="total">10</span></div>
   </header>
 
-  <!-- Main test container -->
-  <main id="test-container">
+  <!-- Main test container (hidden until Start) -->
+  <main id="test-container" class="hidden">
     <div id="equation"></div>
     <button id="clear-btn" title="Clear">🗑️</button>
     <div id="digit-pad"></div>
@@ -46,7 +47,7 @@
 
   <!-- Results Overlay -->
   <div id="results-container" class="overlay" style="display:none;">
-    <div class="overlay-content">
+    <div class="overlay-content scrollable">
       <h1>Your Score: <span id="score"></span>/<span id="total-questions"></span> (<span id="percent"></span>%)</h1>
       <ul id="results-list"></ul>
       <button id="retake-btn">Retake Test</button>
