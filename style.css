@@ -1,0 +1,149 @@
+:root {
+  --primary-color: #160f2A;
+  --secondary-color: #FB6E43;
+  --background-color: #F5F3EE;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--background-color);
+  color: #333;
+}
+
+header {
+  background: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.logo-header {
+  height: 40px;
+}
+.timer, .progress {
+  font-size: 1.2rem;
+}
+
+#test-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Overlay (instructions/results) */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.overlay-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 420px;
+  width: 90%;
+}
+.logo {
+  max-height: 60px;
+  margin-bottom: 1rem;
+}
+
+#equation {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.blank {
+  display: inline-block;
+  width: 2ch;
+  margin: 0 .25ch;
+  padding: .25ch 0;
+  background: #eee;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#digit-pad {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.digit {
+  width: 3rem;
+  height: 3rem;
+  margin: .5rem;
+  line-height: 3rem;
+  text-align: center;
+  background: var(--secondary-color);
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+}
+.digit.used {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+#controls {
+  text-align: center;
+}
+#controls button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: .5rem 1rem;
+  margin: 0 .5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#clear-btn {
+  display: block;
+  margin: 0 auto 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Results list */
+#results-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin: 1rem 0;
+}
+#results-list li {
+  padding: .5rem 0;
+  border-bottom: 1px solid #eee;
+}
+.correct { color: green; }
+.wrong   { color: red; }
+
+#retake-btn {
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: .5rem 1rem;
+  margin-top: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
