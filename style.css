@@ -6,8 +6,7 @@
 
 * { box-sizing: border-box; }
 body {
-  margin: 0;
-  padding: 0;
+  margin: 0; padding: 0;
   font-family: system-ui, sans-serif;
   background: var(--background-color);
   color: #333;
@@ -21,12 +20,8 @@ header {
   justify-content: space-between;
   padding: 1rem;
 }
-.logo-header {
-  height: 40px;
-}
-.timer, .progress {
-  font-size: 1.2rem;
-}
+.logo-header { height: 40px; }
+.timer, .progress { font-size: 1.2rem; }
 
 #test-container {
   max-width: 500px;
@@ -39,15 +34,9 @@ header {
 
 /* Overlay (instructions/results) */
 .overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(0,0,0,0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
 }
 .overlay-content {
   background: white;
@@ -86,8 +75,7 @@ header {
   margin-bottom: 1rem;
 }
 .digit {
-  width: 3rem;
-  height: 3rem;
+  width: 3rem; height: 3rem;
   margin: .5rem;
   line-height: 3rem;
   text-align: center;
@@ -103,9 +91,7 @@ header {
   pointer-events: none;
 }
 
-#controls {
-  text-align: center;
-}
+#controls { text-align: center; }
 #controls button {
   background: var(--primary-color);
   color: white;
@@ -116,12 +102,9 @@ header {
   cursor: pointer;
 }
 #clear-btn {
-  display: block;
-  margin: 0 auto 1rem;
-  background: transparent;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
+  display: block; margin: 0 auto 1rem;
+  background: transparent; border: none;
+  font-size: 1.5rem; cursor: pointer;
 }
 
 /* Results list */
@@ -147,3 +130,4 @@ header {
   border-radius: 4px;
   cursor: pointer;
 }
+
