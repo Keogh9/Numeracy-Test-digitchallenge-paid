@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Element refs
   const instructionsOverlay = document.getElementById('instructions-overlay');
   const testContainer      = document.getElementById('test-container');
   const resultsContainer   = document.getElementById('results-container');
@@ -16,21 +17,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const percentSpan        = document.getElementById('percent');
   const resultsList        = document.getElementById('results-list');
 
+  // State
   let bank = [], currentIndex = 0;
   const userAnswers = {};
   const answeredSet = new Set();
   let answeredCount = 0;
   let timerId;
 
-  // Load & shuffle the 300 questions
+  // Load & shuffle questions
   fetch('questions.json')
     .then(res => res.json())
-    .then(qs => {
-      bank = shuffleArray(qs);
-      totalQSpan.textContent = bank.length; // for results banner
-    });
+    .then(qs => { bank = shuffleArray(qs); });
 
-  // Button wiring
+  // Wire up controls
   startBtn.onclick = () => {
     instructionsOverlay.style.display = 'none';
     testContainer.classList.remove('hidden');
@@ -121,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function clearLast() {
     const arr = userAnswers[currentIndex] || [];
-    const last = arr.map((v,i)=> v? i : -1).filter(i=>i>=0).pop();
+    const last = arr.map((v,i)=> v?i:-1).filter(i=>i>=0).pop();
     if (last >= 0) {
       arr[last] = null;
       renderQuestion();
@@ -146,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Show results with original equation = correct answer
+  // Show results
   function showResults() {
     clearInterval(timerId);
     testContainer.style.display    = 'none';
@@ -182,16 +181,16 @@ document.addEventListener('DOMContentLoaded', () => {
   function buildExpression(expr, ua) {
     let i=0;
     return expr.split(/(__)/g)
-      .map(part => part==='__' ? ua[i++] : part)
+      .map(part=> part==='__'?ua[i++]:part)
       .join('').split('=')[0].trim();
   }
   function evaluateExpression(str) {
     const js = str.replace(/×/g,'*').replace(/−/g,'-');
     try { return eval(js); }
-    catch { return NaN; }
+    catch{ return NaN; }
   }
   function shuffleArray(a) {
-    const arr = a.slice();
+    const arr=a.slice();
     for(let i=arr.length-1;i>0;i--){
       const j=Math.floor(Math.random()*(i+1));
       [arr[i],arr[j]]=[arr[j],arr[i]];
@@ -199,3 +198,4 @@ document.addEventListener('DOMContentLoaded', () => {
     return arr;
   }
 });
+
