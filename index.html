@@ -26,7 +26,7 @@
     </div>
   </div>
 
-  <!-- Header with logo, test name, timer & completed count -->
+  <!-- Header -->
   <header>
     <img src="logo-header.png" alt="Company Logo" class="logo-header"/>
     <h1 class="test-name">Numeracy Test</h1>
@@ -34,7 +34,7 @@
     <div class="progress">Completed: <span id="completed">0</span></div>
   </header>
 
-  <!-- Main test container (hidden until Start) -->
+  <!-- Main Test -->
   <main id="test-container" class="hidden">
     <div id="equation"></div>
     <button id="clear-btn" title="Clear">🗑️</button>
@@ -45,7 +45,7 @@
     </div>
   </main>
 
-  <!-- Results Overlay -->
+  <!-- Results -->
   <div id="results-container" class="overlay" style="display:none;">
     <div class="overlay-content scrollable">
       <h1>Your Score: <span id="score"></span>/<span id="total-questions"></span> (<span id="percent"></span>%)</h1>
@@ -57,3 +57,4 @@
   <script src="app.js"></script>
 </body>
 </html>
+
