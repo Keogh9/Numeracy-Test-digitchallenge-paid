@@ -2,25 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Numeracy Digit‐Challenge</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Numeracy Digit-Challenge</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- Instructions Overlay -->
   <div id="instructions-overlay" class="overlay">
     <div class="overlay-content">
-      <img src="/logo.png" alt="Logo" class="logo"/>
+      <!-- now loading logo.png from this folder -->
+      <img src="logo.png" alt="Logo" class="logo"/>
       <h1>Numeracy Digit-Challenge</h1>
-      <p>This test measures your ability to solve arithmetic functions using mental calculation. You have <strong>5 minutes</strong> to answer as many questions as accurately and quickly as possible.</p>
+      <p>You have <strong>5 minutes</strong> to solve as many mental‐arithmetic questions as you can.</p>
       <h2>Instructions</h2>
       <ul>
-        <li>Use the on-screen keypad (1–9) to fill blanks.</li>
-        <li>Each digit can only be used <em>once</em> per question.</li>
-        <li>Click the trash icon to clear the last entry.</li>
-        <li>Navigate with the Previous and Next buttons.</li>
-        <li>The timer starts when you click <strong>Start Test</strong>.</li>
-        <li>Remember BOMDAS: Brackets, Orders, Multiplication, Division, Addition, Subtraction.</li>
+        <li>Click the blanks to clear them.</li>
+        <li>Use digits 1–9, each at most once per question.</li>
+        <li>Trash icon clears your last entry.</li>
+        <li>Previous/Next to navigate.</li>
+        <li>Timer starts when you click <strong>Start Test</strong>.</li>
+        <li>Follow BOMDAS order of operations.</li>
       </ul>
       <button id="start-btn">Start Test</button>
     </div>
@@ -28,13 +29,13 @@
 
   <!-- Header -->
   <header>
-    <img src="/logo-header.png" alt="Logo" class="logo-header"/>
+    <img src="logo-header.png" alt="Logo" class="logo-header"/>
     <h1 class="test-name">Numeracy Test</h1>
     <div class="timer" id="timer">05:00</div>
     <div class="progress">Completed: <span id="completed">0</span></div>
   </header>
 
-  <!-- Main Test (hidden until start) -->
+  <!-- Main Test (hidden until Start) -->
   <main id="test-container" class="hidden">
     <div id="equation"></div>
     <button id="clear-btn" title="Clear">🗑️</button>
