@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Numeracy Digit‐Challenge</title>
-  <link rel="stylesheet" href="style.css" />
+  <!-- Absolute path to the CSS in the numeracy folder -->
+  <link rel="stylesheet" href="/numeracy/style.css" />
 </head>
 <body>
   <!-- Instructions Overlay -->
   <div id="instructions-overlay" class="overlay">
     <div class="overlay-content">
-      <!-- Logo loaded from root -->
-      <img src="../logo.png" alt="Company Logo" class="logo"/>
+      <img src="/logo.png" alt="Logo" class="logo"/>
       <h1>Numeracy Digit-Challenge</h1>
       <p>This test measures your ability to solve arithmetic functions using mental calculation. You have <strong>5 minutes</strong> to answer as many questions as accurately and quickly as possible.</p>
       <h2>Instructions</h2>
@@ -23,15 +23,13 @@
         <li>The timer starts when you click <strong>Start Test</strong>.</li>
         <li>Remember BOMDAS: Brackets, Orders, Multiplication, Division, Addition, Subtraction.</li>
       </ul>
-      <!-- This ID must match app.js exactly -->
       <button id="start-btn">Start Test</button>
     </div>
   </div>
 
   <!-- Header -->
   <header>
-    <!-- Light logo version for dark background -->
-    <img src="../logo-header.png" alt="Company Logo" class="logo-header"/>
+    <img src="/logo-header.png" alt="Logo" class="logo-header"/>
     <h1 class="test-name">Numeracy Test</h1>
     <div class="timer" id="timer">05:00</div>
     <div class="progress">Completed: <span id="completed">0</span></div>
@@ -40,7 +38,7 @@
   <!-- Main Test (hidden until start) -->
   <main id="test-container" class="hidden">
     <div id="equation"></div>
-    <button id="clear-btn" title="Clear">🗑️</button>
+    <button id="clear-btn">🗑️</button>
     <div id="digit-pad"></div>
     <div id="controls">
       <button id="prev-btn">Previous</button>
@@ -57,8 +55,8 @@
     </div>
   </div>
 
-  <!-- Load the test logic -->
-  <script src="app.js"></script>
+  <!-- Absolute path to the JS in the numeracy folder -->
+  <script src="/numeracy/app.js"></script>
 </body>
 </html>
 
