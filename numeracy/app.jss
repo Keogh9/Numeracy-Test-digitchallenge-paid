@@ -1,217 +1,171 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1) Element refs
-  const instructionsOverlay = document.getElementById('instructions-overlay');
-  const testContainer      = document.getElementById('test-container');
-  const resultsContainer   = document.getElementById('results-container');
-  const startBtn           = document.getElementById('start-btn');
-  const prevBtn            = document.getElementById('prev-btn');
-  const nextBtn            = document.getElementById('next-btn');
-  const clearBtn           = document.getElementById('clear-btn');
-  const retakeBtn          = document.getElementById('retake-btn');
-  const equationDiv        = document.getElementById('equation');
-  const padDiv             = document.getElementById('digit-pad');
-  const timerDisplay       = document.getElementById('timer');
-  const completedSpan      = document.getElementById('completed');
-  const scoreSpan          = document.getElementById('score');
-  const totalQSpan         = document.getElementById('total-questions');
-  const percentSpan        = document.getElementById('percent');
-  const resultsList        = document.getElementById('results-list');
+  // Element refs
+  const instrOvl = document.getElementById('instructions-overlay');
+  const testC    = document.getElementById('test-container');
+  const resC     = document.getElementById('results-container');
+  const startB   = document.getElementById('start-btn');
+  const prevB    = document.getElementById('prev-btn');
+  const nextB    = document.getElementById('next-btn');
+  const clearB   = document.getElementById('clear-btn');
+  const retakeB  = document.getElementById('retake-btn');
+  const eqDiv    = document.getElementById('equation');
+  const padDiv   = document.getElementById('digit-pad');
+  const timerD   = document.getElementById('timer');
+  const compD    = document.getElementById('completed');
+  const scoreD   = document.getElementById('score');
+  const totalD   = document.getElementById('total-questions');
+  const pctD     = document.getElementById('percent');
+  const list     = document.getElementById('results-list');
 
-  // 2) State
-  let bank = [], currentIndex = 0;
-  const userAnswers = {};
-  const answeredSet = new Set();
-  let answeredCount = 0;
-  let timerId;
+  // State
+  let bank = [], idx = 0;
+  const answers = {};
+  const seen = new Set();
+  let count = 0, timerId;
 
-  // 3) Disable Start until questions load
-  startBtn.textContent = 'Loading…';
-  startBtn.disabled = true;
+  // Disable start until bank is loaded
+  startB.disabled = true;
+  startB.textContent = 'Loading…';
 
-  // 4) Load & shuffle the question bank
-  fetch('questions.json')
-    .then(res => res.json())
+  // 1) Load questions.json via absolute path
+  fetch('/numeracy/questions.json')
+    .then(r => r.json())
     .then(qs => {
-      bank = shuffleArray(qs);
-      totalQSpan.textContent = bank.length;
+      bank = shuffle(qs);
+      totalD.textContent = bank.length;
     })
-    .catch(err => {
-      console.error('Error loading questions.json:', err);
-      const msg = instructionsOverlay.querySelector('p');
-      msg.textContent = 'Failed to load test. Please try again later.';
+    .catch(() => {
+      instrOvl.querySelector('p').textContent = 'Unable to load test. Please try again later.';
     })
     .finally(() => {
-      startBtn.textContent = 'Start Test';
-      startBtn.disabled = false;
-      startBtn.onclick = () => {
-        instructionsOverlay.style.display = 'none';
-        testContainer.classList.remove('hidden');
-        renderQuestion();
-        startTimer(300);
-      };
+      startB.disabled = false;
+      startB.textContent = 'Start Test';
+      startB.onclick = beginTest;
     });
 
-  // 5) Navigation & control handlers
-  prevBtn.onclick   = () => currentIndex > 0 && (--currentIndex, renderQuestion());
-  nextBtn.onclick   = nextQuestion;
-  clearBtn.onclick  = clearLast;
-  retakeBtn.onclick = () => location.reload();
+  // Handlers
+  prevB.onclick   = () => { if (idx>0) { idx--; render(); } };
+  nextB.onclick   = nextQ;
+  clearB.onclick  = clearLast;
+  retakeB.onclick = () => location.reload();
 
-  // 6) Timer logic
-  function startTimer(sec) {
-    let rem = sec;
-    timerDisplay.textContent = formatTime(rem);
+  function beginTest() {
+    instrOvl.style.display = 'none';
+    testC.classList.remove('hidden');
+    render();
+    startTimer(300);
+  }
+
+  // Timer
+  function startTimer(s) {
+    let rem = s;
+    timerD.textContent = fmt(rem);
     timerId = setInterval(() => {
-      rem--;
-      timerDisplay.textContent = formatTime(rem);
-      if (rem <= 0) {
+      rem--; timerD.textContent = fmt(rem);
+      if (rem<=0) {
         clearInterval(timerId);
-        showResults();
+        showRes();
       }
-    }, 1000);
+    },1000);
   }
-  function formatTime(s) {
-    const m = String(Math.floor(s/60)).padStart(2,'0');
-    const ss = String(s%60).padStart(2,'0');
-    return `${m}:${ss}`;
+  function fmt(sec) {
+    const m = String(Math.floor(sec/60)).padStart(2,'0');
+    const s = String(sec%60).padStart(2,'0');
+    return `${m}:${s}`;
   }
 
-  // 7) Render question
-  function renderQuestion() {
-    const q = bank[currentIndex];
-    equationDiv.innerHTML = '';
+  // Render question
+  function render() {
+    const q = bank[idx];
+    eqDiv.innerHTML = '';
     padDiv.innerHTML = '';
-
-    let bi = 0;
-    q.expr.split(/(__)/g).forEach(part => {
-      if (part === '__') {
-        const span = document.createElement('span');
-        span.className = 'blank';
-        span.dataset.idx = bi;
-        const ua = userAnswers[currentIndex] || [];
-        span.textContent = ua[bi] || '';
-        span.onclick = () => clearBlank(bi);
-        equationDiv.appendChild(span);
-        bi++;
-      } else {
-        equationDiv.insertAdjacentText('beforeend', part);
-      }
+    let b=0;
+    q.expr.split(/(__)/g).forEach(p => {
+      if (p==='__') {
+        const sp = document.createElement('span');
+        sp.className='blank';
+        sp.dataset.i=b;
+        const ua = answers[idx]||[];
+        sp.textContent=ua[b]||'';
+        sp.onclick=()=>{ answers[idx][b]=null; render(); };
+        eqDiv.appendChild(sp);
+        b++;
+      } else eqDiv.insertAdjacentText('beforeend',p);
     });
-
-    for (let d = 1; d <= 9; d++) {
-      const btn = document.createElement('div');
-      btn.className = 'digit';
-      btn.textContent = d;
-      const ua = userAnswers[currentIndex] || [];
+    for (let d=1; d<=9; d++){
+      const btn=document.createElement('div');
+      btn.className='digit'; btn.textContent=d;
+      const ua = answers[idx]||[];
       if (ua.includes(d)) btn.classList.add('used');
-      btn.onclick = () => pickDigit(d);
+      btn.onclick=()=>{ pick(d); };
       padDiv.appendChild(btn);
     }
-
-    completedSpan.textContent = answeredCount;
-    prevBtn.disabled = (currentIndex === 0);
-    nextBtn.textContent = (currentIndex === bank.length - 1 ? 'Submit' : 'Next');
+    compD.textContent = count;
+    prevB.disabled = (idx===0);
+    nextB.textContent = (idx===bank.length-1?'Submit':'Next');
   }
 
-  function pickDigit(d) {
-    if (!userAnswers[currentIndex]) userAnswers[currentIndex] = [];
-    const blanks = equationDiv.querySelectorAll('.blank');
-    for (let i = 0; i < blanks.length; i++) {
-      if (!userAnswers[currentIndex][i]) {
-        userAnswers[currentIndex][i] = d;
-        break;
+  function pick(d) {
+    if (!answers[idx]) answers[idx]=[];
+    const blanks=eqDiv.querySelectorAll('.blank');
+    for(let i=0;i<blanks.length;i++){
+      if(!answers[idx][i]){
+        answers[idx][i]=d;break;
       }
     }
-    renderQuestion();
+    render();
   }
-
-  function clearBlank(i) {
-    const arr = userAnswers[currentIndex];
-    if (!arr) return;
-    arr[i] = null;
-    renderQuestion();
-  }
-
   function clearLast() {
-    const arr = userAnswers[currentIndex] || [];
-    const last = arr.map((v,i) => v ? i : -1).filter(i=>i>=0).pop();
-    if (last >= 0) {
-      arr[last] = null;
-      renderQuestion();
+    const arr=answers[idx]||[];
+    const last=arr.map((v,i)=>v?i:-1).filter(i=>i>=0).pop();
+    if(last>=0){arr[last]=null;render();}
+  }
+  function nextQ(){
+    const blanks=eqDiv.querySelectorAll('.blank');
+    const ua=answers[idx]||[];
+    if(ua.length<blanks.length||ua.some(v=>!v)){
+      return alert('Please fill all blanks');
     }
+    if(!seen.has(idx)){ seen.add(idx); count++; }
+    idx++;
+    if(idx>=bank.length) showRes();
+    else render();
   }
 
-  function nextQuestion() {
-    const blanks = equationDiv.querySelectorAll('.blank');
-    const ua = userAnswers[currentIndex] || [];
-    if (ua.length < blanks.length || ua.some(v=>!v)) {
-      return alert('Please fill all blanks before proceeding.');
-    }
-    if (!answeredSet.has(currentIndex)) {
-      answeredSet.add(currentIndex);
-      answeredCount++;
-    }
-    currentIndex++;
-    if (currentIndex >= bank.length) {
-      showResults();
-    } else {
-      renderQuestion();
-    }
-  }
-
-  // 8) Show results
-  function showResults() {
+  // Show results
+  function showRes() {
     clearInterval(timerId);
-    testContainer.style.display    = 'none';
-    resultsContainer.style.display = 'flex';
-
-    let score = 0;
-    const answeredIndices = Array.from(answeredSet).sort((a,b)=>a-b);
-    resultsList.innerHTML = '';
-
-    answeredIndices.forEach(idx => {
-      const q  = bank[idx];
-      const ua = userAnswers[idx] || [];
-      const userExpr = buildExpression(q.expr, ua);
-      const expected = parseInt(q.expr.split('=')[1].trim(),10);
-      const actual   = evaluateExpression(userExpr);
-      const correct  = (actual === expected);
-      if (correct) score++;
-
-      const li = document.createElement('li');
-      li.innerHTML = `
-        <strong>Q${idx+1}:</strong>
-        <span class="${correct?'correct':'wrong'}">
-          ${userExpr} = ${expected}
-        </span>
-      `;
-      resultsList.appendChild(li);
+    testC.style.display='none';
+    resC.style.display='flex';
+    let score=0;
+    Array.from(seen).sort((a,b)=>a-b).forEach(i=>{
+      const q=bank[i], ua=answers[i]||[];
+      const expr=build(q.expr,ua);
+      const exp=+q.expr.split('=')[1];
+      const act=eval(expr.replace(/×/g,'*').replace(/−/g,'-'));
+      const ok=(act===exp);
+      if(ok) score++;
+      const li=document.createElement('li');
+      li.innerHTML=`<strong>Q${i+1}:</strong>
+        <span class="${ok?'correct':'wrong'}">${expr} = ${exp}</span>`;
+      list.appendChild(li);
     });
-
-    scoreSpan.textContent   = score;
-    totalQSpan.textContent  = answeredIndices.length;
-    percentSpan.textContent = Math.round(score/answeredIndices.length*100);
+    scoreD.textContent=score;
+    pctD.textContent=Math.round(100*score/seen.size);
   }
 
-  // 9) Helpers
-  function buildExpression(expr, ua) {
+  // Helpers
+  function build(expr, ua){
     let i=0;
     return expr.split(/(__)/g)
-      .map(part => part==='__'? ua[i++] : part)
-      .join('')
-      .split('=')[0]
-      .trim();
+      .map(p=>p==='__'?ua[i++]:p)
+      .join('').split('=')[0].trim();
   }
-  function evaluateExpression(str) {
-    const jsExpr = str.replace(/×/g,'*').replace(/−/g,'-');
-    try { return eval(jsExpr); }
-    catch { return NaN; }
-  }
-  function shuffleArray(a) {
-    const arr = a.slice();
-    for (let i=arr.length-1; i>0; i--) {
-      const j = Math.floor(Math.random()*(i+1));
-      [arr[i],arr[j]] = [arr[j],arr[i]];
+  function shuffle(a){
+    const arr=a.slice();
+    for(let i=arr.length-1;i>0;i--){
+      const j=Math.floor(Math.random()*(i+1));
+      [arr[i],arr[j]]=[arr[j],arr[i]];
     }
     return arr;
   }
