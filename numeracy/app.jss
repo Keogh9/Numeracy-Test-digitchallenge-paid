@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Element refs
+  // 1) Element refs
   const instructionsOverlay = document.getElementById('instructions-overlay');
   const testContainer      = document.getElementById('test-container');
   const resultsContainer   = document.getElementById('results-container');
@@ -17,36 +17,47 @@ document.addEventListener('DOMContentLoaded', () => {
   const percentSpan        = document.getElementById('percent');
   const resultsList        = document.getElementById('results-list');
 
-  // State
+  // 2) State
   let bank = [], currentIndex = 0;
   const userAnswers = {};
   const answeredSet = new Set();
   let answeredCount = 0;
   let timerId;
 
-  // Load & shuffle questions
+  // 3) Disable Start until questions load
+  startBtn.textContent = 'Loading…';
+  startBtn.disabled = true;
+
+  // 4) Load & shuffle the question bank
   fetch('questions.json')
     .then(res => res.json())
-    .then(qs => { bank = shuffleArray(qs); });
+    .then(qs => {
+      bank = shuffleArray(qs);
+      totalQSpan.textContent = bank.length;
+    })
+    .catch(err => {
+      console.error('Error loading questions.json:', err);
+      const msg = instructionsOverlay.querySelector('p');
+      msg.textContent = 'Failed to load test. Please try again later.';
+    })
+    .finally(() => {
+      startBtn.textContent = 'Start Test';
+      startBtn.disabled = false;
+      startBtn.onclick = () => {
+        instructionsOverlay.style.display = 'none';
+        testContainer.classList.remove('hidden');
+        renderQuestion();
+        startTimer(300);
+      };
+    });
 
-  // Wire up controls
-  startBtn.onclick = () => {
-    instructionsOverlay.style.display = 'none';
-    testContainer.classList.remove('hidden');
-    renderQuestion();
-    startTimer(300);
-  };
-  prevBtn.onclick = () => {
-    if (currentIndex > 0) {
-      currentIndex--;
-      renderQuestion();
-    }
-  };
-  nextBtn.onclick = nextQuestion;
-  clearBtn.onclick = clearLast;
+  // 5) Navigation & control handlers
+  prevBtn.onclick   = () => currentIndex > 0 && (--currentIndex, renderQuestion());
+  nextBtn.onclick   = nextQuestion;
+  clearBtn.onclick  = clearLast;
   retakeBtn.onclick = () => location.reload();
 
-  // Timer
+  // 6) Timer logic
   function startTimer(sec) {
     let rem = sec;
     timerDisplay.textContent = formatTime(rem);
@@ -65,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return `${m}:${ss}`;
   }
 
-  // Render question
+  // 7) Render question
   function renderQuestion() {
     const q = bank[currentIndex];
     equationDiv.innerHTML = '';
@@ -98,6 +109,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     completedSpan.textContent = answeredCount;
+    prevBtn.disabled = (currentIndex === 0);
+    nextBtn.textContent = (currentIndex === bank.length - 1 ? 'Submit' : 'Next');
   }
 
   function pickDigit(d) {
@@ -113,14 +126,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function clearBlank(i) {
-    if (!userAnswers[currentIndex]) return;
-    userAnswers[currentIndex][i] = null;
+    const arr = userAnswers[currentIndex];
+    if (!arr) return;
+    arr[i] = null;
     renderQuestion();
   }
 
   function clearLast() {
     const arr = userAnswers[currentIndex] || [];
-    const last = arr.map((v,i)=> v?i:-1).filter(i=>i>=0).pop();
+    const last = arr.map((v,i) => v ? i : -1).filter(i=>i>=0).pop();
     if (last >= 0) {
       arr[last] = null;
       renderQuestion();
@@ -145,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Show results
+  // 8) Show results
   function showResults() {
     clearInterval(timerId);
     testContainer.style.display    = 'none';
@@ -156,19 +170,21 @@ document.addEventListener('DOMContentLoaded', () => {
     resultsList.innerHTML = '';
 
     answeredIndices.forEach(idx => {
-      const q = bank[idx];
+      const q  = bank[idx];
       const ua = userAnswers[idx] || [];
       const userExpr = buildExpression(q.expr, ua);
       const expected = parseInt(q.expr.split('=')[1].trim(),10);
       const actual   = evaluateExpression(userExpr);
-      const correct  = actual === expected;
+      const correct  = (actual === expected);
       if (correct) score++;
 
       const li = document.createElement('li');
-      li.innerHTML = `<strong>Q${idx+1}:</strong>
+      li.innerHTML = `
+        <strong>Q${idx+1}:</strong>
         <span class="${correct?'correct':'wrong'}">
           ${userExpr} = ${expected}
-        </span>`;
+        </span>
+      `;
       resultsList.appendChild(li);
     });
 
@@ -177,23 +193,25 @@ document.addEventListener('DOMContentLoaded', () => {
     percentSpan.textContent = Math.round(score/answeredIndices.length*100);
   }
 
-  // Helpers
+  // 9) Helpers
   function buildExpression(expr, ua) {
     let i=0;
     return expr.split(/(__)/g)
-      .map(part=> part==='__'?ua[i++]:part)
-      .join('').split('=')[0].trim();
+      .map(part => part==='__'? ua[i++] : part)
+      .join('')
+      .split('=')[0]
+      .trim();
   }
   function evaluateExpression(str) {
-    const js = str.replace(/×/g,'*').replace(/−/g,'-');
-    try { return eval(js); }
-    catch{ return NaN; }
+    const jsExpr = str.replace(/×/g,'*').replace(/−/g,'-');
+    try { return eval(jsExpr); }
+    catch { return NaN; }
   }
   function shuffleArray(a) {
-    const arr=a.slice();
-    for(let i=arr.length-1;i>0;i--){
-      const j=Math.floor(Math.random()*(i+1));
-      [arr[i],arr[j]]=[arr[j],arr[i]];
+    const arr = a.slice();
+    for (let i=arr.length-1; i>0; i--) {
+      const j = Math.floor(Math.random()*(i+1));
+      [arr[i],arr[j]] = [arr[j],arr[i]];
     }
     return arr;
   }
