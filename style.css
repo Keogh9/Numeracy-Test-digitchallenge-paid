@@ -1,0 +1,77 @@
+:root {
+  --primary-color: #160f2A;
+  --secondary-color: #FB6E43;
+  --background-color: #F5F3EE;
+  --text-color: #333333;
+  --button-hover: #1f173f;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background: var(--primary-color);
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.logo {
+  max-height: 60px;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.test-btn {
+  display: block;
+  padding: 1rem 1.5rem;
+  background: var(--secondary-color);
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: background 0.2s, transform 0.1s;
+}
+
+.test-btn:hover {
+  background: var(--button-hover);
+  transform: translateY(-2px);
+}
+
+footer {
+  background: #eee;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
