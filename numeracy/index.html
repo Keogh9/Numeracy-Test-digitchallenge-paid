@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Numeracy Digit‐Challenge</title>
-  <!-- Absolute path to the CSS in the numeracy folder -->
-  <link rel="stylesheet" href="/numeracy/style.css" />
+  <!-- Use relative path -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- Instructions Overlay -->
   <div id="instructions-overlay" class="overlay">
     <div class="overlay-content">
-      <img src="/logo.png" alt="Logo" class="logo"/>
+      <img src="../logo.png" alt="Logo" class="logo"/>
       <h1>Numeracy Digit-Challenge</h1>
       <p>This test measures your ability to solve arithmetic functions using mental calculation. You have <strong>5 minutes</strong> to answer as many questions as accurately and quickly as possible.</p>
       <h2>Instructions</h2>
@@ -29,7 +29,7 @@
 
   <!-- Header -->
   <header>
-    <img src="/logo-header.png" alt="Logo" class="logo-header"/>
+    <img src="../logo-header.png" alt="Logo" class="logo-header"/>
     <h1 class="test-name">Numeracy Test</h1>
     <div class="timer" id="timer">05:00</div>
     <div class="progress">Completed: <span id="completed">0</span></div>
@@ -55,8 +55,9 @@
     </div>
   </div>
 
-  <!-- Absolute path to the JS in the numeracy folder -->
-  <script src="/numeracy/app.js"></script>
+  <!-- Use relative path -->
+  <script src="app.js"></script>
 </body>
 </html>
+
 
