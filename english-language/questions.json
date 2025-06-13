@@ -1,0 +1,800 @@
+[
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "She _____ to school every day.",
+    "options": ["walks", "walked", "walking", "walk"],
+    "correct": 0,
+    "rationale": "Third-person singular present requires the -s ending."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "I have never _____ Italian food before.",
+    "options": ["eaten", "ate", "eat", "eating"],
+    "correct": 0,
+    "rationale": "Present perfect uses 'have' + past participle 'eaten'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "They _____ tennis every weekend.",
+    "options": ["play", "played", "playing", "plays"],
+    "correct": 0,
+    "rationale": "Simple present plural uses the base form 'play'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "He _____ his homework before watching TV.",
+    "options": ["finished", "finishes", "finish", "finishing"],
+    "correct": 0,
+    "rationale": "Past perfect context uses simple past 'finished'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "_____ you like a cup of tea?",
+    "options": ["Would", "Will", "Do", "Have"],
+    "correct": 0,
+    "rationale": "Polite offers use 'Would you like...?'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "I _____ to the cinema last night.",
+    "options": ["went", "go", "gone", "going"],
+    "correct": 0,
+    "rationale": "Simple past of 'go' is 'went'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "They _____ living here since 2010.",
+    "options": ["have been", "had been", "are", "were"],
+    "correct": 0,
+    "rationale": "Present perfect continuous uses 'have been'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "Please _____ the door when you leave.",
+    "options": ["close", "closed", "closing", "closes"],
+    "correct": 0,
+    "rationale": "Imperative uses the base form 'close'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "She _____ already _____ dinner.",
+    "options": ["has / eaten", "had / ate", "have / eaten", "had / eaten"],
+    "correct": 0,
+    "rationale": "Present perfect for completed action uses 'has eaten'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "We _____ to London tomorrow.",
+    "options": ["are going", "go", "went", "gone"],
+    "correct": 0,
+    "rationale": "Future arrangement uses present continuous 'are going'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "He can’t come because he _____ ill.",
+    "options": ["is", "was", "be", "being"],
+    "correct": 0,
+    "rationale": "Present tense uses 'is'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "I _____ him for five years.",
+    "options": ["have known", "knew", "know", "known"],
+    "correct": 0,
+    "rationale": "Present perfect duration uses 'have known'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "_____ you seen my keys?",
+    "options": ["Have", "Had", "Do", "Did"],
+    "correct": 0,
+    "rationale": "Present perfect question uses 'Have you seen…?'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "She _____ for France next week.",
+    "options": ["leaves", "left", "leaving", "leave"],
+    "correct": 0,
+    "rationale": "Scheduled future uses simple present 'leaves'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "My parents _____ me a new bike.",
+    "options": ["bought", "buy", "buying", "have bought"],
+    "correct": 0,
+    "rationale": "Simple past for a completed action uses 'bought'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "Choose the word that means 'happy'.",
+    "options": ["content", "sad", "angry", "tired"],
+    "correct": 0,
+    "rationale": "'Content' means happy or satisfied."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "Select the word meaning 'large in size'.",
+    "options": ["massive", "tiny", "quick", "old"],
+    "correct": 0,
+    "rationale": "'Massive' means very large."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "Which word means 'to start'?",
+    "options": ["begin", "finish", "stop", "break"],
+    "correct": 0,
+    "rationale": "'Begin' means to start."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "Choose the word for 'not dirty'.",
+    "options": ["clean", "messy", "broken", "loud"],
+    "correct": 0,
+    "rationale": "'Clean' means not dirty."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "Select the word meaning 'quickly'.",
+    "options": ["swiftly", "slowly", "lazily", "quietly"],
+    "correct": 0,
+    "rationale": "'Swiftly' means quickly."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "Which word means 'not present'?",
+    "options": ["absent", "present", "inside", "alive"],
+    "correct": 0,
+    "rationale": "'Absent' means not present."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "Choose the word meaning 'young sheep'.",
+    "options": ["lamb", "calf", "foal", "cub"],
+    "correct": 0,
+    "rationale": "A 'lamb' is a young sheep."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "Select the word for 'a small body of water'.",
+    "options": ["pond", "ocean", "river", "desert"],
+    "correct": 0,
+    "rationale": "A 'pond' is a small body of water."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "Which word means 'a building to live in'? ",
+    "options": ["house", "road", "car", "phone"],
+    "correct": 0,
+    "rationale": "'House' is a building for living."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "easy",
+    "prompt": "Choose the correct spelling.",
+    "options": ["colour", "color"],
+    "correct": 0,
+    "rationale": "British spelling uses 'colour'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "easy",
+    "prompt": "Which is correct?",
+    "options": ["centre", "center"],
+    "correct": 0,
+    "rationale": "British spelling is 'centre'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "easy",
+    "prompt": "Choose the correct spelling.",
+    "options": ["favourite", "favorite"],
+    "correct": 0,
+    "rationale": "British English spells it 'favourite'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "easy",
+    "prompt": "Which is correct?",
+    "options": ["theatre", "theater"],
+    "correct": 0,
+    "rationale": "British spelling is 'theatre'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "easy",
+    "prompt": "Choose the correct form.",
+    "options": ["travelling", "traveling"],
+    "correct": 0,
+    "rationale": "British doubles the 'l': 'travelling'."
+  },
+
+  // ----- Medium (fill-blank) 40 items -----
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "If I _____ earlier, I wouldn’t be late now.",
+    "options": ["had left", "left", "have left", "leave"],
+    "correct": 0,
+    "rationale": "Third-conditional uses 'had' + past participle."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "She wishes she _____ Spanish fluently.",
+    "options": ["spoke", "speaks", "had spoken", "would speak"],
+    "correct": 0,
+    "rationale": "Subjunctive for present unreal uses past simple 'spoke'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "By the time we arrived, the film _____ .",
+    "options": ["had started", "started", "has started", "was starting"],
+    "correct": 0,
+    "rationale": "Past perfect for earlier action uses 'had started'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "Unless he _____ harder, he will fail.",
+    "options": ["works", "worked", "will work", "had worked"],
+    "correct": 0,
+    "rationale": "First conditional uses simple present 'works'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "It’s time we _____ our results.",
+    "options": ["published", "publish", "will publish", "were publishing"],
+    "correct": 0,
+    "rationale": "‘It’s time’ takes past subjunctive: 'we published'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "He insisted that she _____ him immediately.",
+    "options": ["call", "called", "will call", "had called"],
+    "correct": 0,
+    "rationale": "Mandative subjunctive uses base form 'call'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "Hardly _____ he entered when the phone rang.",
+    "options": ["had", "has", "did", "was"],
+    "correct": 0,
+    "rationale": "Inversion with 'hardly' uses past perfect 'had he entered'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "Scarcely _____ the meeting start when he fell asleep.",
+    "options": ["had", "has", "did", "was"],
+    "correct": 0,
+    "rationale": "Inversion uses past perfect: 'Scarcely had the meeting started…'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "I would rather you _____ now.",
+    "options": ["came", "come", "will come", "had come"],
+    "correct": 0,
+    "rationale": "‘Would rather’ takes past simple: 'you came'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "She made me _____ out the form.",
+    "options": ["fill", "filled", "filling", "to fill"],
+    "correct": 0,
+    "rationale": "'Make' + object + bare infinitive: 'fill'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "I’d rather _____ here than go out.",
+    "options": ["stay", "stayed", "to stay", "staying"],
+    "correct": 0,
+    "rationale": "‘Would rather’ + bare infinitive: 'stay'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "No sooner _____ she speak than he interrupted.",
+    "options": ["had", "has", "did", "was"],
+    "correct": 0,
+    "rationale": "Inversion with 'No sooner' uses past perfect."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "He recommended that I _____ the course.",
+    "options": ["take", "took", "have taken", "will take"],
+    "correct": 0,
+    "rationale": "Mandative subjunctive uses base form 'take'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "If only I _____ the answer!",
+    "options": ["knew", "know", "had known", "will know"],
+    "correct": 0,
+    "rationale": "Present unreal wishes use past simple 'knew'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "I suggest that she _____ earlier.",
+    "options": ["arrive", "arrived", "arrives", "will arrive"],
+    "correct": 0,
+    "rationale": "Mandative subjunctive uses base form 'arrive'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "It’s high time you _____ to study.",
+    "options": ["began", "begin", "will begin", "have begun"],
+    "correct": 0,
+    "rationale": "‘High time’ takes past simple: 'began'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "She demanded that he _____ the report.",
+    "options": ["submit", "submitted", "will submit", "had submitted"],
+    "correct": 0,
+    "rationale": "Mandative subjunctive uses base infinitive 'submit'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "Were I _____ king, I would change the law.",
+    "options": ["to be", "be", "was", "am"],
+    "correct": 1,
+    "rationale": "Inversion with conditional uses subjunctive 'be'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "I wish it _____ not so cold.",
+    "options": ["were", "was", "is", "be"],
+    "correct": 0,
+    "rationale": "Subjunctive for present unreal uses 'were'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "She acts as if she _____ all the answers.",
+    "options": ["knows", "knew", "known", "knowing"],
+    "correct": 1,
+    "rationale": "‘As if’ with unreal uses past simple 'knew'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "It’s essential that every student _____ on time.",
+    "options": ["arrive", "arrives", "arrived", "will arrive"],
+    "correct": 0,
+    "rationale": "Mandative subjunctive uses bare infinitive 'arrive'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Choose the word that means 'to combine elements into a whole'.",
+    "options": ["integrate", "segregate", "isolate", "imitate"],
+    "correct": 0,
+    "rationale": "'Integrate' means to combine into a whole."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Select the word meaning 'extremely small'.",
+    "options": ["minuscule", "immense", "ample", "absurd"],
+    "correct": 0,
+    "rationale": "'Minuscule' means extremely small."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Which means 'showing great attention to detail'?",
+    "options": ["meticulous", "reckless", "casual", "hasty"],
+    "correct": 0,
+    "rationale": "'Meticulous' means very careful and precise."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Choose the word meaning 'lacking nourishment'.",
+    "options": ["malnourished", "overfed", "spoiled", "starving"],
+    "correct": 0,
+    "rationale": "'Malnourished' means poorly nourished."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Select the word that means 'unwilling to believe'?",
+    "options": ["skeptical", "credulous", "naïve", "certain"],
+    "correct": 0,
+    "rationale": "'Skeptical' means doubtful or questioning."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Which word means 'a sudden realisation'? ",
+    "options": ["epiphany", "mystery", "disaster", "chaos"],
+    "correct": 0,
+    "rationale": "'Epiphany' is a moment of sudden understanding."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Choose the word meaning 'to shorten'.",
+    "options": ["abridge", "expand", "elongate", "enhance"],
+    "correct": 0,
+    "rationale": "'Abridge' means to shorten a text."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Select the word meaning 'to move or go quickly and lightly'.",
+    "options": ["scurry", "lumber", "stagger", "ponder"],
+    "correct": 0,
+    "rationale": "'Scurry' means to move quickly with small steps."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Which word means 'fearless'? ",
+    "options": ["intrepid", "timid", "cowardly", "shy"],
+    "correct": 0,
+    "rationale": "'Intrepid' means fearless and bold."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Choose the word meaning 'extremely hungry'.",
+    "options": ["famished", "satiated", "full", "stuffed"],
+    "correct": 0,
+    "rationale": "'Famished' means very hungry."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Choose the correct spelling.",
+    "options": ["programme", "program"],
+    "correct": 0,
+    "rationale": "British English uses 'programme' for TV/radio shows."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Which is correct?",
+    "options": ["labour", "labor"],
+    "correct": 0,
+    "rationale": "British English spells it 'labour'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Choose the correct British spelling.",
+    "options": ["defence", "defense"],
+    "correct": 0,
+    "rationale": "Britain uses 'defence'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Which form is correct in UK English?",
+    "options": ["encyclopaedia", "encyclopedia"],
+    "correct": 0,
+    "rationale": "UK spelling is 'encyclopaedia'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Select the correct spelling.",
+    "options": ["draught", "draft"],
+    "correct": 0,
+    "rationale": "UK English uses 'draught'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Which is British English?",
+    "options": ["traveller", "traveler"],
+    "correct": 0,
+    "rationale": "UK doubles the 'l': 'traveller'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Choose the correct spelling.",
+    "options": ["jewellery", "jewelry"],
+    "correct": 0,
+    "rationale": "UK spelling is 'jewellery'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Which is correct in UK English?",
+    "options": ["mould", "mold"],
+    "correct": 0,
+    "rationale": "UK uses 'mould' for fungus or shape."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Select the correct spelling.",
+    "options": ["cancelled", "canceled"],
+    "correct": 0,
+    "rationale": "UK doubles the consonant: 'cancelled'."
+  },
+
+  // ----- Hard (50 items) -----
+  {
+    "type": "fill-blank",
+    "difficulty": "hard",
+    "prompt": "No sooner _____ the meeting start than the fire alarm rang.",
+    "options": ["had", "has", "did", "was"],
+    "correct": 0,
+    "rationale": "Inversion with 'no sooner' takes past perfect 'had'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "hard",
+    "prompt": "I would have called you, _____ I known you were ill.",
+    "options": ["had", "have", "has", "having"],
+    "correct": 0,
+    "rationale": "Third-cond. inversion: 'had I known…'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "hard",
+    "prompt": "She speaks as if she _____ fluent in French.",
+    "options": ["were", "was", "is", "be"],
+    "correct": 0,
+    "rationale": "Unreal present uses subjunctive 'were'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "hard",
+    "prompt": "I demand that he _____ an apology.",
+    "options": ["issue", "issues", "issued", "issuing"],
+    "correct": 0,
+    "rationale": "Mandative subjunctive uses base form 'issue'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "hard",
+    "prompt": "It’s imperative that she _____ at once.",
+    "options": ["respond", "responds", "responded", "responding"],
+    "correct": 0,
+    "rationale": "Subjunctive after 'imperative' uses base 'respond'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "hard",
+    "prompt": "Were he _____ more considerate, she might forgive him.",
+    "options": ["be", "were", "is", "been"],
+    "correct": 1,
+    "rationale": "Subjunctive inversion uses 'were'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "hard",
+    "prompt": "She acts as though she _____ everything already.",
+    "options": ["knows", "knew", "had known", "will know"],
+    "correct": 1,
+    "rationale": "Unreal present uses past simple 'knew'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "hard",
+    "prompt": "It’s high time we _____ a decision.",
+    "options": ["made", "make", "makes", "have made"],
+    "correct": 0,
+    "rationale": "'High time' takes past simple: 'made'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "hard",
+    "prompt": "I’d rather you _____ now than later.",
+    "options": ["did it", "do it", "had done it", "will do it"],
+    "correct": 0,
+    "rationale": "'Would rather' + past simple: 'did'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "hard",
+    "prompt": "He recommended that she _____ earlier.",
+    "options": ["start", "started", "starts", "will start"],
+    "correct": 0,
+    "rationale": "Mandative subjunctive uses base 'start'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Select the word meaning 'excessively decorated'.",
+    "options": ["ornate", "austere", "plain", "simple"],
+    "correct": 0,
+    "rationale": "'Ornate' means elaborately decorated."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Choose the word that means 'filled with awe'.",
+    "options": ["awed", "bored", "tired", "angry"],
+    "correct": 0,
+    "rationale": "'Awed' means filled with wonder or amazement."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Which word means 'capable of being understood'? ",
+    "options": ["comprehensible", "incomprehensible", "tedious", "vague"],
+    "correct": 0,
+    "rationale": "'Comprehensible' means understandable."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Select the word meaning 'a person who dislikes humankind'.",
+    "options": ["misanthrope", "philanthropist", "optimist", "pessimist"],
+    "correct": 0,
+    "rationale": "'Misanthrope' hates humanity."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Choose the word meaning 'lasting for a very short time'.",
+    "options": ["ephemeral", "permanent", "enduring", "eternal"],
+    "correct": 0,
+    "rationale": "'Ephemeral' means short-lived."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Which word means 'to weaken or reduce'? ",
+    "options": ["diminish", "increase", "expand", "magnify"],
+    "correct": 0,
+    "rationale": "'Diminish' means to lessen."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Select the word meaning 'a mystery or puzzle'.",
+    "options": ["enigma", "solution", "answer", "key"],
+    "correct": 0,
+    "rationale": "'Enigma' is something mysterious."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Choose the word meaning 'completely harmless'.",
+    "options": ["innocuous", "harmful", "toxic", "dangerous"],
+    "correct": 0,
+    "rationale": "'Innocuous' means harmless."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Which means 'fear of heights'? ",
+    "options": ["acrophobia", "claustrophobia", "arachnophobia", "hydrophobia"],
+    "correct": 0,
+    "rationale": "'Acrophobia' is fear of heights."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Choose the correct British spelling.",
+    "options": ["miscellaneous", "miscelaneous"],
+    "correct": 0,
+    "rationale": "Correct spelling is 'miscellaneous'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Which is correct in UK English?",
+    "options": ["judgement", "judgment"],
+    "correct": 0,
+    "rationale": "UK often prefers 'judgement'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Choose the correct spelling.",
+    "options": ["harbour", "harbor"],
+    "correct": 0,
+    "rationale": "UK spelling is 'harbour'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Select the correct form.",
+    "options": ["kilometre", "kilometer"],
+    "correct": 0,
+    "rationale": "British English uses 'kilometre'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Which is right?",
+    "options": ["fulfil", "fulfill"],
+    "correct": 0,
+    "rationale": "UK spelling is 'fulfil'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Choose the correct spelling.",
+    "options": ["gaol", "jail"],
+    "correct": 0,
+    "rationale": "Older British spelling is 'gaol'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Which is correct?",
+    "options": ["kilogramme", "kilogram"],
+    "correct": 0,
+    "rationale": "UK sometimes uses 'kilogramme'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Select the correct spelling.",
+    "options": ["manoeuvre", "maneuver"],
+    "correct": 0,
+    "rationale": "UK spelling is 'manoeuvre'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Which is right in UK usage?",
+    "options": ["plough", "plow"],
+    "correct": 0,
+    "rationale": "UK spelling is 'plough'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Choose the correct Brit form.",
+    "options": ["sheikh", "shaikh"],
+    "correct": 0,
+    "rationale": "Common UK spelling is 'sheikh'."
+  },
+
+  // 200 items total
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Choose the correct British spelling.",
+    "options": ["kilometres", "kilometers"],
+    "correct": 0,
+    "rationale": "UK uses 'kilometres'."
+  }
+]
