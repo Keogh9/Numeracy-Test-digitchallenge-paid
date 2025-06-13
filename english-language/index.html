@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>English Language Skills Test</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Instructions Overlay -->
+  <div id="instructions-overlay" class="overlay">
+    <div class="overlay-content">
+      <img src="../logo.png" alt="Logo" class="logo"/>
+      <h1>English Language Skills Test</h1>
+      <p>This test measures your fluency, vocabulary, and spelling skills. You have <strong>10 minutes</strong> to complete as many questions as you can.</p>
+      <h2>Instructions</h2>
+      <ul>
+        <li><strong>Part 1:</strong> Fill in the blank with the correct word (4 choices).</li>
+        <li><strong>Part 2:</strong> Select the word that matches the definition (4 choices).</li>
+        <li><strong>Part 3:</strong> Choose the correctly spelled word (2 choices).</li>
+        <li>You must answer to proceed. Keep going until time’s up.</li>
+      </ul>
+      <button id="start-btn">Start Test</button>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <img src="../logo-header.png" alt="Logo" class="logo-header"/>
+    <h1 class="test-name">English Language Skills</h1>
+    <div class="timer" id="timer">10:00</div>
+    <div class="progress">Attempted: <span id="attempted">0</span></div>
+  </header>
+
+  <!-- Main Test (hidden until start) -->
+  <main id="test-container" class="hidden">
+    <div id="question-prompt"></div>
+    <div id="options-container"></div>
+  </main>
+
+  <!-- Results Overlay -->
+  <div id="results-container" class="overlay" style="display:none;">
+    <div class="overlay-content scrollable">
+      <h1>Your Score: <span id="score"></span>/<span id="total"></span></h1>
+      <ul id="results-list"></ul>
+      <div class="results-actions">
+        <button id="retake-btn">Retake Test</button>
+        <button id="home-btn">Return to Home</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
