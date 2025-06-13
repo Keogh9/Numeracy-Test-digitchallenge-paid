@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const answeredSet = new Set();
   let timerId;
 
+  // Disable Start until questions load
   startBtn.disabled = true;
   startBtn.textContent = 'Loading…';
 
@@ -29,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(r => r.json())
     .then(qs => {
       bank = shuffle(qs);
-      totalEl.textContent = bank.length;
       ready = true;
     })
     .catch(() => {
@@ -104,9 +104,9 @@ document.addEventListener('DOMContentLoaded', () => {
       };
       padDiv.appendChild(btn);
     }
-    compEl.textContent = answeredSet.size;
-    prevBtn.disabled   = idx===0;
-    nextBtn.textContent = idx === bank.length - 1 ? 'Submit' : 'Next';
+    compEl.textContent    = answeredSet.size;
+    prevBtn.disabled      = (idx === 0);
+    nextBtn.textContent   = (idx === bank.length - 1 ? 'Submit' : 'Next');
   }
 
   function clearLast() {
@@ -132,12 +132,13 @@ document.addEventListener('DOMContentLoaded', () => {
     resultsC.style.display = 'flex';
     listEl.innerHTML       = '';
     let score = 0;
+    const attempted = Array.from(answeredSet).sort((a,b)=>a-b);
 
-    Array.from(answeredSet).sort((a,b)=>a-b).forEach(i => {
+    attempted.forEach(i => {
       const q = bank[i];
       const ua = userAnswers[i] || [];
       const expr = buildExpr(q.expr, ua);
-      const expected = parseInt(q.expr.split('=')[1].trim(),10);
+      const expected = +q.expr.split('=')[1].trim();
       const actual   = evaluateExpression(expr);
       const correct  = actual === expected;
       if (correct) score++;
@@ -150,13 +151,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (alts.length) {
           const div = document.createElement('div');
           div.className = 'suggestion';
-          div.textContent = 'Possible solutions: ' +
+          div.textContent = 'Suggestions: ' +
             alts.map(arr => {
               let j=0;
-              const filled = q.expr.split(/(__)/g)
+              const s = q.expr.split(/(__)/g)
                 .map(p => p==='__' ? arr[j++] : p)
                 .join('').split('=')[0].trim();
-              return `${filled} = ${expected}`;
+              return `${s} = ${expected}`;
             }).join('; ');
           li.appendChild(div);
         }
@@ -164,58 +165,56 @@ document.addEventListener('DOMContentLoaded', () => {
       listEl.appendChild(li);
     });
 
-    scoreEl.textContent  = score;
-    pctEl.textContent    = Math.round(100*score/answeredSet.size);
+    scoreEl.textContent = score;
+    totalEl.textContent = attempted.length;
+    pctEl.textContent   = Math.round(100 * score / attempted.length);
   }
 
-  // Helpers ------------------------------------------------
-
+  // Helpers ↓↓↓
   function buildExpr(tmpl, ua) {
-    let i = 0;
+    let i=0;
     return tmpl.split(/(__)/g)
-      .map(p => p==='__' ? ua[i++] : p)
+      .map(p=>p==='__'?ua[i++]:p)
       .join('').split('=')[0].trim();
   }
-
   function evaluateExpression(str) {
     const js = str.replace(/×/g,'*').replace(/−/g,'-');
     try { return eval(js); } catch { return NaN; }
   }
-
-  function findAlternatives(tmpl, target, userAns, max) {
-    const count = (tmpl.match(/__/g) || []).length;
+  function findAlternatives(tmpl, target, ua, max) {
+    const count = (tmpl.match(/__/g)||[]).length;
     const results = [];
-    const used = new Set();
+    const used = new Set(ua.filter(n=>n));
     function backtrack(pos, arr) {
-      if (results.length >= max) return;
-      if (pos === count) {
-        if (arr.every((n,i)=>n===userAns[i])) return;
+      if (results.length>=max) return;
+      if (pos===count) {
         const expr = buildExpr(tmpl, arr);
-        if (evaluateExpression(expr) === target) {
+        if (evaluateExpression(expr)===target
+            && !arr.every((n,i)=>n===ua[i])) {
           results.push(arr.slice());
         }
         return;
       }
-      for (let d = 1; d <= 9; d++) {
+      for (let d=1; d<=9; d++) {
         if (used.has(d)) continue;
         used.add(d);
-        arr[pos] = d;
-        backtrack(pos+1, arr);
+        arr[pos]=d;
+        backtrack(pos+1,arr);
         used.delete(d);
-        if (results.length >= max) break;
+        if (results.length>=max) break;
       }
     }
     backtrack(0, []);
     return results;
   }
-
-  function shuffle(arr) {
-    const a = arr.slice();
-    for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random()*(i+1));
-      [a[i],a[j]] = [a[j],a[i]];
+  function shuffle(a) {
+    const arr=[...a];
+    for (let i=arr.length-1;i>0;i--){
+      const j=Math.floor(Math.random()*(i+1));
+      [arr[i],arr[j]]=[arr[j],arr[i]];
     }
-    return a;
+    return arr;
   }
 });
+
 
