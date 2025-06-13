@@ -1,0 +1,1285 @@
+[
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "The vocabulary of a language.",
+    "options": [
+      "venerate",
+      "transient",
+      "redundant",
+      "lexicon"
+    ],
+    "correct": 3,
+    "rationale": "'lexicon' means the vocabulary of a language."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "Extremely small.",
+    "options": [
+      "integrate",
+      "minuscule",
+      "lexicon",
+      "ubiquitous"
+    ],
+    "correct": 1,
+    "rationale": "'minuscule' means extremely small."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Found everywhere.",
+    "options": [
+      "ubiquitous",
+      "ambiguous",
+      "intrepid",
+      "paradigm"
+    ],
+    "correct": 0,
+    "rationale": "'ubiquitous' means found everywhere."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "She ____ every day.",
+    "options": [
+      "sleeps",
+      "sleeped",
+      "sleep",
+      "sleeping"
+    ],
+    "correct": 0,
+    "rationale": "3rd-person singular present takes the -s ending."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "easy",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "colour",
+      "color"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'colour'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "She ____ every day.",
+    "options": [
+      "plays",
+      "played",
+      "play",
+      "playing"
+    ],
+    "correct": 0,
+    "rationale": "3rd-person singular present takes the -s ending."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "She ____ every day.",
+    "options": [
+      "eats",
+      "eated",
+      "eat",
+      "eating"
+    ],
+    "correct": 0,
+    "rationale": "3rd-person singular present takes the -s ending."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "easy",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "licence",
+      "license"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'licence'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "To combine parts into a whole.",
+    "options": [
+      "epiphany",
+      "tentative",
+      "lexicon",
+      "integrate"
+    ],
+    "correct": 3,
+    "rationale": "'integrate' means to combine parts into a whole."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "aluminium",
+      "aluminum"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'aluminium'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "A countless number.",
+    "options": [
+      "myriad",
+      "paradigm",
+      "venerate",
+      "scurry"
+    ],
+    "correct": 0,
+    "rationale": "'myriad' means a countless number."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "A person who hates humankind.",
+    "options": [
+      "redundant",
+      "misanthrope",
+      "gregarious",
+      "incorrigible"
+    ],
+    "correct": 1,
+    "rationale": "'misanthrope' means a person who hates humankind."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "maximise",
+      "maximize"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'maximise'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "instalment",
+      "installment"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'instalment'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "On the surface, lacking depth.",
+    "options": [
+      "superficial",
+      "omnipotent",
+      "misanthrope",
+      "skeptical"
+    ],
+    "correct": 0,
+    "rationale": "'superficial' means on the surface, lacking depth."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Very talkative.",
+    "options": [
+      "malnourished",
+      "gregarious",
+      "intrepid",
+      "loquacious"
+    ],
+    "correct": 3,
+    "rationale": "'loquacious' means very talkative."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "Poorly nourished.",
+    "options": [
+      "eclectic",
+      "sinister",
+      "malnourished",
+      "venerate"
+    ],
+    "correct": 2,
+    "rationale": "'malnourished' means poorly nourished."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "jewellery",
+      "jewelry"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'jewellery'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "analyse",
+      "analyze"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'analyse'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "She ____ every day.",
+    "options": [
+      "drives",
+      "driveed",
+      "drive",
+      "driveing"
+    ],
+    "correct": 0,
+    "rationale": "3rd-person singular present takes the -s ending."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "kerb",
+      "curb"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'kerb'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "easy",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "honour",
+      "honor"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'honour'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "She ____ every day.",
+    "options": [
+      "listens",
+      "listened",
+      "listen",
+      "listening"
+    ],
+    "correct": 0,
+    "rationale": "3rd-person singular present takes the -s ending."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "smoulder",
+      "smolder"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'smoulder'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "waggon",
+      "wagon"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'waggon'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "aesthetics",
+      "esthetics"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'aesthetics'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "She ____ every day.",
+    "options": [
+      "walks",
+      "walked",
+      "walk",
+      "walking"
+    ],
+    "correct": 0,
+    "rationale": "3rd-person singular present takes the -s ending."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "easy",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "neighbour",
+      "neighbor"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'neighbour'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "She ____ every day.",
+    "options": [
+      "works",
+      "worked",
+      "work",
+      "working"
+    ],
+    "correct": 0,
+    "rationale": "3rd-person singular present takes the -s ending."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "hard",
+    "prompt": "She ____ every day.",
+    "options": [
+      "jumps",
+      "jumped",
+      "jump",
+      "jumping"
+    ],
+    "correct": 0,
+    "rationale": "3rd-person singular present takes the -s ending."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "To place side by side for contrast.",
+    "options": [
+      "ostentatious",
+      "ubiquitous",
+      "juxtapose",
+      "ornate"
+    ],
+    "correct": 2,
+    "rationale": "'juxtapose' means to place side by side for contrast."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "To move quickly with small steps.",
+    "options": [
+      "loquacious",
+      "tentative",
+      "ubiquitous",
+      "scurry"
+    ],
+    "correct": 3,
+    "rationale": "'scurry' means to move quickly with small steps."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "To make less.",
+    "options": [
+      "diminish",
+      "meticulous",
+      "loquacious",
+      "innocuous"
+    ],
+    "correct": 0,
+    "rationale": "'diminish' means to make less."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "metre",
+      "meter"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'metre'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "She ____ every day.",
+    "options": [
+      "teachs",
+      "teached",
+      "teach",
+      "teaching"
+    ],
+    "correct": 0,
+    "rationale": "3rd-person singular present takes the -s ending."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "hard",
+    "prompt": "She ____ every day.",
+    "options": [
+      "visits",
+      "visited",
+      "visit",
+      "visiting"
+    ],
+    "correct": 0,
+    "rationale": "3rd-person singular present takes the -s ending."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Elaborately decorated.",
+    "options": [
+      "enigma",
+      "intrepid",
+      "ornate",
+      "meticulous"
+    ],
+    "correct": 2,
+    "rationale": "'ornate' means elaborately decorated."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "Fearless and bold.",
+    "options": [
+      "intrepid",
+      "scurry",
+      "diminish",
+      "minuscule"
+    ],
+    "correct": 0,
+    "rationale": "'intrepid' means fearless and bold."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Truthful and straightforward.",
+    "options": [
+      "candid",
+      "sinister",
+      "eclectic",
+      "debilitate"
+    ],
+    "correct": 0,
+    "rationale": "'candid' means truthful and straightforward."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "analogue",
+      "analog"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'analogue'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "aeroplane",
+      "airplane"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'aeroplane'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Logical and consistent.",
+    "options": [
+      "coherent",
+      "minuscule",
+      "debilitate",
+      "recalcitrant"
+    ],
+    "correct": 0,
+    "rationale": "'coherent' means logical and consistent."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "mould",
+      "mold"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'mould'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "hard",
+    "prompt": "She ____ every day.",
+    "options": [
+      "speaks",
+      "speaked",
+      "speak",
+      "speaking"
+    ],
+    "correct": 0,
+    "rationale": "3rd-person singular present takes the -s ending."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "hard",
+    "prompt": "She ____ every day.",
+    "options": [
+      "learns",
+      "learned",
+      "learn",
+      "learning"
+    ],
+    "correct": 0,
+    "rationale": "3rd-person singular present takes the -s ending."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "hard",
+    "prompt": "She ____ every day.",
+    "options": [
+      "swims",
+      "swimed",
+      "swim",
+      "swiming"
+    ],
+    "correct": 0,
+    "rationale": "3rd-person singular present takes the -s ending."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Exaggeration for effect.",
+    "options": [
+      "hyperbole",
+      "ostentatious",
+      "ornate",
+      "skeptical"
+    ],
+    "correct": 0,
+    "rationale": "'hyperbole' means exaggeration for effect."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "No longer needed.",
+    "options": [
+      "sinister",
+      "redundant",
+      "diminish",
+      "ephemeral"
+    ],
+    "correct": 1,
+    "rationale": "'redundant' means no longer needed."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "Very hungry.",
+    "options": [
+      "intrepid",
+      "famished",
+      "loquacious",
+      "tentative"
+    ],
+    "correct": 1,
+    "rationale": "'famished' means very hungry."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "easy",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "favourite",
+      "favorite"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'favourite'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "fuelled",
+      "fueled"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'fuelled'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "To weaken.",
+    "options": [
+      "zealous",
+      "transient",
+      "ubiquitous",
+      "debilitate"
+    ],
+    "correct": 3,
+    "rationale": "'debilitate' means to weaken."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Lasting very briefly.",
+    "options": [
+      "ephemeral",
+      "diminish",
+      "ubiquitous",
+      "incorrigible"
+    ],
+    "correct": 0,
+    "rationale": "'ephemeral' means lasting very briefly."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "apologise",
+      "apologize"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'apologise'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Having unlimited power.",
+    "options": [
+      "tentative",
+      "skeptical",
+      "omnipotent",
+      "abridge"
+    ],
+    "correct": 2,
+    "rationale": "'omnipotent' means having unlimited power."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "manoeuvre",
+      "maneuver"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'manoeuvre'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "draught",
+      "draft"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'draught'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "To shorten a text.",
+    "options": [
+      "abridge",
+      "intrepid",
+      "skeptical",
+      "diminish"
+    ],
+    "correct": 0,
+    "rationale": "'abridge' means to shorten a text."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "She ____ every day.",
+    "options": [
+      "watchs",
+      "watched",
+      "watch",
+      "watching"
+    ],
+    "correct": 0,
+    "rationale": "3rd-person singular present takes the -s ending."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Designed to impress.",
+    "options": [
+      "redundant",
+      "abridge",
+      "meticulous",
+      "ostentatious"
+    ],
+    "correct": 3,
+    "rationale": "'ostentatious' means designed to impress."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Not certain or fixed.",
+    "options": [
+      "abridge",
+      "nonchalant",
+      "omnipotent",
+      "tentative"
+    ],
+    "correct": 3,
+    "rationale": "'tentative' means not certain or fixed."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Harmless.",
+    "options": [
+      "enigma",
+      "myriad",
+      "eclectic",
+      "innocuous"
+    ],
+    "correct": 3,
+    "rationale": "'innocuous' means harmless."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "criticise",
+      "criticize"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'criticise'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "hard",
+    "prompt": "She ____ every day.",
+    "options": [
+      "runs",
+      "runed",
+      "run",
+      "runing"
+    ],
+    "correct": 0,
+    "rationale": "3rd-person singular present takes the -s ending."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "easy",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "centre",
+      "center"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'centre'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Unable to be corrected.",
+    "options": [
+      "candid",
+      "incorrigible",
+      "fortuitous",
+      "recalcitrant"
+    ],
+    "correct": 1,
+    "rationale": "'incorrigible' means unable to be corrected."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "fulfil",
+      "fulfill"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'fulfil'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "gaol",
+      "jail"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'gaol'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "Doubting or questioning.",
+    "options": [
+      "transient",
+      "skeptical",
+      "abridge",
+      "fortuitous"
+    ],
+    "correct": 1,
+    "rationale": "'skeptical' means doubting or questioning."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "paralyse",
+      "paralyze"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'paralyse'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "She ____ every day.",
+    "options": [
+      "cooks",
+      "cooked",
+      "cook",
+      "cooking"
+    ],
+    "correct": 0,
+    "rationale": "3rd-person singular present takes the -s ending."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "easy",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "travelling",
+      "traveling"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'travelling'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "She ____ every day.",
+    "options": [
+      "writes",
+      "writeed",
+      "write",
+      "writeing"
+    ],
+    "correct": 0,
+    "rationale": "3rd-person singular present takes the -s ending."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "labelled",
+      "labeled"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'labelled'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "Showing great attention to detail.",
+    "options": [
+      "juxtapose",
+      "ornate",
+      "meticulous",
+      "venerate"
+    ],
+    "correct": 2,
+    "rationale": "'meticulous' means showing great attention to detail."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Open to more than one interpretation.",
+    "options": [
+      "misanthrope",
+      "ambiguous",
+      "tentative",
+      "myriad"
+    ],
+    "correct": 1,
+    "rationale": "'ambiguous' means open to more than one interpretation."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "enrolment",
+      "enrollment"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'enrolment'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "She ____ every day.",
+    "options": [
+      "studys",
+      "studyed",
+      "study",
+      "studying"
+    ],
+    "correct": 0,
+    "rationale": "3rd-person singular present takes the -s ending."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Casually calm.",
+    "options": [
+      "juxtapose",
+      "debilitate",
+      "paradigm",
+      "nonchalant"
+    ],
+    "correct": 3,
+    "rationale": "'nonchalant' means casually calm."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Happening by chance.",
+    "options": [
+      "fortuitous",
+      "nonchalant",
+      "acrophobia",
+      "coherent"
+    ],
+    "correct": 0,
+    "rationale": "'fortuitous' means happening by chance."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Lasting a short time.",
+    "options": [
+      "ambiguous",
+      "meticulous",
+      "omnipotent",
+      "transient"
+    ],
+    "correct": 3,
+    "rationale": "'transient' means lasting a short time."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "The most perfect example.",
+    "options": [
+      "skeptical",
+      "ambiguous",
+      "transient",
+      "quintessential"
+    ],
+    "correct": 3,
+    "rationale": "'quintessential' means the most perfect example."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "To regard with respect.",
+    "options": [
+      "venerate",
+      "quintessential",
+      "candid",
+      "recalcitrant"
+    ],
+    "correct": 0,
+    "rationale": "'venerate' means to regard with respect."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "tyre",
+      "tire"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'tyre'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "litre",
+      "liter"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'litre'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "From a broad range of sources.",
+    "options": [
+      "minuscule",
+      "juxtapose",
+      "epiphany",
+      "eclectic"
+    ],
+    "correct": 3,
+    "rationale": "'eclectic' means from a broad range of sources."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Suggesting something harmful.",
+    "options": [
+      "famished",
+      "ambiguous",
+      "sinister",
+      "acrophobia"
+    ],
+    "correct": 2,
+    "rationale": "'sinister' means suggesting something harmful."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "A typical example.",
+    "options": [
+      "intrepid",
+      "loquacious",
+      "ubiquitous",
+      "paradigm"
+    ],
+    "correct": 3,
+    "rationale": "'paradigm' means a typical example."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "She ____ every day.",
+    "options": [
+      "reads",
+      "readed",
+      "read",
+      "reading"
+    ],
+    "correct": 0,
+    "rationale": "3rd-person singular present takes the -s ending."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "recognise",
+      "recognize"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'recognise'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Stubbornly disobedient.",
+    "options": [
+      "transient",
+      "recalcitrant",
+      "minuscule",
+      "venerate"
+    ],
+    "correct": 1,
+    "rationale": "'recalcitrant' means stubbornly disobedient."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "plough",
+      "plow"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'plough'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Sociable.",
+    "options": [
+      "meticulous",
+      "gregarious",
+      "enigma",
+      "redundant"
+    ],
+    "correct": 1,
+    "rationale": "'gregarious' means sociable."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "easy",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "defence",
+      "defense"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'defence'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "moustache",
+      "mustache"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'moustache'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "A mystery.",
+    "options": [
+      "fortuitous",
+      "gregarious",
+      "enigma",
+      "nonchalant"
+    ],
+    "correct": 2,
+    "rationale": "'enigma' means a mystery."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "easy",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "theatre",
+      "theater"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'theatre'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "catalogue",
+      "catalog"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'catalogue'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "dialled",
+      "dialed"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'dialled'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "A moment of sudden revelation.",
+    "options": [
+      "paradigm",
+      "epiphany",
+      "skeptical",
+      "acrophobia"
+    ],
+    "correct": 1,
+    "rationale": "'epiphany' means a moment of sudden revelation."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "easy",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "labour",
+      "labor"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'labour'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "She ____ every day.",
+    "options": [
+      "sings",
+      "singed",
+      "sing",
+      "singing"
+    ],
+    "correct": 0,
+    "rationale": "3rd-person singular present takes the -s ending."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Fear of heights.",
+    "options": [
+      "ornate",
+      "diminish",
+      "myriad",
+      "acrophobia"
+    ],
+    "correct": 3,
+    "rationale": "'acrophobia' means fear of heights."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Choose the correct spelling.",
+    "options": [
+      "pyjamas",
+      "pajamas"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'pyjamas'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Very energetic in pursuit of a cause.",
+    "options": [
+      "abridge",
+      "ephemeral",
+      "zealous",
+      "famished"
+    ],
+    "correct": 2,
+    "rationale": "'zealous' means very energetic in pursuit of a cause."
+  }
+]
