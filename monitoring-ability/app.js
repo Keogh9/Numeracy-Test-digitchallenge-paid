@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const homeBtn  = document.getElementById('home-btn');
 
   const ctx = canvas.getContext('2d');
+  const R  = canvas.width / 2;    // circle radius
+  const DOT_R = 5;                // dot radius
   let bank = [], idx=0, ready=false;
   const responses = [];
   let timerId, startTime;
@@ -37,13 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   function startTimer(sec) {
-    let rem = sec;
-    timerEl.textContent = fmt(rem);
+    timerEl.textContent = fmt(sec);
     timerId = setInterval(() => {
-      rem = Math.ceil((120000 - (Date.now()-startTime))/1000);
-      if(rem<0) rem=0;
+      const elapsed = (Date.now() - startTime) / 1000;
+      const rem = Math.max(0, sec - elapsed);
       timerEl.textContent = fmt(rem);
-      if(rem<=0) {
+      if (rem <= 0) {
         clearInterval(timerId);
         endTest();
       }
@@ -51,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   function fmt(s) {
     const m = String(Math.floor(s/60)).padStart(2,'0'),
-          ss= String(s%60).padStart(2,'0');
+          ss= String(Math.floor(s%60)).padStart(2,'0');
     return `${m}:${ss}`;
   }
 
@@ -64,19 +65,19 @@ document.addEventListener('DOMContentLoaded', () => {
   function runTrial(count) {
     // prepare dots
     const dots = [];
-    const R = canvas.width/2;
     for(let i=0;i<count;i++){
-      const angle = Math.random()*2*Math.PI;
-      const r = Math.random()*(R-10);
-      const x = R + r*Math.cos(angle);
-      const y = R + r*Math.sin(angle);
+      // random pos inside circle
+      let angle = Math.random() * 2 * Math.PI;
+      let r = Math.random() * (R - DOT_R);
+      let x = R + r * Math.cos(angle);
+      let y = R + r * Math.sin(angle);
       const speed = 1.5 + Math.random(); // px per frame
-      const dir = Math.random()*2*Math.PI;
+      const dir = Math.random() * 2 * Math.PI;
       dots.push({x,y,dx:Math.cos(dir)*speed,dy:Math.sin(dir)*speed});
     }
-    // clear pad
+
+    // build answer buttons
     pad.innerHTML = '';
-    // build choices: correct + 4 distractors
     const choices = makeChoices(count,3,12,4);
     choices.forEach(n=>{
       const btn = document.createElement('button');
@@ -85,20 +86,43 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.onclick = ()=>record(count,n);
       pad.appendChild(btn);
     });
-    // animation loop
+
+    // animation
     let anim;
     function draw(){
       ctx.clearRect(0,0,canvas.width,canvas.height);
+      // draw transparent circle background
+      // (already styled via CSS, so optional here)
+
       dots.forEach(d=>{
-        // bounce
-        if(d.x<=5||d.x>=canvas.width-5) d.dx*=-1;
-        if(d.y<=5||d.y>=canvas.height-5) d.dy*=-1;
-        d.x+=d.dx; d.y+=d.dy;
+        // move
+        d.x += d.dx;
+        d.y += d.dy;
+
+        // check distance from center
+        const vx = d.x - R;
+        const vy = d.y - R;
+        const dist = Math.hypot(vx, vy);
+        if (dist + DOT_R > R) {
+          // reflect velocity across normal
+          const nx = vx / dist;
+          const ny = vy / dist;
+          // dot product v·n
+          const pd = d.dx * nx + d.dy * ny;
+          d.dx -= 2 * pd * nx;
+          d.dy -= 2 * pd * ny;
+          // reposition just inside circle
+          d.x = R + nx * (R - DOT_R);
+          d.y = R + ny * (R - DOT_R);
+        }
+
+        // draw dot
         ctx.beginPath();
-        ctx.arc(d.x,d.y,5,0,2*Math.PI);
-        ctx.fillStyle='white';
+        ctx.arc(d.x, d.y, DOT_R, 0, 2*Math.PI);
+        ctx.fillStyle = '#fff';
         ctx.fill();
       });
+
       anim = requestAnimationFrame(draw);
     }
     draw();
@@ -110,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
       responses.push({correct, picked});
       attEl.textContent = responses.length;
       // if time remains
-      if(Date.now() - startTime < 120000) {
+      if ((Date.now() - startTime) < 120000) {
         nextTrial();
       } else {
         endTest();
@@ -131,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const li = document.createElement('li');
       li.innerHTML = `<strong>Trial ${i+1}:</strong>
         <span class="${r.picked===r.correct?'correct':'wrong'}">
-          You: ${r.picked} &mdash; ${r.correct}
+          You: ${r.picked} — Correct: ${r.correct}
         </span>`;
       listEl.appendChild(li);
     });
@@ -149,12 +173,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     return arr;
   }
-  function makeChoices(correct,min,max,nDistr) {
+  function makeChoices(correct,min,max,extra){
     const set = new Set([correct]);
-    while(set.size < nDistr+1) {
+    while(set.size < extra+1) {
       set.add(Math.floor(Math.random()*(max-min+1))+min);
     }
-    const arr = Array.from(set);
-    return shuffle(arr);
+    return shuffle(Array.from(set));
   }
 });
