@@ -10,15 +10,14 @@
   <!-- Instructions Overlay -->
   <div id="instructions-overlay" class="overlay">
     <div class="overlay-content">
-      <!-- now loading logo.png from this folder -->
       <img src="logo.png" alt="Logo" class="logo"/>
       <h1>Numeracy Digit-Challenge</h1>
-      <p>You have <strong>5 minutes</strong> to solve as many mental‐arithmetic questions as you can.</p>
+      <p>You have <strong>5 minutes</strong> to solve as many mental-arithmetic questions as you can.</p>
       <h2>Instructions</h2>
       <ul>
-        <li>Click the blanks to clear them.</li>
+        <li>Click blanks to clear them.</li>
         <li>Use digits 1–9, each at most once per question.</li>
-        <li>Trash icon clears your last entry.</li>
+        <li>🗑️ clears your last entry.</li>
         <li>Previous/Next to navigate.</li>
         <li>Timer starts when you click <strong>Start Test</strong>.</li>
         <li>Follow BOMDAS order of operations.</li>
@@ -35,7 +34,7 @@
     <div class="progress">Completed: <span id="completed">0</span></div>
   </header>
 
-  <!-- Main Test (hidden until Start) -->
+  <!-- Main Test (hidden until start) -->
   <main id="test-container" class="hidden">
     <div id="equation"></div>
     <button id="clear-btn" title="Clear">🗑️</button>
@@ -49,14 +48,17 @@
   <!-- Results Overlay -->
   <div id="results-container" class="overlay" style="display:none;">
     <div class="overlay-content scrollable">
-      <h1>Your Score: <span id="score"></span>/<span id="total-questions"></span> (<span id="percent"></span>%)</h1>
+      <h1>Your Score: <span id="score"></span>/<span id="total-questions"></span> 
+         (<span id="percent"></span>%)</h1>
       <ul id="results-list"></ul>
-      <button id="retake-btn">Retake Test</button>
+      <div class="results-actions">
+        <button id="retake-btn">Retake Test</button>
+        <button id="home-btn">Return to Home</button>
+      </div>
     </div>
   </div>
 
   <script src="app.js"></script>
 </body>
 </html>
-
 
