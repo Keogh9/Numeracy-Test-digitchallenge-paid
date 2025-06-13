@@ -10,6 +10,13 @@ body {
   color: #333;
 }
 
+/* Remove bullets from instruction list */
+#instructions-overlay .overlay-content ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem 0;
+}
+
 /* Overlay */
 .overlay {
   position: fixed; inset: 0;
@@ -80,8 +87,7 @@ header {
   list-style: none; padding: 0; text-align: left; margin: 1rem 0;
 }
 #results-list li {
-  padding: .5rem 0; border-bottom: 1px solid #eee;
-  font-size: 1rem;
+  padding: .5rem 0; border-bottom: 1px solid #eee; font-size: 1rem;
 }
 .correct { color: green; }
 .wrong   { color: red; }
