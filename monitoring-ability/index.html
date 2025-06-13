@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Monitoring Ability Test</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Instructions Overlay -->
+  <div id="instructions-overlay" class="overlay">
+    <div class="overlay-content">
+      <img src="../logo.png" alt="Logo" class="logo"/>
+      <h1>Monitoring Ability Test</h1>
+      <p>You have <strong>2 minutes</strong> to track moving objects. Count as many as you can.</p>
+      <h2>Instructions</h2>
+      <ul>
+        <li>Watch the dots moving inside the circle.</li>
+        <li>When you know how many there are, tap the correct number below.</li>
+        <li>The next trial begins immediately—keep going until time’s up.</li>
+      </ul>
+      <button id="start-btn">Start Test</button>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <img src="../logo-header.png" alt="Logo" class="logo-header"/>
+    <h1 class="test-name">Monitoring Ability</h1>
+    <div class="timer" id="timer">02:00</div>
+    <div class="progress">Attempted: <span id="attempted">0</span></div>
+  </header>
+
+  <!-- Main Test (hidden) -->
+  <main id="test-container" class="hidden">
+    <div class="canvas-wrapper">
+      <canvas id="monitor-canvas" width="300" height="300"></canvas>
+    </div>
+    <div id="answer-pad"></div>
+  </main>
+
+  <!-- Results Overlay -->
+  <div id="results-container" class="overlay" style="display:none;">
+    <div class="overlay-content scrollable">
+      <h1>Your Score: <span id="score"></span>/<span id="total"></span></h1>
+      <ul id="results-list"></ul>
+      <div class="results-actions">
+        <button id="retake-btn">Retake Test</button>
+        <button id="home-btn">Return to Home</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
