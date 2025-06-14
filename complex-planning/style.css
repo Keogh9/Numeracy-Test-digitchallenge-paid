@@ -1,52 +1,50 @@
-/* reset a few things */
+/* RESET & BASE */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background:#f3f1ed; }
+body { font-family: Arial, sans-serif; background: #f5f5f5; color: #333; }
 
-/* BUTTON BASE */
+/* UTILITY */
+.hidden { display: none; }
+
+/* BUTTONS */
 .btn {
   background: #ff6f3c;
   color: #fff;
   border: none;
   padding: .75em 1.5em;
   font-size: 1rem;
-  cursor: pointer;
   border-radius: 4px;
-}
-.btn:disabled {
-  opacity: .5;
-  cursor: default;
+  cursor: pointer;
 }
 
-/* OVERLAY (instructions) */
+/* OVERLAY */
 .overlay {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
+  top:0; left:0;
+  width:100vw; height:100vh;
+  background: rgba(0,0,0,0.5);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  z-index: 100;
 }
 .overlay-header {
-  background: #0e1a35;        /* navy top third */
+  background: #0e1a35;
   width: 100%;
-  padding: 2em 0;
   text-align: center;
+  padding: 1em 0;
 }
 .overlay-logo {
-  height: 2.5em;
+  height: 3em;
 }
 .overlay-body {
   background: #fff;
-  padding: 2em;
-  max-width: 400px;
+  max-width: 500px;
   width: 90%;
+  padding: 1.5em;
   border-radius: 8px;
-  margin-top: -1em;           /* overlap the navy */
+  margin-top: -1em;
 }
 .overlay-body h2 {
   margin-bottom: .5em;
-  font-size: 1.25rem;
 }
 .overlay-body p {
   margin-bottom: 1em;
@@ -58,7 +56,10 @@ body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background:#f
 .overlay-body li {
   margin-bottom: .75em;
 }
-#start-btn { display: block; margin: 0 auto; }
+.overlay-body #start-btn {
+  display: block;
+  margin: 0 auto;
+}
 
 /* NAVBAR */
 .navbar {
@@ -69,36 +70,40 @@ body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background:#f
   padding: .5em 1em;
   color: #fff;
 }
-.navbar-logo {
-  height: 2em;
-}
-.navbar-title {
-  font-size: 1.1rem;
-  flex: 1;
-  text-align: center;
-}
-.navbar-info span {
-  margin-left: 1em;
-}
+.navbar-logo { height: 2.5em; }
+.navbar-title { flex: 1; text-align: center; font-size: 1.1rem; }
+.navbar-info span { margin-left: 1em; }
 
-/* MAIN TEST AREA */
-#test-area {
+/* GAME AREA */
+#game {
   padding: 2em 1em;
   text-align: center;
 }
-#grid-container {
-  display: inline-grid;
+.grid {
+  display: grid;
   grid-template-columns: repeat(3, 4em);
   grid-template-rows: repeat(5, 4em);
   gap: .5em;
-  margin-bottom: 1.5em;
+  margin: 0 auto 1.5em;
+}
+.cell {
+  position: relative;
+  width: 4em; height: 4em;
   background: #ddd;
-  padding: .5em;
   border-radius: 4px;
 }
-#controls {
-  display: flex;
-  justify-content: center;
-  gap: 1em;
+.piece {
+  position: absolute;
+  width: 100%; height: 100%;
+}
+.piece.redBall    { background: red; }
+.piece.exitHole   { background: black; }
+.piece.blueBlock  { background: blue; }
+.piece.greenBlock { background: green; }
+.piece.greyBlock  { background: grey; }
+
+/* CONTROLS */
+.controls .btn {
+  margin: 0 .5em;
 }
 
