@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Situational Judgement Test</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV BAR -->
+  <header class="nav">
+    <img class="logo" src="../logo.png" alt="999 Recruitment Ready">
+    <h1>Situational Judgement Test</h1>
+    <div class="spacer"></div>
+    <div class="timer">Untimed</div>
+    <div class="attempted">Answered: <span id="attempted-count">0</span></div>
+  </header>
+
+  <!-- INSTRUCTIONS OVERLAY -->
+  <div id="overlay" class="overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <img class="modal-logo" src="../logo.png" alt="999 Recruitment Ready">
+      </div>
+      <div class="modal-body">
+        <h2>Situational Judgement Test</h2>
+        <p>This untimed practice test presents you with 30 job-related scenarios for Dublin Fire Brigade. For each, choose the single best action. Once you select, you’ll see the rationale before moving on.</p>
+        <ul>
+          <li>Select the one most effective response.</li>
+          <li>You must choose an answer to proceed.</li>
+          <li>You’ll get feedback immediately.</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button id="start-button" class="btn">Start Test</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TEST AREA -->
+  <main id="test-area" class="hidden">
+    <div id="question-number" class="question-number"></div>
+    <div id="scenario" class="scenario"></div>
+    <div id="options" class="options"></div>
+    <div id="rationale" class="rationale hidden"></div>
+    <div class="controls">
+      <button id="next-button" class="btn hidden">Next</button>
+    </div>
+  </main>
+
+  <!-- RESULTS SCREEN -->
+  <div id="results" class="overlay hidden">
+    <div class="modal">
+      <div class="modal-body">
+        <h2>Test Complete</h2>
+        <p>You answered <span id="correct-count"></span> correctly and <span id="wrong-count"></span> incorrectly.</p>
+      </div>
+      <div class="modal-footer">
+        <button id="retake-button" class="btn">Retake Test</button>
+        <button id="home-button" class="btn">Return Home</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
