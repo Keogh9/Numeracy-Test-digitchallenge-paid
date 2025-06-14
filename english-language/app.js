@@ -47,13 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function nextQuestion() {
-    if (questions.length === 0) return endTest();
-    attempted++;
-    attemptedEl.textContent = `Attempted: ${attempted}`;
-    const q = questions.shift();
-    showQuestion(q);
-  }
-
+  attempted++;
+  attemptedEl.textContent = `Attempted: ${attempted}`;
+  // pick a random question from the full bank
+  const idx = Math.floor(Math.random() * questions.length);
+  const q = questions[idx];
+  showQuestion(q);
+}
   function showQuestion(q) {
     promptEl.textContent = q.prompt;
     optionsEl.innerHTML = '';
