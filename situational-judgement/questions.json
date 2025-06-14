@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "scenario": "You arrive at Dun Laoghaire Fire Station to start your shift and see that the crew vehicle hasn’t been fully restocked with medical supplies after the last call. What do you do?",
+    "scenario": "You arrive at Dun Laoghaire Fire Station to start your shift and see that the ambulance hasn’t been fully restocked with medical supplies after the last call. What do you do?",
     "options": [
       "Report it to the Station Officer and help restock immediately before any call.",
       "Leave it to the next shift; they will notice and restock.",
@@ -16,7 +16,7 @@
   },
   {
     "id": 2,
-    "scenario": "On route to a cardiac arrest in Finglas, the ambulance radio reports traffic congestion ahead. Your sub officer suggests rerouting through back streets. What do you do?",
+    "scenario": "On route to a cardiac arrest in Finglas, the sat nav reports traffic congestion ahead. Your sub officer suggests rerouting through back streets. What do you do?",
     "options": [
       "Agree and follow the sub officer’s local knowledge to beat the traffic.",
       "Insist on sticking to the main route—it’s what you’re trained on.",
@@ -46,7 +46,7 @@
   },
   {
     "id": 4,
-    "scenario": "You’re first at the scene of a house fire in Rathfarnham. You spot a neighbour filming inside and getting in the way of firefighters. What do you do?",
+    "scenario": "You’re first at the scene of a house fire in Rathfarnham. You spot a neighbour filming in the driveway and getting in the way of firefighters. What do you do?",
     "options": [
       "Politely ask them to step back and offer to keep them updated once safe.",
       "Ignore them; concentrate on the fire attack.",
@@ -76,7 +76,7 @@
   },
   {
     "id": 6,
-    "scenario": "An experienced Dublin City Council officer tells you to skip PPE on a low-risk inspection of Rathgar station. What do you do?",
+    "scenario": "An senior firefighter tells you to relax your PPE on a low-risk turnout. What do you do?",
     "options": [
       "Politely insist on wearing full PPE—safety protocols cannot be bypassed.",
       "Agree—it’s only a quick check anyway.",
@@ -151,7 +151,7 @@
   },
   {
     "id": 11,
-    "scenario": "On a haz-mat call in Tallaght, your SCBA warns of low air while you’re still inside. What’s your action?",
+    "scenario": "On a haz-mat call in Tallaght, your BA warns of low air while you’re still inside. What’s your action?",
     "options": [
       "Signal to exit immediately and follow the buddy system out.",
       "Press on; it’s only a drill and you’ll finish quickly.",
@@ -168,13 +168,13 @@
     "id": 12,
     "scenario": "You’re first on scene at a commercial fire in Swords. Flames are spreading on the rooftop—what’s your priority?",
     "options": [
-      "Call for aerial support (platform) then establish a water-through-hose advance.",
+      "Call for aerial support.",
       "Try to climb the ladder yourself to tackle the roof vent.",
       "Go door-to-door inside to search for people."
     ],
     "correctIndex": 0,
     "rationale": {
-      "0": "Correct. Aerial support combined with water advance controls the fire safely.",
+      "0": "Correct. Aerial support combined with water controls the fire safely.",
       "1": "Incorrect. Solo rooftop work is unsafe without backup.",
       "2": "Premature. Searches should wait until the fire attack secures a path."
     }
@@ -194,20 +194,24 @@
       "2": "Sub-optimal. Post-exercise reporting delays crucial patient-safety education."
     }
   },
-  {
-    "id": 14,
-    "scenario": "You’re called to assist a crew at Dun Laoghaire when you’re low on fatigue hours. Your sub officer says it’s “just a simple lift assist.” What do you do?",
-    "options": [
-      "Decline kindly—exceeding fatigue limits risks impairing your performance.",
-      "Agree—lifting is easy and won’t tire you out.",
-      "Offer to go but ask to be relieved if you feel tired."
-    ],
-    "correctIndex": 0,
-    "rationale": {
-      "0": "Correct. Fatigue management is crucial for safety in all roles.",
-      "1": "Incorrect. Even simple tasks under fatigue can be dangerous.",
-      "2": "Risky. Starting under fatigue violates policy."
-    }
+{
+  "id": 14,
+  "scenario": "During a busy shift at Finglas Station, you notice a colleague looks unusually tired and is making small errors during routine equipment checks. What do you do?",
+  "options": [
+    "Assume they’ll manage and carry on without saying anything.",
+    "Offer to share the remaining equipment checks and inform the Station Officer of your concerns.",
+    "Tell them to slow down and be more careful without involving anyone else.",
+    "Drop some of your own tasks so you can complete theirs too."
+  ],
+  "correctIndex": 1,
+  "rationale": [
+    "Ignoring the issue risks safety and leaves them unsupported.",
+    "✔ By offering help and alerting the Station Officer, you maintain safety, support your colleague, and follow the proper chain of command.",
+    "Simply telling them to be more careful doesn’t address their fatigue or alert leadership to a potential hazard.",
+    "Taking on extra work yourself jeopardises overall station readiness and isn’t sustainable."
+  ]
+}
+
   },
   {
     "id": 15,
@@ -241,7 +245,7 @@
   },
   {
     "id": 17,
-    "scenario": "You arrive at Finglas station building maintenance report of a gas smell. What’s your first step?",
+    "scenario": "You arrive at Finglas shopping centre and the facilities manager reports a gas smell. What’s your first step?",
     "options": [
       "Evacuate the building, call gas authority, then ventilate.",
       "Search for the leak yourself before evacuating.",
@@ -271,16 +275,16 @@
   },
   {
     "id": 19,
-    "scenario": "Your turnout gear gets soaked while tackling a chimney fire in Tallaght. You have no spare gear onsite. What do you do?",
+    "scenario": "Your turnout gear gets ripped while tackling a chimney fire in Tallaght. You have no spare gear onsite. What do you do?",
     "options": [
-      "Switch to breathing-only if safe, then head back to station to change.",
+      "Report it to the station officer immediately.",
       "Keep fighting until the fire’s out—gear can dry later.",
       "Borrow another crew’s gear immediately."
     ],
     "correctIndex": 0,
     "rationale": {
-      "0": "Correct. Keeping gear intact is safer than operating in wet or compromised PPE.",
-      "1": "Incorrect. Wet gear affects insulation and protection.",
+      "0": "Correct. Keeping gear intact is safer than operating in compromised PPE, the issue needs to be reports and the PPE replaced.",
+      "1": "Incorrect. Ripped gear affects insulation and protection.",
       "2": "Often not feasible—inter-crew loaning requires proper fit checks."
     }
   },
@@ -331,7 +335,7 @@
   },
   {
     "id": 23,
-    "scenario": "You arrive at a pediatric accident in Rathgar. The child is screaming and uncooperative. How do you approach them?",
+    "scenario": "You arrive at a pediatric accident in the Ilac Shopping Centre. The child is screaming and uncooperative. How do you approach them?",
     "options": [
       "Kneel to their level, speak gently, explain what you’ll do, then proceed.",
       "Tell them to be quiet so you can work faster.",
@@ -389,20 +393,23 @@
       "2": "Incorrect. Team safety comes before any single task."
     }
   },
-  {
-    "id": 27,
-    "scenario": "At Finglas station you’re asked to cover extra shifts at short notice. You’re already at your maximum hours. What do you do?",
-    "options": [
-      "Explain your hours limit under the fatigue policy and propose someone else cover.",
-      "Agree but cut your rest short to accommodate.",
-      "Ignore and just show up—duty comes first."
-    ],
-    "correctIndex": 0,
-    "rationale": {
-      "0": "Correct. Fatigue regulations protect staff and public safety.",
-      "1": "Incorrect. Breaching rest can lead to errors and accidents.",
-      "2": "Incorrect. Ignoring policy jeopardises competence and wellbeing."
-    }
+{
+  "id": 27,
+  "scenario": "A new chemical-spill response protocol has just been issued by DFB HQ, but you notice that several crew members at Rathfarnham Station haven’t seen it yet. What do you do?",
+  "options": [
+    "Wait for the Station Officer to mention it at the next briefing.",
+    "Liase with the Station Officer and see if the protocl can be distrbuted by email to all crew members and highlight the critical steps.",
+    "Make a quick announcement over the station radio and assume everyone has heard it.",
+    "Print copies of the protocol, pin them to the station noticeboard, and leave it at that."
+  ],
+  "correctIndex": 1,
+  "rationale": [
+    "Waiting for someone else delays compliance and risks safety.",  
+    "✔ Respecting the chain of command and proactively emailing everyone and drawing attention to key actions ensures all crew receive and understand the new protocol.",
+    "A radio announcement alone may not reach everyone or convey the full details.",
+    "Pinning notices without discussion doesn’t guarantee people will read or grasp the critical procedures."
+  ]
+}
   },
   {
     "id": 28,
