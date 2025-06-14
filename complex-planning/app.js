@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let timerInterval = null;
 
   // Load puzzles JSON
-  fetch('questions.json')
+  fetch('./questions.json')
     .then(res => res.json())
     .then(data => {
       questions = data;
