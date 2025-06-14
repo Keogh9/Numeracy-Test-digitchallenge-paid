@@ -76,7 +76,7 @@
   },
   {
     "id": 6,
-    "scenario": "An senior firefighter tells you to relax your PPE on a low-risk turnout. What do you do?",
+    "scenario": "A senior firefighter tells you to relax your PPE on a low-risk turnout. What do you do?",
     "options": [
       "Politely insist on wearing full PPE—safety protocols cannot be bypassed.",
       "Agree—it’s only a quick check anyway.",
@@ -121,7 +121,7 @@
   },
   {
     "id": 9,
-    "scenario": "You’re dispatched to a multi-casualty bus crash near Finglas. Triage tags are running out. What’s your priority?",
+    "scenario": "You’re dispatched to a multi-vehicle collision on the M50. Triage tags are running out. What’s your priority?",
     "options": [
       "Use improvised marking (chalk or tape) and radio for more tags.",
       "Wait until proper tags arrive before starting triage.",
@@ -194,24 +194,22 @@
       "2": "Sub-optimal. Post-exercise reporting delays crucial patient-safety education."
     }
   },
-{
-  "id": 14,
-  "scenario": "During a busy shift at Finglas Station, you notice a colleague looks unusually tired and is making small errors during routine equipment checks. What do you do?",
-  "options": [
-    "Assume they’ll manage and carry on without saying anything.",
-    "Offer to share the remaining equipment checks and inform the Station Officer of your concerns.",
-    "Tell them to slow down and be more careful without involving anyone else.",
-    "Drop some of your own tasks so you can complete theirs too."
-  ],
-  "correctIndex": 1,
-  "rationale": [
-    "Ignoring the issue risks safety and leaves them unsupported.",
-    "✔ By offering help and alerting the Station Officer, you maintain safety, support your colleague, and follow the proper chain of command.",
-    "Simply telling them to be more careful doesn’t address their fatigue or alert leadership to a potential hazard.",
-    "Taking on extra work yourself jeopardises overall station readiness and isn’t sustainable."
-  ]
-}
-
+  {
+    "id": 14,
+    "scenario": "During a busy shift at Finglas Station, you notice a colleague looks unusually tired and is making small errors during routine equipment checks. What do you do?",
+    "options": [
+      "Assume they’ll manage and carry on without saying anything.",
+      "Offer to share the remaining equipment checks and inform the Station Officer of your concerns.",
+      "Tell them to slow down and be more careful without involving anyone else.",
+      "Drop some of your own tasks so you can complete theirs too."
+    ],
+    "correctIndex": 1,
+    "rationale": {
+      "0": "Ignoring the issue risks safety and leaves them unsupported.",
+      "1": "✔ By offering help and alerting the Station Officer, you maintain safety, support your colleague, and follow the proper chain of command.",
+      "2": "Simply telling them to be more careful doesn’t address their fatigue or alert leadership to a potential hazard.",
+      "3": "Taking on extra work yourself jeopardises overall station readiness and isn’t sustainable."
+    }
   },
   {
     "id": 15,
@@ -277,13 +275,13 @@
     "id": 19,
     "scenario": "Your turnout gear gets ripped while tackling a chimney fire in Tallaght. You have no spare gear onsite. What do you do?",
     "options": [
-      "Report it to the station officer immediately.",
+      "Report it to the Station Officer immediately.",
       "Keep fighting until the fire’s out—gear can dry later.",
       "Borrow another crew’s gear immediately."
     ],
     "correctIndex": 0,
     "rationale": {
-      "0": "Correct. Keeping gear intact is safer than operating in compromised PPE, the issue needs to be reports and the PPE replaced.",
+      "0": "Correct. Keeping gear intact is safer than operating in compromised PPE; the issue needs to be reported and the PPE replaced.",
       "1": "Incorrect. Ripped gear affects insulation and protection.",
       "2": "Often not feasible—inter-crew loaning requires proper fit checks."
     }
@@ -295,7 +293,7 @@
       "Initiate search-and-rescue with your hose team, while calling for the alarm engineer.",
       "Wait for confirmation of alarm failure from the Station Officer.",
       "Sound a portable alarm yourself and wait for backup."
-    ],
+    ],  
     "correctIndex": 0,
     "rationale": {
       "0": "Correct. Immediate rescue is critical; system repairs can follow.",
@@ -393,23 +391,22 @@
       "2": "Incorrect. Team safety comes before any single task."
     }
   },
-{
-  "id": 27,
-  "scenario": "A new chemical-spill response protocol has just been issued by DFB HQ, but you notice that several crew members at Rathfarnham Station haven’t seen it yet. What do you do?",
-  "options": [
-    "Wait for the Station Officer to mention it at the next briefing.",
-    "Liase with the Station Officer and see if the protocl can be distrbuted by email to all crew members and highlight the critical steps.",
-    "Make a quick announcement over the station radio and assume everyone has heard it.",
-    "Print copies of the protocol, pin them to the station noticeboard, and leave it at that."
-  ],
-  "correctIndex": 1,
-  "rationale": [
-    "Waiting for someone else delays compliance and risks safety.",  
-    "✔ Respecting the chain of command and proactively emailing everyone and drawing attention to key actions ensures all crew receive and understand the new protocol.",
-    "A radio announcement alone may not reach everyone or convey the full details.",
-    "Pinning notices without discussion doesn’t guarantee people will read or grasp the critical procedures."
-  ]
-}
+  {
+    "id": 27,
+    "scenario": "A new chemical-spill response protocol has just been issued by DFB HQ, but you notice that several crew members at Rathfarnham Station haven’t seen it yet. What do you do?",
+    "options": [
+      "Wait for the Station Officer to mention it at the next briefing.",
+      "Liaise with the Station Officer and see if the protocol can be distributed by email to all crew members and highlight the critical steps.",
+      "Make a quick announcement over the station radio and assume everyone has heard it.",
+      "Print copies of the protocol, pin them to the station noticeboard, and leave it at that."
+    ],
+    "correctIndex": 1,
+    "rationale": {
+      "0": "Waiting for someone else delays compliance and risks safety.",
+      "1": "✔ Respecting the chain of command and proactively emailing everyone and drawing attention to key actions ensures all crew receive and understand the new protocol.",
+      "2": "A radio announcement alone may not reach everyone or convey the full details.",
+      "3": "Pinning notices without discussion doesn’t guarantee people will read or grasp the critical procedures."
+    }
   },
   {
     "id": 28,
@@ -457,3 +454,4 @@
     }
   }
 ]
+
