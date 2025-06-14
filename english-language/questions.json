@@ -1,0 +1,1444 @@
+[
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Select the word meaning 'designed to impress'.",
+    "options": [
+      "innocuous",
+      "zealous",
+      "ostentatious",
+      "abridge"
+    ],
+    "correct": 2,
+    "rationale": "'ostentatious' means designed to impress."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "She ____ her homework after school.",
+    "options": [
+      "did",
+      "does",
+      "do",
+      "doing"
+    ],
+    "correct": 1,
+    "rationale": "The correct answer is 'does'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "Select the word meaning 'fearless and bold'.",
+    "options": [
+      "intrepid",
+      "superficial",
+      "abridge",
+      "eclectic"
+    ],
+    "correct": 0,
+    "rationale": "'intrepid' means fearless and bold."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "He ____ the window before leaving.",
+    "options": [
+      "broke",
+      "broken",
+      "breaks",
+      "break"
+    ],
+    "correct": 0,
+    "rationale": "The correct answer is 'broke'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "I ____ an apple for breakfast.",
+    "options": [
+      "eats",
+      "ate",
+      "eat",
+      "eaten"
+    ],
+    "correct": 1,
+    "rationale": "The correct answer is 'ate'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "Select the word meaning 'to move quickly with small steps'.",
+    "options": [
+      "famished",
+      "nonchalant",
+      "redundant",
+      "scurry"
+    ],
+    "correct": 3,
+    "rationale": "'scurry' means to move quickly with small steps."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "After they ____ lunch, they returned.",
+    "options": [
+      "have had",
+      "had",
+      "have",
+      "having"
+    ],
+    "correct": 1,
+    "rationale": "The correct answer is 'had'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Select the word meaning 'having unlimited power'.",
+    "options": [
+      "omnipotent",
+      "zealous",
+      "acrophobia",
+      "innocuous"
+    ],
+    "correct": 0,
+    "rationale": "'omnipotent' means having unlimited power."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Select the word meaning 'stubbornly disobedient'.",
+    "options": [
+      "abridge",
+      "coherent",
+      "enigma",
+      "recalcitrant"
+    ],
+    "correct": 3,
+    "rationale": "'recalcitrant' means stubbornly disobedient."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "I borrowed a pen ____ Sarah.",
+    "options": [
+      "with",
+      "by",
+      "to",
+      "from"
+    ],
+    "correct": 3,
+    "rationale": "The correct answer is 'from'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Select the word meaning 'to regard with respect'.",
+    "options": [
+      "enigma",
+      "skeptical",
+      "omnipotent",
+      "venerate"
+    ],
+    "correct": 3,
+    "rationale": "'venerate' means to regard with respect."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Choose the correct British spelling.",
+    "options": [
+      "manoeuvre",
+      "maneuver"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'manoeuvre'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Choose the correct British spelling.",
+    "options": [
+      "plough",
+      "plow"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'plough'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "Unless you ____ early, you'll miss the train.",
+    "options": [
+      "leave",
+      "leaving",
+      "leaves",
+      "left"
+    ],
+    "correct": 0,
+    "rationale": "The correct answer is 'leave'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Select the word meaning 'lasting very briefly'.",
+    "options": [
+      "ephemeral",
+      "epiphany",
+      "malnourished",
+      "lexicon"
+    ],
+    "correct": 0,
+    "rationale": "'ephemeral' means lasting very briefly."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Choose the correct British spelling.",
+    "options": [
+      "aluminium",
+      "aluminum"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'aluminium'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Choose the correct British spelling.",
+    "options": [
+      "defence",
+      "defense"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'defence'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Choose the correct British spelling.",
+    "options": [
+      "mould",
+      "mold"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'mould'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Select the word meaning 'lasting a short time'.",
+    "options": [
+      "redundant",
+      "zealous",
+      "transient",
+      "minuscule"
+    ],
+    "correct": 2,
+    "rationale": "'transient' means lasting a short time."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "He ____ to work by bus.",
+    "options": [
+      "went",
+      "going",
+      "go",
+      "goes"
+    ],
+    "correct": 3,
+    "rationale": "The correct answer is 'goes'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "He jumped ____ the river.",
+    "options": [
+      "through",
+      "into",
+      "over",
+      "across"
+    ],
+    "correct": 3,
+    "rationale": "The correct answer is 'across'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Choose the correct British spelling.",
+    "options": [
+      "kerb",
+      "curb"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'kerb'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "Select the word meaning 'to shorten a text'.",
+    "options": [
+      "skeptical",
+      "lexicon",
+      "abridge",
+      "ornate"
+    ],
+    "correct": 2,
+    "rationale": "'abridge' means to shorten a text."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Choose the correct British spelling.",
+    "options": [
+      "pyjamas",
+      "pajamas"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'pyjamas'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "She ____ a lot of books each year.",
+    "options": [
+      "reading",
+      "readed",
+      "reads",
+      "read"
+    ],
+    "correct": 2,
+    "rationale": "The correct answer is 'reads'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "He ____ coffee every morning.",
+    "options": [
+      "drink",
+      "drinks",
+      "drinking",
+      "drank"
+    ],
+    "correct": 1,
+    "rationale": "The correct answer is 'drinks'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Select the word meaning 'a person who hates humankind'.",
+    "options": [
+      "misanthrope",
+      "sinister",
+      "epiphany",
+      "eclectic"
+    ],
+    "correct": 0,
+    "rationale": "'misanthrope' means a person who hates humankind."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Select the word meaning 'not certain or fixed'.",
+    "options": [
+      "abridge",
+      "tentative",
+      "superficial",
+      "ornate"
+    ],
+    "correct": 1,
+    "rationale": "'tentative' means not certain or fixed."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Select the word meaning 'on the surface, lacking depth'.",
+    "options": [
+      "gregarious",
+      "ostentatious",
+      "superficial",
+      "skeptical"
+    ],
+    "correct": 2,
+    "rationale": "'superficial' means on the surface, lacking depth."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "Select the word meaning 'very hungry'.",
+    "options": [
+      "fortuitous",
+      "loquacious",
+      "eclectic",
+      "famished"
+    ],
+    "correct": 3,
+    "rationale": "'famished' means very hungry."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "She's interested ____ art history.",
+    "options": [
+      "at",
+      "in",
+      "on",
+      "for"
+    ],
+    "correct": 1,
+    "rationale": "The correct answer is 'in'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "She arrived ____ the airport on time.",
+    "options": [
+      "to",
+      "at",
+      "by",
+      "in"
+    ],
+    "correct": 1,
+    "rationale": "The correct answer is 'at'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "He looked ____ the window.",
+    "options": [
+      "through",
+      "at",
+      "over",
+      "into"
+    ],
+    "correct": 0,
+    "rationale": "The correct answer is 'through'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "He paid ____ credit card.",
+    "options": [
+      "in",
+      "by",
+      "with",
+      "on"
+    ],
+    "correct": 1,
+    "rationale": "The correct answer is 'by'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "Although he ____ tired, he continued.",
+    "options": [
+      "was",
+      "were",
+      "is",
+      "will be"
+    ],
+    "correct": 0,
+    "rationale": "The correct answer is 'was'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Choose the correct British spelling.",
+    "options": [
+      "licence",
+      "license"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'licence'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "Once you ____ finished, turn it in.",
+    "options": [
+      "had",
+      "has",
+      "having",
+      "have"
+    ],
+    "correct": 3,
+    "rationale": "The correct answer is 'have'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Select the word meaning 'unable to be corrected'.",
+    "options": [
+      "epiphany",
+      "ornate",
+      "malnourished",
+      "incorrigible"
+    ],
+    "correct": 3,
+    "rationale": "'incorrigible' means unable to be corrected."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "hard",
+    "prompt": "I ____ go to the doctor.",
+    "options": [
+      "could",
+      "must",
+      "should",
+      "can"
+    ],
+    "correct": 2,
+    "rationale": "The correct answer is 'should'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "They ____ a great movie last night.",
+    "options": [
+      "see",
+      "saw",
+      "sees",
+      "seen"
+    ],
+    "correct": 1,
+    "rationale": "The correct answer is 'saw'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Select the word meaning 'happening by chance'.",
+    "options": [
+      "abridge",
+      "fortuitous",
+      "zealous",
+      "intrepid"
+    ],
+    "correct": 1,
+    "rationale": "'fortuitous' means happening by chance."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Select the word meaning 'to place side by side for contrast'.",
+    "options": [
+      "juxtapose",
+      "misanthrope",
+      "integrate",
+      "intrepid"
+    ],
+    "correct": 0,
+    "rationale": "'juxtapose' means to place side by side for contrast."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Select the word meaning 'the most perfect example'.",
+    "options": [
+      "tentative",
+      "minuscule",
+      "misanthrope",
+      "quintessential"
+    ],
+    "correct": 3,
+    "rationale": "'quintessential' means the most perfect example."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Select the word meaning 'logical and consistent'.",
+    "options": [
+      "venerate",
+      "abridge",
+      "malnourished",
+      "coherent"
+    ],
+    "correct": 3,
+    "rationale": "'coherent' means logical and consistent."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "Before she ____ to bed, she read.",
+    "options": [
+      "went",
+      "going",
+      "go",
+      "goes"
+    ],
+    "correct": 0,
+    "rationale": "The correct answer is 'went'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "easy",
+    "prompt": "Choose the correct British spelling.",
+    "options": [
+      "theatre",
+      "theater"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'theatre'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Select the word meaning 'a countless number'.",
+    "options": [
+      "loquacious",
+      "nonchalant",
+      "myriad",
+      "meticulous"
+    ],
+    "correct": 2,
+    "rationale": "'myriad' means a countless number."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "If ____ raining tomorrow, we'll cancel.",
+    "options": [
+      "it's",
+      "it was",
+      "it is",
+      "it will"
+    ],
+    "correct": 2,
+    "rationale": "The correct answer is 'it is'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "hard",
+    "prompt": "They ____ arrive soon.",
+    "options": [
+      "may",
+      "must",
+      "would",
+      "will"
+    ],
+    "correct": 3,
+    "rationale": "The correct answer is 'will'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "She ____ every day.",
+    "options": [
+      "running",
+      "run",
+      "runs",
+      "ran"
+    ],
+    "correct": 2,
+    "rationale": "The correct answer is 'runs'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "easy",
+    "prompt": "Choose the correct British spelling.",
+    "options": [
+      "labour",
+      "labor"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'labour'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Select the word meaning 'open to more than one interpretation'.",
+    "options": [
+      "ambiguous",
+      "intrepid",
+      "fortuitous",
+      "tentative"
+    ],
+    "correct": 0,
+    "rationale": "'ambiguous' means open to more than one interpretation."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "hard",
+    "prompt": "You ____ not smoke here.",
+    "options": [
+      "must",
+      "should",
+      "may",
+      "can"
+    ],
+    "correct": 0,
+    "rationale": "The correct answer is 'must'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "Select the word meaning 'doubting or questioning'.",
+    "options": [
+      "skeptical",
+      "innocuous",
+      "quintessential",
+      "ostentatious"
+    ],
+    "correct": 0,
+    "rationale": "'skeptical' means doubting or questioning."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "I ____ his name just now.",
+    "options": [
+      "knew",
+      "known",
+      "know",
+      "knows"
+    ],
+    "correct": 0,
+    "rationale": "The correct answer is 'knew'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "She ____ a complaint yesterday.",
+    "options": [
+      "makes",
+      "make",
+      "making",
+      "made"
+    ],
+    "correct": 3,
+    "rationale": "The correct answer is 'made'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "She ____ to the store yesterday.",
+    "options": [
+      "goes",
+      "gone",
+      "went",
+      "go"
+    ],
+    "correct": 2,
+    "rationale": "The correct answer is 'went'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Choose the correct British spelling.",
+    "options": [
+      "metre",
+      "meter"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'metre'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Select the word meaning 'the vocabulary of a language'.",
+    "options": [
+      "eclectic",
+      "integrate",
+      "lexicon",
+      "ostentatious"
+    ],
+    "correct": 2,
+    "rationale": "'lexicon' means the vocabulary of a language."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Select the word meaning 'found everywhere'.",
+    "options": [
+      "hyperbole",
+      "sinister",
+      "ubiquitous",
+      "integrate"
+    ],
+    "correct": 2,
+    "rationale": "'ubiquitous' means found everywhere."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "Select the word meaning 'to combine parts into a whole'.",
+    "options": [
+      "epiphany",
+      "integrate",
+      "abridge",
+      "juxtapose"
+    ],
+    "correct": 1,
+    "rationale": "'integrate' means to combine parts into a whole."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "We ____ to France last summer.",
+    "options": [
+      "flying",
+      "flew",
+      "fly",
+      "flown"
+    ],
+    "correct": 1,
+    "rationale": "The correct answer is 'flew'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Choose the correct British spelling.",
+    "options": [
+      "aeroplane",
+      "airplane"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'aeroplane'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "He ____ late last night.",
+    "options": [
+      "sleeps",
+      "sleep",
+      "sleeping",
+      "slept"
+    ],
+    "correct": 3,
+    "rationale": "The correct answer is 'slept'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Select the word meaning 'a mystery'.",
+    "options": [
+      "enigma",
+      "ephemeral",
+      "famished",
+      "ambiguous"
+    ],
+    "correct": 0,
+    "rationale": "'enigma' means a mystery."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "easy",
+    "prompt": "Choose the correct British spelling.",
+    "options": [
+      "colour",
+      "color"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'colour'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Select the word meaning 'truthful and straightforward'.",
+    "options": [
+      "ornate",
+      "candid",
+      "lexicon",
+      "intrepid"
+    ],
+    "correct": 1,
+    "rationale": "'candid' means truthful and straightforward."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Select the word meaning 'exaggeration for effect'.",
+    "options": [
+      "misanthrope",
+      "superficial",
+      "hyperbole",
+      "transient"
+    ],
+    "correct": 2,
+    "rationale": "'hyperbole' means exaggeration for effect."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "He ____ a letter yesterday.",
+    "options": [
+      "write",
+      "wrote",
+      "written",
+      "writes"
+    ],
+    "correct": 1,
+    "rationale": "The correct answer is 'wrote'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "hard",
+    "prompt": "You ____ try again tomorrow.",
+    "options": [
+      "could",
+      "should",
+      "must",
+      "can"
+    ],
+    "correct": 0,
+    "rationale": "The correct answer is 'could'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "Select the word meaning 'poorly nourished'.",
+    "options": [
+      "innocuous",
+      "malnourished",
+      "ornate",
+      "intrepid"
+    ],
+    "correct": 1,
+    "rationale": "'malnourished' means poorly nourished."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Choose the correct British spelling.",
+    "options": [
+      "neighbour",
+      "neighbor"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'neighbour'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "While we ____ dinner, the phone rang.",
+    "options": [
+      "eat",
+      "were eating",
+      "eating",
+      "ate"
+    ],
+    "correct": 1,
+    "rationale": "The correct answer is 'were eating'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Select the word meaning 'fear of heights'.",
+    "options": [
+      "acrophobia",
+      "innocuous",
+      "scurry",
+      "debilitate"
+    ],
+    "correct": 0,
+    "rationale": "'acrophobia' means fear of heights."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "She ____ well in the exam.",
+    "options": [
+      "do",
+      "doing",
+      "does",
+      "did"
+    ],
+    "correct": 3,
+    "rationale": "The correct answer is 'did'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "Select the word meaning 'extremely small'.",
+    "options": [
+      "tentative",
+      "enigma",
+      "ostentatious",
+      "minuscule"
+    ],
+    "correct": 3,
+    "rationale": "'minuscule' means extremely small."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "hard",
+    "prompt": "She ____ speak three languages.",
+    "options": [
+      "might",
+      "should",
+      "must",
+      "can"
+    ],
+    "correct": 3,
+    "rationale": "The correct answer is 'can'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "Select the word meaning 'showing great attention to detail'.",
+    "options": [
+      "acrophobia",
+      "meticulous",
+      "debilitate",
+      "zealous"
+    ],
+    "correct": 1,
+    "rationale": "'meticulous' means showing great attention to detail."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "He ____ his keys yesterday.",
+    "options": [
+      "lost",
+      "loses",
+      "losing",
+      "lose"
+    ],
+    "correct": 0,
+    "rationale": "The correct answer is 'lost'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Select the word meaning 'no longer needed'.",
+    "options": [
+      "epiphany",
+      "coherent",
+      "ornate",
+      "redundant"
+    ],
+    "correct": 3,
+    "rationale": "'redundant' means no longer needed."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "They ____ the project on time.",
+    "options": [
+      "completes",
+      "complete",
+      "completed",
+      "completing"
+    ],
+    "correct": 2,
+    "rationale": "The correct answer is 'completed'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "When you ____ home, call me.",
+    "options": [
+      "get",
+      "got",
+      "gets",
+      "getting"
+    ],
+    "correct": 0,
+    "rationale": "The correct answer is 'get'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Choose the correct British spelling.",
+    "options": [
+      "jewellery",
+      "jewelry"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'jewellery'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Select the word meaning 'sociable'.",
+    "options": [
+      "famished",
+      "ostentatious",
+      "gregarious",
+      "enigma"
+    ],
+    "correct": 2,
+    "rationale": "'gregarious' means sociable."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "hard",
+    "prompt": "They ____ be there by now.",
+    "options": [
+      "should",
+      "may",
+      "might",
+      "must"
+    ],
+    "correct": 0,
+    "rationale": "The correct answer is 'should'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "easy",
+    "prompt": "Choose the correct British spelling.",
+    "options": [
+      "favourite",
+      "favorite"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'favourite'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "We walked ____ the park.",
+    "options": [
+      "around",
+      "over",
+      "into",
+      "through"
+    ],
+    "correct": 3,
+    "rationale": "The correct answer is 'through'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "easy",
+    "prompt": "Choose the correct British spelling.",
+    "options": [
+      "centre",
+      "center"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'centre'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "hard",
+    "prompt": "She ____ help if needed.",
+    "options": [
+      "will",
+      "shall",
+      "should",
+      "would"
+    ],
+    "correct": 0,
+    "rationale": "The correct answer is 'will'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "They ____ the homework before class.",
+    "options": [
+      "done",
+      "did",
+      "do",
+      "does"
+    ],
+    "correct": 1,
+    "rationale": "The correct answer is 'did'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Select the word meaning 'casually calm'.",
+    "options": [
+      "loquacious",
+      "nonchalant",
+      "ephemeral",
+      "meticulous"
+    ],
+    "correct": 1,
+    "rationale": "'nonchalant' means casually calm."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Select the word meaning 'a typical example'.",
+    "options": [
+      "innocuous",
+      "paradigm",
+      "sinister",
+      "famished"
+    ],
+    "correct": 1,
+    "rationale": "'paradigm' means a typical example."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Select the word meaning 'to make less'.",
+    "options": [
+      "malnourished",
+      "misanthrope",
+      "quintessential",
+      "diminish"
+    ],
+    "correct": 3,
+    "rationale": "'diminish' means to make less."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Select the word meaning 'elaborately decorated'.",
+    "options": [
+      "candid",
+      "ornate",
+      "enigma",
+      "hyperbole"
+    ],
+    "correct": 1,
+    "rationale": "'ornate' means elaborately decorated."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "Where did you get the money ____?",
+    "options": [
+      "away",
+      "out",
+      "from",
+      "for"
+    ],
+    "correct": 2,
+    "rationale": "The correct answer is 'from'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Choose the correct British spelling.",
+    "options": [
+      "travelling",
+      "traveling"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'travelling'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Select the word meaning 'suggesting something harmful'.",
+    "options": [
+      "sinister",
+      "redundant",
+      "ambiguous",
+      "gregarious"
+    ],
+    "correct": 0,
+    "rationale": "'sinister' means suggesting something harmful."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "Please fill ____ the form completely.",
+    "options": [
+      "up",
+      "out",
+      "over",
+      "in"
+    ],
+    "correct": 1,
+    "rationale": "The correct answer is 'out'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "They ____ tennis on Saturdays.",
+    "options": [
+      "plays",
+      "played",
+      "playing",
+      "play"
+    ],
+    "correct": 3,
+    "rationale": "The correct answer is 'play'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "medium",
+    "prompt": "She ____ the marathon last year.",
+    "options": [
+      "run",
+      "runs",
+      "running",
+      "ran"
+    ],
+    "correct": 3,
+    "rationale": "The correct answer is 'ran'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Select the word meaning 'very talkative'.",
+    "options": [
+      "ephemeral",
+      "zealous",
+      "venerate",
+      "loquacious"
+    ],
+    "correct": 3,
+    "rationale": "'loquacious' means very talkative."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "hard",
+    "prompt": "He ____ know the answer.",
+    "options": [
+      "must",
+      "can",
+      "might",
+      "should"
+    ],
+    "correct": 2,
+    "rationale": "The correct answer is 'might'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "Because he ____ late, he missed the meeting.",
+    "options": [
+      "arrives",
+      "arrive",
+      "arrived",
+      "arriving"
+    ],
+    "correct": 2,
+    "rationale": "The correct answer is 'arrived'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Select the word meaning 'harmless'.",
+    "options": [
+      "malnourished",
+      "superficial",
+      "innocuous",
+      "debilitate"
+    ],
+    "correct": 2,
+    "rationale": "'innocuous' means harmless."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Select the word meaning 'from a broad range of sources'.",
+    "options": [
+      "eclectic",
+      "venerate",
+      "myriad",
+      "sinister"
+    ],
+    "correct": 0,
+    "rationale": "'eclectic' means from a broad range of sources."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "hard",
+    "prompt": "Choose the correct British spelling.",
+    "options": [
+      "tyre",
+      "tire"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'tyre'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "hard",
+    "prompt": "You ____ finish it by Monday.",
+    "options": [
+      "must",
+      "should",
+      "can",
+      "will"
+    ],
+    "correct": 0,
+    "rationale": "The correct answer is 'must'."
+  },
+  {
+    "type": "spelling",
+    "difficulty": "medium",
+    "prompt": "Choose the correct British spelling.",
+    "options": [
+      "honour",
+      "honor"
+    ],
+    "correct": 0,
+    "rationale": "UK spelling is 'honour'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "hard",
+    "prompt": "Select the word meaning 'very energetic'.",
+    "options": [
+      "minuscule",
+      "zealous",
+      "ornate",
+      "scurry"
+    ],
+    "correct": 1,
+    "rationale": "'zealous' means very energetic."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "hard",
+    "prompt": "He ____ have left already.",
+    "options": [
+      "can",
+      "must",
+      "might",
+      "should"
+    ],
+    "correct": 2,
+    "rationale": "The correct answer is 'might'."
+  },
+  {
+    "type": "definition",
+    "difficulty": "easy",
+    "prompt": "Select the word meaning 'a moment of sudden revelation'.",
+    "options": [
+      "innocuous",
+      "malnourished",
+      "epiphany",
+      "transient"
+    ],
+    "correct": 2,
+    "rationale": "'epiphany' means a moment of sudden revelation."
+  },
+  {
+    "type": "definition",
+    "difficulty": "medium",
+    "prompt": "Select the word meaning 'to weaken'.",
+    "options": [
+      "loquacious",
+      "diminish",
+      "coherent",
+      "debilitate"
+    ],
+    "correct": 3,
+    "rationale": "'debilitate' means to weaken."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "Even if she ____ busy, she'll help.",
+    "options": [
+      "be",
+      "is",
+      "will be",
+      "was"
+    ],
+    "correct": 1,
+    "rationale": "The correct answer is 'is'."
+  },
+  {
+    "type": "fill-blank",
+    "difficulty": "easy",
+    "prompt": "They live ____ the city centre.",
+    "options": [
+      "at",
+      "by",
+      "in",
+      "on"
+    ],
+    "correct": 2,
+    "rationale": "The correct answer is 'in'."
+  }
+]
