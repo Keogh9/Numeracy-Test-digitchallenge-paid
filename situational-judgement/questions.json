@@ -1,0 +1,452 @@
+[
+  {
+    "id": 1,
+    "scenario": "You arrive at Dun Laoghaire Fire Station to start your shift and see that the crew vehicle hasn’t been fully restocked with medical supplies after the last call. What do you do?",
+    "options": [
+      "Report it to the Station Officer and help restock immediately before any call.",
+      "Leave it to the next shift; they will notice and restock.",
+      "Make a note in the log and mention it at end-of-shift debrief."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. Patient care is paramount—raising it immediately and helping restock prevents delays on the next call.",
+      "1": "Incorrect. Waiting risks going out without essential kit and jeopardising patient safety.",
+      "2": "Partially correct but too late. Waiting for end-of-shift means you may be dispatched without supplies."
+    }
+  },
+  {
+    "id": 2,
+    "scenario": "On route to a cardiac arrest in Finglas, the ambulance radio reports traffic congestion ahead. Your sub officer suggests rerouting through back streets. What do you do?",
+    "options": [
+      "Agree and follow the sub officer’s local knowledge to beat the traffic.",
+      "Insist on sticking to the main route—it’s what you’re trained on.",
+      "Slow down and use lights only if absolutely necessary."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. Trusting local experience to arrive faster supports patient survival.",
+      "1": "Incorrect. Rigid adherence to a plan that’s known to be blocked delays care.",
+      "2": "Incorrect. Lights and siren should be used appropriately; slowing defeats the purpose."
+    }
+  },
+  {
+    "id": 3,
+    "scenario": "A crew member at Tallaght Fire Station is showing signs of fatigue and distraction during equipment checks. How do you respond?",
+    "options": [
+      "Pull them aside, check they’re fit for duty, and offer a break or coffee.",
+      "Ignore it; they’ll pull themselves together once the alarm sounds.",
+      "Report them at shift end; it’s not your responsibility today."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. Early intervention maintains safety and wellbeing for everyone.",
+      "1": "Incorrect. Assuming it will correct itself risks errors later on.",
+      "2": "Incorrect. Leaving it unaddressed could endanger the team and public."
+    }
+  },
+  {
+    "id": 4,
+    "scenario": "You’re first at the scene of a house fire in Rathfarnham. You spot a neighbour filming inside and getting in the way of firefighters. What do you do?",
+    "options": [
+      "Politely ask them to step back and offer to keep them updated once safe.",
+      "Ignore them; concentrate on the fire attack.",
+      "Confiscate their phone—no recording allowed."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. Ensuring scene safety while managing bystanders is key.",
+      "1": "Incorrect. Leaving them risks obstruction and liability.",
+      "2": "Incorrect. Confiscation is heavy-handed and not a lawful power."
+    }
+  },
+  {
+    "id": 5,
+    "scenario": "On a multi-vehicle RTC on Swords Road, a paramedic colleague asks you to clear debris while they treat casualties. You’re the only firefighter present. What do you do?",
+    "options": [
+      "Agree, clear debris first so casualties can be extricated safely.",
+      "Refuse—your role is firefighting, not stretcher work.",
+      "Help them lift a casualty then clear debris afterwards."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. Clearing the path is urgent to save lives.",
+      "1": "Incorrect. In modern Fire-EMS practice, roles are fluid to meet patient needs.",
+      "2": "Sub-optimal. Delaying debris removal slows overall rescue."
+    }
+  },
+  {
+    "id": 6,
+    "scenario": "An experienced Dublin City Council officer tells you to skip PPE on a low-risk inspection of Rathgar station. What do you do?",
+    "options": [
+      "Politely insist on wearing full PPE—safety protocols cannot be bypassed.",
+      "Agree—it’s only a quick check anyway.",
+      "Only wear your helmet, as a compromise."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. PPE standards are non-negotiable for everyone’s protection.",
+      "1": "Incorrect. Underestimating hazards compromises safety.",
+      "2": "Incorrect. Partial compliance leaves you exposed to risk."
+    }
+  },
+  {
+    "id": 7,
+    "scenario": "You arrive at HQ to find the turnout gear racks disorganised, exposing sets to contamination. What’s your best action?",
+    "options": [
+      "Reorganise the gear immediately and remind colleagues of cleaning procedures.",
+      "Leave it—someone else will sort it out eventually.",
+      "Lock the room to prevent further use until it’s fixed."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. Taking immediate ownership preserves equipment integrity.",
+      "1": "Incorrect. Ignoring maintenance duties undermines team readiness.",
+      "2": "Incorrect. Locking denies access in an emergency."
+    }
+  },
+  {
+    "id": 8,
+    "scenario": "During a training drill at North Strand, you see a new recruit struggling with the breathing apparatus. How do you handle it?",
+    "options": [
+      "Stop the drill, coach them through donning/doffing, then resume together.",
+      "Leave them to figure it out—they need to learn independence.",
+      "Continue the drill and report their performance later."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. Live teaching ensures competence before moving on.",
+      "1": "Incorrect. Struggling with life-saving kit is too high a risk for unguided learning.",
+      "2": "Incorrect. Delaying support endangers future calls."
+    }
+  },
+  {
+    "id": 9,
+    "scenario": "You’re dispatched to a multi-casualty bus crash near Finglas. Triage tags are running out. What’s your priority?",
+    "options": [
+      "Use improvised marking (chalk or tape) and radio for more tags.",
+      "Wait until proper tags arrive before starting triage.",
+      "Skip triage tags and just treat in arrival order."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. Improvising maintains triage order and tracks patient status.",
+      "1": "Incorrect. Delaying triage wastes precious time.",
+      "2": "Incorrect. No tagging leads to chaos and possible mistreatment."
+    }
+  },
+  {
+    "id": 10,
+    "scenario": "A senior Station Officer at Rathfarnham asks you to falsify the log to hide a delayed response. What do you do?",
+    "options": [
+      "Refuse and report immediately through your chain of command.",
+      "Agree—he’s under pressure and knows best.",
+      "Delay your response but comply later."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. Integrity is fundamental—falsification is gross misconduct.",
+      "1": "Incorrect. Seniority doesn’t override ethics or policy.",
+      "2": "Incorrect. Any compliance violates trust and regulation."
+    }
+  },
+  {
+    "id": 11,
+    "scenario": "On a haz-mat call in Tallaght, your SCBA warns of low air while you’re still inside. What’s your action?",
+    "options": [
+      "Signal to exit immediately and follow the buddy system out.",
+      "Press on; it’s only a drill and you’ll finish quickly.",
+      "Ignore the alarm; it’s probably a false alert."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. Low-air warnings must be acted on at once to avoid harm.",
+      "1": "Incorrect. Drills still follow full safety protocols.",
+      "2": "Incorrect. Ignoring alarms risks asphyxiation."
+    }
+  },
+  {
+    "id": 12,
+    "scenario": "You’re first on scene at a commercial fire in Swords. Flames are spreading on the rooftop—what’s your priority?",
+    "options": [
+      "Call for aerial support (platform) then establish a water-through-hose advance.",
+      "Try to climb the ladder yourself to tackle the roof vent.",
+      "Go door-to-door inside to search for people."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. Aerial support combined with water advance controls the fire safely.",
+      "1": "Incorrect. Solo rooftop work is unsafe without backup.",
+      "2": "Premature. Searches should wait until the fire attack secures a path."
+    }
+  },
+  {
+    "id": 13,
+    "scenario": "During a mass-casualty exercise at HQ, you notice a paramedic trainee giving incorrect drug doses. What do you do?",
+    "options": [
+      "Intervene immediately, correct the dose, and explain the rationale.",
+      "Let them finish and discuss it during the debrief.",
+      "Report them after the exercise to your line manager."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. Immediate correction prevents dangerous practice.",
+      "1": "Incorrect. Waiting risks cementing the error in their learning.",
+      "2": "Sub-optimal. Post-exercise reporting delays crucial patient-safety education."
+    }
+  },
+  {
+    "id": 14,
+    "scenario": "You’re called to assist a crew at Dun Laoghaire when you’re low on fatigue hours. Your sub officer says it’s “just a simple lift assist.” What do you do?",
+    "options": [
+      "Decline kindly—exceeding fatigue limits risks impairing your performance.",
+      "Agree—lifting is easy and won’t tire you out.",
+      "Offer to go but ask to be relieved if you feel tired."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. Fatigue management is crucial for safety in all roles.",
+      "1": "Incorrect. Even simple tasks under fatigue can be dangerous.",
+      "2": "Risky. Starting under fatigue violates policy."
+    }
+  },
+  {
+    "id": 15,
+    "scenario": "At a station inspection in North Strand, you find the defibrillator pads are expired. What’s your response?",
+    "options": [
+      "Tag the pads out of service, replace them immediately, and log it.",
+      "Ignore it—they still work most of the time.",
+      "Make a note for next month’s restock."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. Expired pads must be replaced at once to ensure equipment reliability.",
+      "1": "Incorrect. Aging pads may fail when needed.",
+      "2": "Too late. Next month could be after a critical incident."
+    }
+  },
+  {
+    "id": 16,
+    "scenario": "You’re on an ambulance call in Rathgar and notice the casualty is distressed by bystanders taking photos. How do you act?",
+    "options": [
+      "Ask bystanders politely to step back and offer privacy screens.",
+      "Continue treatment ignoring them; your focus is the patient.",
+      "Confront them aggressively to stop filming."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. Respecting privacy and calming the patient is professional.",
+      "1": "Incorrect. Ignoring them leaves patient distress unaddressed.",
+      "2": "Incorrect. Aggression escalates the situation."
+    }
+  },
+  {
+    "id": 17,
+    "scenario": "You arrive at Finglas station building maintenance report of a gas smell. What’s your first step?",
+    "options": [
+      "Evacuate the building, call gas authority, then ventilate.",
+      "Search for the leak yourself before evacuating.",
+      "Ignore until you have a second opinion."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. Evacuation and authority call are standard for suspected gas leaks.",
+      "1": "Incorrect. Searching yourself risks exposure without controls.",
+      "2": "Incorrect. Delay could lead to explosion or poisoning."
+    }
+  },
+  {
+    "id": 18,
+    "scenario": "In a multi-vehicle collision on the M50, a senior truck driver is hostile and refuses treatment. What do you do?",
+    "options": [
+      "Explain the risks, offer treatment again calmly, and document refusal.",
+      "Leave them—they can choose their own care.",
+      "Force treatment; you know what’s best."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. Respecting autonomy while documenting refusal meets legal/ethical standards.",
+      "1": "Incorrect. Not offering care and documenting is negligent.",
+      "2": "Incorrect. Forcing care breaches consent laws."
+    }
+  },
+  {
+    "id": 19,
+    "scenario": "Your turnout gear gets soaked while tackling a chimney fire in Tallaght. You have no spare gear onsite. What do you do?",
+    "options": [
+      "Switch to breathing-only if safe, then head back to station to change.",
+      "Keep fighting until the fire’s out—gear can dry later.",
+      "Borrow another crew’s gear immediately."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. Keeping gear intact is safer than operating in wet or compromised PPE.",
+      "1": "Incorrect. Wet gear affects insulation and protection.",
+      "2": "Often not feasible—inter-crew loaning requires proper fit checks."
+    }
+  },
+  {
+    "id": 20,
+    "scenario": "You’re the first firefighter to arrive at a high-rise incident. The building’s fire alarm system has failed. What’s your priority?",
+    "options": [
+      "Initiate search-and-rescue with your hose team, while calling for the alarm engineer.",
+      "Wait for confirmation of alarm failure from the Station Officer.",
+      "Sound a portable alarm yourself and wait for backup."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. Immediate rescue is critical; system repairs can follow.",
+      "1": "Incorrect. Waiting risks lives in a failing alarm scenario.",
+      "2": "Too slow. Building occupants need evacuation now."
+    }
+  },
+  {
+    "id": 21,
+    "scenario": "A paramedic colleague at Rathfarnham prepares to lift a heavy patient alone. What do you do?",
+    "options": [
+      "Step in and assist—manual handling always requires two people.",
+      "Let them finish; they’re experienced.",
+      "Tell them to wait for the stair chair."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. Team lifts prevent injuries to staff and patient.",
+      "1": "Incorrect. Even experienced staff need assistance for safety.",
+      "2": "Delays care unnecessarily if you’re already there to assist."
+    }
+  },
+  {
+    "id": 22,
+    "scenario": "At a community event in Swords, a member of the public offers you home-made sweets. You’re on duty. What do you do?",
+    "options": [
+      "Politely decline—on-duty personnel shouldn’t consume unregulated food.",
+      "Accept; you can’t refuse goodwill.",
+      "Take one but thank them and discard it later."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. Health and safety protocols forbid unknown food on duty.",
+      "1": "Incorrect. Goodwill is appreciated but policies exist for reason.",
+      "2": "Risky. You can’t guarantee no allergens or contamination."
+    }
+  },
+  {
+    "id": 23,
+    "scenario": "You arrive at a pediatric accident in Rathgar. The child is screaming and uncooperative. How do you approach them?",
+    "options": [
+      "Kneel to their level, speak gently, explain what you’ll do, then proceed.",
+      "Tell them to be quiet so you can work faster.",
+      "Perform the assessment quickly before they kick off more."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. Building trust with young patients improves cooperation and outcomes.",
+      "1": "Incorrect. Shouting at a child escalates fear and non-cooperation.",
+      "2": "Incorrect. Rushing can increase trauma and reduce accuracy."
+    }
+  },
+  {
+    "id": 24,
+    "scenario": "You notice a newly-installed hydrant in Finglas is obstructed by rubbish. It’s not your area’s responsibility. What do you do?",
+    "options": [
+      "Clear the obstruction now and report it to Dublin City Council for permanent removal.",
+      "Ignore it; hydrant maintenance isn’t your job.",
+      "File a late report and continue to your next call."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. Ensuring hydrant access is critical, regardless of boundaries.",
+      "1": "Incorrect. Waiting could impede future firefighting efforts.",
+      "2": "Sub-optimal. Clearing immediately eliminates the hazard."
+    }
+  },
+  {
+    "id": 25,
+    "scenario": "During a major incident debrief at HQ, the Station Officer credits only senior staff. You weren’t mentioned though you played a key role. What do you do?",
+    "options": [
+      "Accept it—focus on team success, not personal recognition.",
+      "Insist you be recognised now in front of everyone.",
+      "Complain privately to a colleague later."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. Humility and collective focus keep morale high.",
+      "1": "Incorrect. Self-promotion in a debrief undermines unity.",
+      "2": "Less effective. Public recognition isn’t the main goal in a crisis."
+    }
+  },
+  {
+    "id": 26,
+    "scenario": "You’re leading a water rescue on the Liffey in city centre when a team member panics. What’s your response?",
+    "options": [
+      "Stay calm, talk them through a controlled exit, then rotate them out of the water.",
+      "Order them to get out immediately without explanation.",
+      "Ignore it and continue the rescue yourself."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. Calm leadership and rotation prevents injury and maintains team strength.",
+      "1": "Incorrect. Abrupt orders in panic can worsen the situation.",
+      "2": "Incorrect. Team safety comes before any single task."
+    }
+  },
+  {
+    "id": 27,
+    "scenario": "At Finglas station you’re asked to cover extra shifts at short notice. You’re already at your maximum hours. What do you do?",
+    "options": [
+      "Explain your hours limit under the fatigue policy and propose someone else cover.",
+      "Agree but cut your rest short to accommodate.",
+      "Ignore and just show up—duty comes first."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. Fatigue regulations protect staff and public safety.",
+      "1": "Incorrect. Breaching rest can lead to errors and accidents.",
+      "2": "Incorrect. Ignoring policy jeopardises competence and wellbeing."
+    }
+  },
+  {
+    "id": 28,
+    "scenario": "You’re first to arrive at a suspected chemical spill in Tallaght. The on-scene officer hasn’t donned the correct respirator. What’s your action?",
+    "options": [
+      "Advise them immediately to don the correct respirator before proceeding.",
+      "Go in yourself wearing correct kit and let them watch.",
+      "Carry on and sort respirators later."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. Ensuring everyone uses proper PPE is non-negotiable in hazmat.",
+      "1": "Incorrect. Leading by example is good, but they must comply instantly.",
+      "2": "Incorrect. Ignoring jeopardises lives and environment."
+    }
+  },
+  {
+    "id": 29,
+    "scenario": "You arrive at a collapsed building scenario near HQ. A bystander says they saw someone trapped inside. What do you do first?",
+    "options": [
+      "Establish command and send team to a swift, structured search-and-rescue.",
+      "Rush in yourself to find the person quickly.",
+      "Interview bystanders thoroughly before acting."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. Structured command and team searches are safest and most efficient.",
+      "1": "Incorrect. Solo action risks further collapse and injury.",
+      "2": "Too slow. Immediate rescue action is needed in collapse scenarios."
+    }
+  },
+  {
+    "id": 30,
+    "scenario": "During a non-urgent home visit in Rathfarnham, you’re offered a drink in the sitting room. What’s your approach?",
+    "options": [
+      "Politely accept a glass of water only, maintaining professionalism.",
+      "Accept whatever is offered to be polite.",
+      "Decline any drinks—on-duty workers must never accept refreshments."
+    ],
+    "correctIndex": 0,
+    "rationale": {
+      "0": "Correct. A water is fine; it’s courteous while staying professional.",
+      "1": "Incorrect. Unregulated refreshments (alcohol, sweets) may breach policy.",
+      "2": "Unnecessarily rigid. Refusing water can seem impolite and affect rapport."
+    }
+  }
+]
