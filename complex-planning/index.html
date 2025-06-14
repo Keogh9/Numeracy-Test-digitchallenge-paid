@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Complex Planning Capability – motionChallenge</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+
   <!-- Instructions Overlay -->
   <div id="overlay" class="overlay">
     <div class="overlay-header">
-      <img src="/logo.png" alt="999 Recruitment Ready" class="overlay-logo" />
+      <img src="logo-header.png" alt="999 Recruitment Ready" class="overlay-logo"/>
     </div>
     <div class="overlay-body">
       <h2>Complex Planning Capability – motionChallenge</h2>
@@ -27,7 +28,7 @@
 
   <!-- Navbar -->
   <header class="navbar">
-    <img src="/logo.png" alt="999 Recruitment Ready" class="navbar-logo" />
+    <img src="logo.png" alt="999 Recruitment Ready" class="navbar-logo"/>
     <div class="navbar-title">Complex Planning Capability – motionChallenge</div>
     <div class="navbar-info">
       <span id="timer">06:00</span>
@@ -35,12 +36,12 @@
     </div>
   </header>
 
-  <!-- Main Test Area -->
-  <main id="test-area">
-    <div id="grid-container"></div>
-    <div id="controls">
+  <!-- Game Area -->
+  <main id="game" class="hidden">
+    <div id="grid" class="grid"></div>
+    <div class="controls">
       <button id="skip-btn" class="btn">Skip</button>
-      <button id="next-btn" class="btn" disabled>Next</button>
+      <button id="next-btn" class="btn">Next</button>
     </div>
   </main>
 
