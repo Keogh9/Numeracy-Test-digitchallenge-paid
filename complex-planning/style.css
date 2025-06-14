@@ -37,6 +37,16 @@ header .status span {
   background: rgba(0,0,0,0.6);
   display: flex; align-items: center; justify-content: center;
   z-index: 100;
+  .instructions-overlay .popup-header {
+  background-color: #0a1f44;   /* navy from your brand palette */
+  padding: 1rem;
+  text-align: center;
+}
+
+.instructions-overlay .popup-header img {
+  max-height: 3rem;
+  filter: brightness(0) invert(1);  /* force logo to white */
+}
 }
 .modal {
   background: #fff; padding: 20px;
