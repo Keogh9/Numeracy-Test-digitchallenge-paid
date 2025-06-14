@@ -10,6 +10,21 @@
   align-items: center;
   justify-content: center;
   z-index: 1000;
+   /* NAVY BANNER ABOVE OVERLAY CONTENT */
+.overlay-header {
+  background: #1a1f3a;        /* your site-header navy */
+  padding: 16px 0;
+  text-align: center;
+}
+.overlay-header .logo-instructions {
+  display: inline-block;
+}
+
+/* REST OF THE OVERLAY */
+.overlay-body {
+  padding: 24px 32px;
+}
+
 }
 .overlay-content {
   background: #fff;
