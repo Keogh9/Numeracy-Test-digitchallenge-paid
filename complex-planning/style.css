@@ -1,0 +1,92 @@
+/* — Global reset — */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: sans-serif; background: #f5f5f5; }
+
+/* — Header — */
+header {
+  display: flex; align-items: center; background: #0a1f44; color: #fff;
+  padding: 0.5rem 1rem;
+}
+header .logo { height: 2rem; margin-right: 1rem; }
+header h1 { flex: 1; text-align: center; font-size: 1.25rem; }
+header .timer, header .attempted {
+  margin-left: 1rem; font-size: 0.9rem;
+}
+
+/* — Grid container — */
+#grid-container {
+  margin: 1rem auto; width: 15rem; height: 25rem;
+  position: relative; background: #ddd;
+  display: grid; grid-template: repeat(5,1fr) / repeat(3,1fr);
+}
+
+/* Blocks & ball & exit */
+.grid-cell { border: 1px solid #fff; }
+.block {
+  position: absolute; background: #4caf50; cursor: grab;
+}
+.block:active { cursor: grabbing; }
+.block.fixed { background: #888; cursor: not-allowed; }
+.red-ball { background: #e53935; }
+.exit-hole { background: #000; }
+
+/* Controls */
+.controls {
+  display: flex; justify-content: center; margin: 1rem 0;
+}
+.controls button {
+  background: #ff6b3c; color: #fff; border: none;
+  padding: 0.5rem 1rem; margin: 0 0.5rem; border-radius: 4px;
+  cursor: pointer; font-size: 1rem;
+}
+
+/* — Instructions Overlay — */
+.instructions-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 10;
+}
+.instructions-overlay .popup {
+  background: #fff; border-radius: 8px; overflow: hidden;
+  max-width: 480px; width: 90%;
+}
+.instructions-overlay .popup-header {
+  background-color: #0a1f44; padding: 1rem; text-align: center;
+}
+.instructions-overlay .popup-header img {
+  max-height: 3rem; filter: brightness(0) invert(1);
+}
+.instructions-overlay .popup-body {
+  padding: 1rem 1.5rem;
+}
+.instructions-overlay .popup-body ul {
+  list-style: none; margin: 0.5rem 0 1.5rem; padding: 0;
+}
+.instructions-overlay .popup-body li {
+  margin-bottom: 0.5rem; line-height: 1.4;
+}
+.instructions-overlay button {
+  display: block; margin: 0 auto; padding: 0.75rem 1.5rem;
+  background: #ff6b3c; color: #fff; border: none;
+  border-radius: 4px; cursor: pointer; font-size: 1rem;
+}
+
+/* — Results Overlay — */
+.overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 10;
+}
+.results-popup {
+  background: #fff; padding: 1.5rem; border-radius: 8px;
+  text-align: center; max-width: 400px; width: 90%;
+}
+.results-popup h2 { margin-bottom: 1rem; }
+.results-popup p { margin: 0.5rem 0; }
+.results-popup button {
+  margin: 0.75rem 0.5rem 0; padding: 0.5rem 1rem;
+  background: #ff6b3c; color: #fff; border: none;
+  border-radius: 4px; cursor: pointer;
+}
