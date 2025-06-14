@@ -2,55 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Complex Planning Capability – motionChallenge</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- instructions overlay -->
+  <div class="instructions-overlay" id="instructions">
+    <div class="instructions-card">
+      <div class="instructions-header navy-header">
+        <img src="logo-header.png" alt="999 Recruitment Ready" class="logo" />
+      </div>
+      <div class="instructions-body">
+        <h2>Complex Planning Capability – motionChallenge</h2>
+        <p>This test measures your ability to think ahead to solve puzzles. You have <strong>6 minutes</strong> to complete as many as you can.</p>
+        <ol>
+          <li>You can <strong>drag</strong> each block up/down or left/right to create a path for the red ball.</li>
+          <li>Each move is counted; work carefully.</li>
+          <li>If you get stuck, press <strong>Skip</strong> (counts as incorrect).</li>
+          <li>When the red ball reaches the black hole, press <strong>Next</strong>.</li>
+        </ol>
+        <button id="startBtn">Start Test</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- header bar -->
   <header>
-    <img class="logo" src="logo-header.png" alt="999 Recruitment Ready" />
+    <img src="logo.png" alt="999 Recruitment Ready" class="logo" />
     <h1>Complex Planning Capability – motionChallenge</h1>
     <div class="timer" id="timer">06:00</div>
     <div class="attempted" id="attempted">Attempted: 0</div>
   </header>
 
-  <div id="grid-container"></div>
-
-  <div class="controls">
-    <button id="skipBtn">Skip</button>
-    <button id="nextBtn">Next</button>
-  </div>
-
-  <div class="instructions-overlay" id="instructions">
-    <div class="popup">
-      <div class="popup-header">
-        <img src="logo-header.png" alt="999 Recruitment Ready" />
-      </div>
-      <div class="popup-body">
-        <h2>Complex Planning Capability – motionChallenge</h2>
-        <p>This test measures your ability to think ahead to solve puzzles. You have <strong>6 minutes</strong> to complete as many as you can.</p>
-        <ul>
-          <li>You can <strong>drag</strong> each block up/down or left/right to create a path for the red ball.</li>
-          <li>Each move is counted; work carefully.</li>
-          <li>If you get stuck, press <strong>Skip</strong> (counts as incorrect).</li>
-          <li>When the red ball reaches the black hole, press <strong>Next</strong>.</li>
-        </ul>
-        <button id="startTest">Start Test</button>
-      </div>
+  <!-- main test area -->
+  <main>
+    <div class="grid-container" id="grid">
+      <!-- JS will populate puzzle pieces here -->
     </div>
-  </div>
-
-  <template id="results-template">
-    <div class="overlay" id="results">
-      <div class="results-popup">
-        <h2>Time’s up!</h2>
-        <p>Your score: <span id="scoreCorrect"></span> / <span id="scoreTotal"></span></p>
-        <p>Total moves (sum): <span id="totalMoves"></span></p>
-        <button id="retakeBtn">Retake Test</button>
-        <button id="homeBtn">Return Home</button>
-      </div>
+    <div class="controls">
+      <button id="skipBtn">Skip</button>
+      <button id="nextBtn">Next</button>
     </div>
-  </template>
+  </main>
 
   <script src="app.js"></script>
 </body>
