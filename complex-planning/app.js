@@ -9,13 +9,15 @@ let moveCount = 0;
 const $ = id => document.getElementById(id);
 
 // Load JSON
-fetch('questions.json')
-  .then(r => r.json())
-  .then(data => {
-    questions = data;
-    showOverlay();
+fetch('./questions.json')
+  .then(res => {
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return res.json();
   })
-  .catch(() => alert('Failed to load test.'));
+  .catch(err => {
+    console.error('could not load questions.json:', err);
+    alert('Failed to load test. Please check your network/JSON file.');
+  })
 
 // Show instructions overlay
 function showOverlay() {
