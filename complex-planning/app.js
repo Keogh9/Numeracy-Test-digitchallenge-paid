@@ -1,196 +1,209 @@
-// Strict mode
-'use strict';
+// complex-planning/app.js
 
-const QUESTIONS_URL = './questions.json';
+// map any generic block names in your JSON to the real CSS classes
+const TYPE_MAP = {
+  block0: "blueBlock",
+  block1: "greenBlock",
+  block2: "yellowBlock",
+  block3: "orangeBlock",
+  block4: "greyBlock",
+  // leave redBall & exitHole untouched if they appear
+};
+
 let puzzles = [];
 let currentIndex = 0;
-let correctCount = 0;
-let totalMoves = 0;
+let moves = 0;
 let timerInterval;
-let timeLeft = 6 * 60; // 6 minutes in seconds
 
-// DOM refs
-const gridContainer = document.getElementById('grid-container');
-const skipBtn = document.getElementById('skipBtn');
-const nextBtn = document.getElementById('nextBtn');
-const instrOverlay = document.getElementById('instructions');
-const startBtn = document.getElementById('startTest');
-const timerEl = document.getElementById('timer');
-const attemptEl = document.getElementById('attempted');
-
-// Results template
-const resultsTpl = document.getElementById('results-template');
-
-// Load puzzles.json
-fetch(QUESTIONS_URL)
-  .then(res => {
-    if (!res.ok) throw new Error(res.status);
-    return res.json();
-  })
-  .then(data => {
+// load all puzzles
+fetch("questions.json")
+  .then((r) => r.json())
+  .then((data) => {
     puzzles = data;
+    showInstructions();
   })
-  .catch(err => {
-    console.error('could not load JSON', err);
-    alert('Failed to load test. Please check your network/JSON file.');
+  .catch((err) => {
+    alert("Failed to load test. Please check your network/JSON file.");
   });
 
-// Start test
-startBtn.addEventListener('click', () => {
-  instrOverlay.style.display = 'none';
-  startTimer();
-  showPuzzle();
-});
+// show the instructions overlay
+function showInstructions() {
+  const overlay = document.createElement("div");
+  overlay.className = "overlay";
+  overlay.innerHTML = `
+    <div class="instructions navy-header">
+      <img src="logo-header.png" alt="999 Recruitment Ready" class="logo">
+      <h2>Complex Planning Capability – motionChallenge</h2>
+      <p>This test measures your ability to think ahead to solve puzzles. You have <strong>6 minutes</strong> to complete as many as you can.</p>
+      <ol>
+        <li>You can <strong>drag</strong> each block up/down or left/right to create a path for the red ball.</li>
+        <li>Each move is counted; work carefully.</li>
+        <li>If you get stuck, press <strong>Skip</strong> (counts as incorrect).</li>
+        <li>When the red ball reaches the black hole, press <strong>Next</strong>.</li>
+      </ol>
+      <button id="startBtn">Start Test</button>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+  document.getElementById("startBtn").onclick = () => {
+    overlay.remove();
+    startTest();
+  };
+}
 
-// Timer
-function startTimer() {
-  updateTimer();
+// main test startup
+function startTest() {
+  startTimer(6 * 60);
+  loadPuzzle(currentIndex);
+}
+
+// timer
+function startTimer(seconds) {
+  const display = document.getElementById("timer");
+  let remaining = seconds;
   timerInterval = setInterval(() => {
-    timeLeft--;
-    if (timeLeft <= 0) {
+    const m = Math.floor(remaining / 60);
+    const s = remaining % 60;
+    display.textContent = `${m.toString().padStart(2, "0")}:${s
+      .toString()
+      .padStart(2, "0")}`;
+    if (--remaining < 0) {
       clearInterval(timerInterval);
       showResults();
-    } else {
-      updateTimer();
     }
   }, 1000);
 }
-function updateTimer() {
-  const min = String(Math.floor(timeLeft / 60)).padStart(2, '0');
-  const sec = String(timeLeft % 60).padStart(2, '0');
-  timerEl.textContent = `${min}:${sec}`;
-}
 
-// Show puzzle N
-function showPuzzle() {
-  if (currentIndex >= puzzles.length) {
-    // wrap or end
-    showResults();
-    return;
+// draw a puzzle grid + pieces
+function loadPuzzle(idx) {
+  moves = 0;
+  document.getElementById("attempted").textContent = idx;
+  const { width, height, pieces } = puzzles[idx];
+  const grid = document.getElementById("grid");
+  grid.innerHTML = "";
+
+  // build empty grid
+  grid.style.setProperty("--cols", width);
+  grid.style.setProperty("--rows", height);
+  for (let i = 0; i < width * height; i++) {
+    grid.appendChild(document.createElement("div"));
   }
-  const p = puzzles[currentIndex];
-  attemptEl.textContent = `Attempted: ${currentIndex}`;
-  renderGrid(p);
-}
 
-// Render grid + objects
-function renderGrid(p) {
-  gridContainer.innerHTML = '';
-  // empty cells (for visual grid)
-  for (let r = 0; r < 5; r++) {
-    for (let c = 0; c < 3; c++) {
-      const cell = document.createElement('div');
-      cell.className = 'grid-cell';
-      gridContainer.appendChild(cell);
+  // place each piece
+  pieces.forEach((p) => {
+    const type = TYPE_MAP[p.type] || p.type;
+    const el = document.createElement("div");
+    el.className = `piece ${type}`;
+    el.style.left = `${p.x * (100 / width)}%`;
+    el.style.top = `${p.y * (100 / height)}%`;
+    if (p.moveable) {
+      makeDraggable(el, width, height);
     }
-  }
-  // exit-hole
-  addBlock(p.exit.x, p.exit.y, 'exit-hole', true);
-  // red-ball
-  addBlock(p.red.x, p.red.y, 'red-ball', true);
-  // fixed blocks
-  p.fixed.forEach(b => addBlock(b.x, b.y, 'block fixed', false, b));
-  // movable blocks
-  p.movable.forEach(b => addBlock(b.x, b.y, 'block', true, b));
-}
-
-// factory to place blocks/balls
-function addBlock(x, y, cls, draggable, meta) {
-  const el = document.createElement('div');
-  el.className = cls;
-  // size & position
-  const cellW = gridContainer.clientWidth / 3;
-  const cellH = gridContainer.clientHeight / 5;
-  if (meta && meta.orientation === 'horizontal') {
-    el.style.width  = cellW * meta.length + 'px';
-    el.style.height = cellH + 'px';
-  } else {
-    el.style.width  = cellW + 'px';
-    el.style.height = cellH * (meta ? meta.length : 1) + 'px';
-  }
-  el.style.left   = x * cellW + 'px';
-  el.style.top    = y * cellH + 'px';
-
-  if (draggable && meta) {
-    makeDraggable(el, meta.orientation);
-  }
-  gridContainer.appendChild(el);
-}
-
-// simple drag handler
-function makeDraggable(el, orientation) {
-  let startX, startY, origX, origY;
-  const cellW = gridContainer.clientWidth / 3;
-  const cellH = gridContainer.clientHeight / 5;
-
-  el.addEventListener('mousedown', e => {
-    startX = e.clientX; startY = e.clientY;
-    origX  = parseFloat(el.style.left);
-    origY  = parseFloat(el.style.top);
-    document.addEventListener('mousemove', onDrag);
-    document.addEventListener('mouseup', onDrop);
+    grid.appendChild(el);
   });
+}
 
+// draggable logic (basic)
+function makeDraggable(el, cols, rows) {
+  let startX, startY;
+  el.onmousedown = (e) => {
+    startX = e.clientX;
+    startY = e.clientY;
+    document.onmousemove = onDrag;
+    document.onmouseup = endDrag;
+  };
   function onDrag(e) {
-    let dx = e.clientX - startX;
-    let dy = e.clientY - startY;
-    let newX = origX, newY = origY;
-
-    if (orientation === 'horizontal') {
-      newX = Math.round((origX + dx) / cellW) * cellW;
+    const dx = e.clientX - startX;
+    const dy = e.clientY - startY;
+    // only move along one axis: whichever is larger
+    if (Math.abs(dx) > Math.abs(dy)) {
+      el.style.transform = `translateX(${Math.sign(dx) * 100 / cols}%)`;
     } else {
-      newY = Math.round((origY + dy) / cellH) * cellH;
+      el.style.transform = `translateY(${Math.sign(dy) * 100 / rows}%)`;
     }
-    // keep inside container
-    newX = Math.max(0, Math.min(newX, gridContainer.clientWidth - el.clientWidth));
-    newY = Math.max(0, Math.min(newY, gridContainer.clientHeight - el.clientHeight));
-    el.style.left = newX + 'px';
-    el.style.top  = newY + 'px';
   }
-
-  function onDrop() {
-    document.removeEventListener('mousemove', onDrag);
-    document.removeEventListener('mouseup', onDrop);
-    totalMoves++;
+  function endDrag(e) {
+    document.onmousemove = null;
+    document.onmouseup = null;
+    // snap into place
+    const style = window.getComputedStyle(el);
+    const left = parseFloat(style.left);
+    const top = parseFloat(style.top);
+    const trans = style.transform.match(/matrix.*\((.+)\)/);
+    let tx = 0, ty = 0;
+    if (trans) {
+      const vals = trans[1].split(",").map(Number);
+      tx = vals[4];
+      ty = vals[5];
+    }
+    // detect direction: if |tx| > |ty|, move in x; else y
+    let newX = Math.round((left + tx) / (100 / cols));
+    let newY = Math.round((top + ty) / (100 / rows));
+    newX = Math.max(0, Math.min(cols - 1, newX));
+    newY = Math.max(0, Math.min(rows - 1, newY));
+    el.style.left = `${newX * (100 / cols)}%`;
+    el.style.top = `${newY * (100 / rows)}%`;
+    el.style.transform = "";
+    moves++;
+    checkWin();
   }
 }
 
-// Next & Skip
-nextBtn.addEventListener('click', () => { checkSuccess(); });
-skipBtn.addEventListener('click', () => {
-  currentIndex++;
-  showPuzzle();
-});
-
-// Success check
-function checkSuccess() {
-  // see if red-ball overlaps exit-hole
-  const rb = document.querySelector('.red-ball');
-  const ex = document.querySelector('.exit-hole');
-  const rbb = rb.getBoundingClientRect();
-  const exb = ex.getBoundingClientRect();
-  if (
-    Math.abs(rbb.left - exb.left) < 2 &&
-    Math.abs(rbb.top  - exb.top ) < 2
-  ) {
-    correctCount++;
+// check if redBall is on exitHole
+function checkWin() {
+  const ball = document.querySelector(".piece.redBall");
+  const hole = document.querySelector(".piece.exitHole");
+  if (ball && hole) {
+    const b = ball.getBoundingClientRect();
+    const h = hole.getBoundingClientRect();
+    if (b.left === h.left && b.top === h.top) {
+      document.getElementById("nextBtn").disabled = false;
+    }
   }
+}
+
+// skip & next buttons
+document.getElementById("skipBtn").onclick = () => {
+  recordResult(false);
+  advance();
+};
+document.getElementById("nextBtn").onclick = () => {
+  recordResult(true);
+  advance();
+};
+
+const results = [];
+function recordResult(won) {
+  results.push({
+    id: puzzles[currentIndex].id,
+    success: won,
+    moves: won ? moves : null,
+  });
+}
+
+function advance() {
   currentIndex++;
   if (currentIndex >= puzzles.length) {
+    clearInterval(timerInterval);
     showResults();
   } else {
-    showPuzzle();
+    loadPuzzle(currentIndex);
+    document.getElementById("nextBtn").disabled = true;
   }
 }
 
-// Show results overlay
+// final results screen
 function showResults() {
-  clearInterval(timerInterval);
-  const frag = resultsTpl.content.cloneNode(true);
-  document.body.appendChild(frag);
-  document.getElementById('scoreCorrect').textContent = correctCount;
-  document.getElementById('scoreTotal').textContent   = currentIndex;
-  document.getElementById('totalMoves').textContent   = totalMoves;
-  document.getElementById('retakeBtn').onclick = () => location.reload();
-  document.getElementById('homeBtn').onclick   = () => window.location.href = '/';
+  // replace body with results summary
+  document.body.innerHTML = `
+    <div class="results">
+      <h2>Test Complete</h2>
+      <p>You attempted ${results.length} puzzles.</p>
+      <p>Correct: ${results.filter(r => r.success).length}</p>
+      <p>Skipped/Incorrect: ${results.filter(r => !r.success).length}</p>
+      <button onclick="location.reload()">Retake Test</button>
+      <button onclick="location.href='/'">Home</button>
+    </div>
+  `;
 }
+
