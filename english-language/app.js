@@ -20,12 +20,26 @@ document.addEventListener('DOMContentLoaded', () => {
   let timerInterval;
   let attempted = 0;
 
-  startBtn.addEventListener('click', () => {
-    // hide overlay, show test area
-    overlay.style.display = 'none';
-    testContainer.classList.remove('hidden');
-    loadQuestions();
+startBtn.addEventListener('click', () => {
+  // 1) Hide the intro overlay
+  overlay.classList.add('hidden');
+
+  // 2) Show the test area
+  testContainer.classList.remove('hidden');
+
+  // 3) Reset counters & results array
+  currentIndex    = 0;
+  correctCount    = 0;
+  results         = [];  
+  attemptedEl.textContent = '0';
+  timerEl.textContent     = '10:00';  // or '06:00' for the planning test
+
+  // 4) Load Qs, then render Q1 & start timer
+  loadQuestions().then(() => {
+    showQuestion();
+    startTimer();
   });
+});
 
   async function loadQuestions() {
     try {
