@@ -17,9 +17,9 @@
     </div>
   </header>
 
-  <!-- ===== Instructions Overlay ===== -->
+  <!-- ===== INSTRUCTIONS OVERLAY ===== -->
   <div id="overlay" class="overlay">
-    <!-- Navy banner with white logo -->
+    <!-- Navy banner + white logo -->
     <div class="overlay-header">
       <img
         src="/logo.png"
@@ -37,27 +37,24 @@
       <p><strong>Part 2:</strong> Match the definition (4 choices).</p>
       <p><strong>Part 3:</strong> Choose the correct spelling (2 choices).</p>
       <p>You must answer each question to proceed. Keep going until time’s up.</p>
-      <!-- Only one Start Test button, with the exact id your JS expects: -->
+      <!-- NOTE lowercase “s” here -->
       <button id="startBtn" class="btn">Start Test</button>
     </div>
   </div>
 
-  <!-- ===== Test Area (hidden until you click “Start Test”) ===== -->
+  <!-- ===== TEST AREA (hidden until you click “Start Test”) ===== -->
   <div id="test-container" class="test-container hidden">
     <div id="prompt" class="prompt"></div>
     <div id="options" class="options"></div>
   </div>
 
-  <!-- ===== Results Overlay (also hidden until the end) ===== -->
+  <!-- ===== RESULTS OVERLAY ===== -->
   <div id="results-overlay" class="overlay hidden">
     <div class="overlay-inner">
       <h2>Test Complete</h2>
       <p>
-        You answered
-        <strong id="correct-count">0</strong>
-        of
-        <strong id="total-count">0</strong>
-        correctly.
+        You answered <strong id="correct-count">0</strong> of
+        <strong id="total-count">0</strong> correctly.
       </p>
       <div id="detailed-results" class="detailed-results"></div>
       <div class="overlay-footer">
