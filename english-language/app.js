@@ -65,42 +65,46 @@ document.addEventListener('DOMContentLoaded', () => {
   retakeBtn.addEventListener('click', () => window.location.reload());
   homeBtn.addEventListener('click', () => window.location.href = '/');
 
-  // ——— Show one question ———
-  function showQuestion() {
-    // end if no time or no more questions
-    if (remainingSec <= 0 || currentIndex >= questions.length) {
-      return showResults();
-    }
-
-    const q = questions[currentIndex];
-    promptEl.textContent = q.prompt;
-    optionsEl.innerHTML   = '';
-
-    q.options.forEach(choice => {       // your JSON must have "options":[…]
-      const btn = document.createElement('button');
-      btn.textContent = choice;
-      btn.className   = 'option-btn';
-      btn.addEventListener('click', () => {
-        // record answer
-        const isCorrect = (choice === q.answer);  // JSON: "answer": "must"
-        if (isCorrect) correctCount++;
-        results.push({
-          text      : q.text,
-          user      : choice,
-          correct   : q.answer,
-          rationale : q.explanation,               // JSON: "explanation": "…"
-          isCorrect
-        });
-
-        // update attempted counter & move on
-        attempted++;
-        attemptedEl.textContent = `Attempted: ${attempted}`;
-        currentIndex++;
-        showQuestion();
-      });
-      optionsEl.appendChild(btn);
-    });
+ function showQuestion() {
+  // bail out when done
+  if (remainingSec <= 0 || currentIndex >= questions.length) {
+    return showResults();
   }
+
+  const q = questions[currentIndex];
+
+  // 1) DISPLAY TEXT (was q.text, now q.prompt)
+  promptEl.textContent = q.prompt;
+
+  // 2) CLEAR & RENDER OPTIONS
+  optionsEl.innerHTML = '';
+  q.options.forEach((choice, i) => {
+    const btn = document.createElement('button');
+    btn.textContent = choice;
+    btn.className   = 'option-btn';
+    btn.addEventListener('click', () => {
+      // 3) RECORD CORRECTNESS using correctIndex
+      const isCorrect     = i === q.correctIndex;
+      const correctValue = q.options[q.correctIndex];
+
+      if (isCorrect) correctCount++;
+      results.push({
+        text      : q.prompt,
+        user      : choice,
+        correct   : correctValue,
+        rationale : q.rationale,    // or whatever your JSON calls it
+        isCorrect
+      });
+
+      // 4) UPDATE ATTEMPTED + MOVE ON
+      attempted++;
+      attemptedEl.textContent = `Attempted: ${attempted}`;
+      currentIndex++;
+      showQuestion();
+    });
+    optionsEl.appendChild(btn);
+  });
+}
 
   // ——— Countdown timer ———
   function startTimer() {
