@@ -16,9 +16,17 @@
       <span id="attempted">Attempted: 0</span>
     </div>
   </header>
-  <!-- ===== Instructions Overlay ===== -->
+<!-- instructions overlay -->
 <div id="overlay" class="overlay">
-  <div class="overlay-content">
+  …  
+  <button id="StartBtn" class="btn">Start Test</button>
+</div>
+
+<!-- test container (initially hidden) -->
+<div id="test-container" class="test-container hidden">
+  <div id="prompt" class="prompt"></div>
+  <div id="options" class="options"></div>
+</div>
 
     <!-- NAVY BANNER WITH WHITE LOGO -->
     <div class="overlay-header">
@@ -44,14 +52,6 @@
 
   </div>
 </div>
-
-
-  <!-- ===== Test Area ===== -->
-  <div id="test-container" class="test-container hidden">
-    <div id="prompt" class="prompt"></div>
-    <div id="options" class="options"></div>
-  </div>
-
   <script src="app.js"></script>
 <!-- RESULTS OVERLAY -->
 <div id="results-overlay" class="overlay hidden">
