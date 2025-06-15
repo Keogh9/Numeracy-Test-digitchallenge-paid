@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const q = questions[currentIndex];
-    promptEl.textContent = q.text;      // your JSON must have "text"
+    promptEl.textContent = q.prompt;
     optionsEl.innerHTML   = '';
 
     q.options.forEach(choice => {       // your JSON must have "options":[…]
