@@ -23,18 +23,17 @@ document.addEventListener('DOMContentLoaded', () => {
 startBtn.addEventListener('click', () => {
   // 1) Hide the intro overlay
   overlay.classList.add('hidden');
-
   // 2) Show the test area
   testContainer.classList.remove('hidden');
 
   // 3) Reset counters & results array
   currentIndex    = 0;
   correctCount    = 0;
-  results         = [];  
+  results         = [];
   attemptedEl.textContent = '0';
-  timerEl.textContent     = '10:00';  // or '06:00' for the planning test
+  timerEl.textContent     = '10:00';
 
-  // 4) Load Qs, then render Q1 & start timer
+  // 4) Load questions, then render Q1 & start timer
   loadQuestions().then(() => {
     showQuestion();
     startTimer();
