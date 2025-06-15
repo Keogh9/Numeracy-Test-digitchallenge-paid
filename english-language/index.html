@@ -17,17 +17,26 @@
     </div>
   </header>
 
-  <!-- ===== INSTRUCTIONS OVERLAY ===== -->
-  <div id="overlay" class="overlay">
-    <!-- Navy banner + white logo -->
-    <div class="overlay-header">
-      <img
-        src="/logo.png"
-        alt="999 Recruitment Ready logo"
-        class="logo-instructions"
-        height="60"
-      />
-    </div>
+<!-- ===== Instructions Overlay ===== -->
+<div id="overlay" class="overlay">
+  <div class="overlay-header">
+    <img src="/logo.png" alt="999 Recruitment Ready logo"
+         class="logo-instructions" height="60" />
+  </div>
+
+  <div class="overlay-body">
+    <h2>English Language Skills Test</h2>
+    <p>This test measures your fluency…</p>
+    <!-- …all your bullets here… -->
+    <button id="startBtn" class="btn">Start Test</button>
+  </div>
+</div>
+
+<!-- ===== Test Area (hidden until start) ===== -->
+<div id="test-container" class="test-container hidden">
+  <div id="prompt" class="prompt"></div>
+  <div id="options" class="options"></div>
+</div>
     <!-- Instructions body -->
     <div class="overlay-body">
       <h2>English Language Skills Test</h2>
