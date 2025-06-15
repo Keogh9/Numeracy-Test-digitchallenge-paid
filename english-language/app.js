@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // ——— grab all the pieces ———
+  // ——— Element references ———
   const overlay        = document.getElementById('overlay');
   const startBtn       = document.getElementById('startBtn');
   const testContainer  = document.getElementById('test-container');
-  const timerEl        = document.getElementById('timer');
-  const attemptedEl    = document.getElementById('attempted');
   const promptEl       = document.getElementById('prompt');
   const optionsEl      = document.getElementById('options');
+  const timerEl        = document.getElementById('timer');
+  const attemptedEl    = document.getElementById('attempted');
 
   const resultsOverlay = document.getElementById('results-overlay');
   const correctEl      = document.getElementById('correct-count');
@@ -15,151 +15,130 @@ document.addEventListener('DOMContentLoaded', () => {
   const retakeBtn      = document.getElementById('retake-btn');
   const homeBtn        = document.getElementById('home-btn');
 
-  // ——— state vars ———
-  let questions      = [];
-  let currentIndex   = 0;
-  let correctCount   = 0;
-  let results        = [];
-  let startTime;
-  let timerInterval;
-  let attemptedCount = 0;
+  // ——— State ———
+  let questions    = [];
+  let currentIndex = 0;
+  let correctCount = 0;
+  let results      = [];
+  let timerId      = null;
+  let remainingSec = 600;  // 10 minutes
+  let attempted    = 0;
 
-  // ——— start the test on button click ———
-  startBtn.addEventListener('click', () => {
-    // hide instructions
+  // ——— Start Test ———
+  startBtn.addEventListener('click', async () => {
     overlay.classList.add('hidden');
-    // show test area
     testContainer.classList.remove('hidden');
-    // reset
-    currentIndex   = 0;
-    correctCount   = 0;
-    results        = [];
-    attemptedCount = 0;
-    attemptedEl.textContent = 'Attempted: 0';
+
+    // reset state
+    currentIndex = 0;
+    correctCount = 0;
+    results      = [];
+    attempted    = 0;
+    remainingSec = 600;
     timerEl.textContent     = '10:00';
-    // load & then show first
-    loadQuestions()
-      .then(() => {
-        showQuestion();
-        startTimer();
-      })
-      .catch(err => {
-        alert('Failed to load questions.json');
-        console.error(err);
-      });
+    attemptedEl.textContent = 'Attempted: 0';
+    detailsEl.innerHTML     = '';
+    correctEl.textContent   = '0';
+    totalEl.textContent     = '0';
+    resultsOverlay.classList.add('hidden');
+
+    // load questions.json from the same folder
+    const base = window.location.pathname.replace(/\/$/, '');
+    const url  = `${base}/questions.json`;
+
+    try {
+      const resp = await fetch(url);
+      if (!resp.ok) throw new Error(resp.statusText);
+      questions = await resp.json();
+    } catch (err) {
+      alert('Failed to load questions.json');
+      console.error(err);
+      return;
+    }
+
+    totalEl.textContent = questions.length;
+    showQuestion();
+    startTimer();
   });
 
-  // ——— fetch questions.json ———
-  async function loadQuestions() {
-    const res = await fetch('./questions.json');
-    questions = await res.json();
-    // timestamp & start ticking
-    startTime = Date.now();
-    timerInterval = setInterval(updateTimer, 500);
-  }
+  // ——— Retake & Home buttons ———
+  retakeBtn.addEventListener('click', () => window.location.reload());
+  homeBtn.addEventListener('click', () => window.location.href = '/');
 
-  // ——— countdown display ———
-  function updateTimer() {
-    const elapsed = Math.floor((Date.now() - startTime) / 1000);
-    const remain  = 600 - elapsed; // 10×60
-    if (remain <= 0) {
-      clearInterval(timerInterval);
-      timerEl.textContent = '00:00';
-      endTest();
-    } else {
-      const m = String(Math.floor(remain/60)).padStart(2,'0');
-      const s = String(remain%60).padStart(2,'0');
-      timerEl.textContent = `${m}:${s}`;
-    }
-  }
-
-  // ——— show current question & options ———
+  // ——— Show one question ———
   function showQuestion() {
-    const q = questions[currentIndex];
-    promptEl.textContent = q.prompt;
-    optionsEl.innerHTML = '';
+    // end if no time or no more questions
+    if (remainingSec <= 0 || currentIndex >= questions.length) {
+      return showResults();
+    }
 
-    q.options.forEach((opt, i) => {
+    const q = questions[currentIndex];
+    promptEl.textContent = q.text;      // your JSON must have "text"
+    optionsEl.innerHTML   = '';
+
+    q.options.forEach(choice => {       // your JSON must have "options":[…]
       const btn = document.createElement('button');
-      btn.className = 'option-btn';
-      btn.textContent = opt;
-      btn.addEventListener('click', () => handleAnswer(i));
+      btn.textContent = choice;
+      btn.className   = 'option-btn';
+      btn.addEventListener('click', () => {
+        // record answer
+        const isCorrect = (choice === q.answer);  // JSON: "answer": "must"
+        if (isCorrect) correctCount++;
+        results.push({
+          text      : q.text,
+          user      : choice,
+          correct   : q.answer,
+          rationale : q.explanation,               // JSON: "explanation": "…"
+          isCorrect
+        });
+
+        // update attempted counter & move on
+        attempted++;
+        attemptedEl.textContent = `Attempted: ${attempted}`;
+        currentIndex++;
+        showQuestion();
+      });
       optionsEl.appendChild(btn);
     });
   }
 
-  // ——— when user picks an answer ———
-  function handleAnswer(choiceIdx) {
-  // new: compare strings
-const picked = q.options[choiceIdx];
-const isCorrect = picked === q.answer;
-
-results.push({
-  text      : q.text,
-  user      : picked,
-  correct   : q.answer,
-  rationale : q.explanation,
-  isCorrect
-});
-
-    // record for results page
-    results.push({
-      text       : q.prompt,
-      user       : q.options[choiceIdx],
-      correct    : q.options[q.correctIndex],
-      rationale  : q.rationale[ choiceIdx ],
-      isCorrect
-    });
-
-    // update attempted count
-    attemptedCount++;
-    attemptedEl.textContent = `Attempted: ${attemptedCount}`;
-
-    // next or finish
-    currentIndex++;
-    if (currentIndex < questions.length) {
-      showQuestion();
-    } else {
-      endTest();
-    }
+  // ——— Countdown timer ———
+  function startTimer() {
+    clearInterval(timerId);
+    timerId = setInterval(() => {
+      remainingSec--;
+      if (remainingSec < 0) {
+        clearInterval(timerId);
+        return showResults();
+      }
+      const m = String(Math.floor(remainingSec/60)).padStart(2,'0');
+      const s = String(remainingSec%60).padStart(2,'0');
+      timerEl.textContent = `${m}:${s}`;
+    }, 1000);
   }
 
-  // ——— wrap up & show results overlay ———
-  function endTest() {
-    clearInterval(timerInterval);
+  // ——— Show results overlay ———
+  function showResults() {
+    clearInterval(timerId);
     testContainer.classList.add('hidden');
 
-    correctEl.textContent = correctCount;
-    totalEl.textContent   = questions.length;
+    correctEl.textContent = String(correctCount);
+    totalEl.textContent   = String(attempted);
 
-    // build detail list
     detailsEl.innerHTML = '';
-    results.forEach((r,i) => {
+    results.forEach((res, i) => {
       const div = document.createElement('div');
-      div.className =
-        'item ' + (r.isCorrect ? 'correct' : 'incorrect');
+      div.className = `item ${res.isCorrect ? 'correct' : 'incorrect'}`;
       div.innerHTML = `
-        <strong>Q${i+1}:</strong> ${r.text}<br>
-        <em>Your answer:</em> ${r.user}<br>
-        <em>${r.isCorrect ? 'Well done!' : 'Correct was:'}</em>
-        ${r.correct}<br>
-        <small>${r.rationale}</small>
+        <strong>Q${i+1}:</strong> ${res.text}<br>
+        <em>Your answer:</em> ${res.user}<br>
+        <em>${res.isCorrect ? 'Well done!' : 'Correct was:'}</em> ${res.correct}<br>
+        <small>${res.rationale}</small>
       `;
       detailsEl.appendChild(div);
     });
 
     resultsOverlay.classList.remove('hidden');
   }
-
-  // ——— retry from start ———
-  retakeBtn.addEventListener('click', () => {
-    resultsOverlay.classList.add('hidden');
-    overlay.classList.remove('hidden');
-  });
-
-  // ——— back to home ———
-  homeBtn.addEventListener('click', () => {
-    window.location.href = '/';
-  });
 });
 
