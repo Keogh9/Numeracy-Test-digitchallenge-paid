@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ——— fetch questions.json ———
   async function loadQuestions() {
-    const res = await fetch('questions.json');
+    const res = await fetch('./questions.json');
     questions = await res.json();
     // timestamp & start ticking
     startTime = Date.now();
