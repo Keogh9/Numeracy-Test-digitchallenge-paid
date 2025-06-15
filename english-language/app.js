@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let timerInterval;
   let attempted = 0;
 
-startbtn.addEventListener('click', () => {
   // 1) Hide the intro overlay
   overlay.classList.add('hidden');
   // 2) Show the test area
