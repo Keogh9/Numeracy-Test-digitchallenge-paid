@@ -122,4 +122,27 @@
 .hidden {
   display: none;
 }
-
+/* ===== RESULTS OVERLAY ===== */
+.overlay-inner {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow: hidden;
+  text-align: center;
+}
+.detailed-results {
+  margin: 1rem 0;
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+  max-height: 40vh;
+  overflow-y: auto;
+  text-align: left;
+}
+.detailed-results .item.correct   { color: #0a1; }   /* green */
+.detailed-results .item.incorrect { color: #a10; }   /* red */
+.overlay-footer {
+  margin-top: 1rem;
+}
