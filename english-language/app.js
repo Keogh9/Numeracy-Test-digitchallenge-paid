@@ -1,11 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const overlay = document.getElementById('overlay');
-  const startBtn = document.getElementById('startBtn');
+  // ==== TEST AREA ELEMENTS ====
+  const startBtn      = document.getElementById('start-test');
   const testContainer = document.getElementById('test-container');
-  const timerEl = document.getElementById('timer');
-  const attemptedEl = document.getElementById('attempted');
-  const promptEl = document.getElementById('prompt');
-  const optionsEl = document.getElementById('options');
+  const timerEl       = document.getElementById('timer');
+  const attemptedEl   = document.getElementById('attempted');
+  const promptEl      = document.getElementById('prompt');
+  const optionsEl     = document.getElementById('options');
+
+  // ==== RESULTS OVERLAY ELEMENTS ====
+  const resultsOverlay= document.getElementById('results-overlay');
+  const correctEl     = document.getElementById('correct-count');
+  const totalEl       = document.getElementById('total-count');
+  const detailsEl     = document.getElementById('detailed-results');
+  const retakeBtn     = document.getElementById('retake-btn');
+  const homeBtn       = document.getElementById('home-btn');
 
   let questions = [];
   let startTime;
@@ -69,9 +77,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  function endTest() {
-    // For now just reload. You can hook in your results-page here.
-    alert(`Time’s up! You attempted ${attempted} questions.`);
-    window.location.reload();
-  }
+function showResults() {
+  // hide the test area
+  testArea.classList.add('hidden');
+  // put totals into the overlay
+  correctEl.textContent = correctCount;
+  totalEl.textContent   = questions.length;
+
+  // build the scrollable breakdown
+  detailsEl.innerHTML = '';
+  results.forEach((res, idx) => {
+    const div = document.createElement('div');
+    div.className = 'item ' + (res.isCorrect ? 'correct' : 'incorrect');
+    div.innerHTML = `
+      <strong>Q${idx+1}:</strong> ${res.text}
+      <br>
+      <em>Your answer:</em> ${res.user}
+      <br>
+      <em>${res.isCorrect ? 'Well done!' : 'Correct was:'}</em> ${res.correct}
+      <br>
+      <small>${res.rationale}</small>
+    `;
+    detailsEl.appendChild(div);
+  });
+
+  // show the overlay
+  resultsOverlay.classList.remove('hidden');
+}
+
 });
