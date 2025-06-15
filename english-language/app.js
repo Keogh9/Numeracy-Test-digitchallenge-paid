@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   // ==== TEST AREA ELEMENTS ====
-  const startBtn      = document.getElementById('start-test');
+  const startbtn      = document.getElementById('start-test');
   const testContainer = document.getElementById('test-container');
   const timerEl       = document.getElementById('timer');
   const attemptedEl   = document.getElementById('attempted');
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let timerInterval;
   let attempted = 0;
 
-startBtn.addEventListener('click', () => {
+startbtn.addEventListener('click', () => {
   // 1) Hide the intro overlay
   overlay.classList.add('hidden');
   // 2) Show the test area
