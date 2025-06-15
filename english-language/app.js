@@ -90,9 +90,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ——— when user picks an answer ———
   function handleAnswer(choiceIdx) {
-    const q = questions[currentIndex];
-    const isCorrect = choiceIdx === q.correctIndex;
-    if (isCorrect) correctCount++;
+  // new: compare strings
+const picked = q.options[choiceIdx];
+const isCorrect = picked === q.answer;
+
+results.push({
+  text      : q.text,
+  user      : picked,
+  correct   : q.answer,
+  rationale : q.explanation,
+  isCorrect
+});
 
     // record for results page
     results.push({
