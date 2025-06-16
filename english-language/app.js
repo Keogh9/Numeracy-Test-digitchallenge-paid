@@ -1,132 +1,119 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Elements
-  const overlay       = document.getElementById('overlay');
-  const startBtn      = document.getElementById('startBtn');
-  const testContainer = document.getElementById('test-container');
-  const timerEl       = document.getElementById('timer');
-  const attemptedEl   = document.getElementById('attempted');
-  const promptEl      = document.getElementById('prompt');
-  const optionsEl     = document.getElementById('options');
+  // --- DOM references ---
+  const overlay      = document.getElementById('overlay');
+  const startBtn     = document.getElementById('startBtn');
+  const testContainer= document.getElementById('test-container');
+  const timerEl      = document.getElementById('timer');
+  const attemptedEl  = document.getElementById('attempted');
+  const promptEl     = document.getElementById('prompt');
+  const optionsEl    = document.getElementById('options');
 
-  const resultsOverlay= document.getElementById('results-overlay');
-  const correctEl     = document.getElementById('correct-count');
-  const totalEl       = document.getElementById('total-count');
-  const detailsEl     = document.getElementById('detailed-results');
-  const retakeBtn     = document.getElementById('retake-btn');
-  const homeBtn       = document.getElementById('home-btn');
+  const resultsOverlay = document.getElementById('results-overlay');
+  const correctEl      = document.getElementById('correct-count');
+  const totalEl        = document.getElementById('total-count');
+  const detailsEl      = document.getElementById('detailed-results');
+  const retakeBtn      = document.getElementById('retake-btn');
+  const homeBtn        = document.getElementById('home-btn');
 
-  // State
-  let questions     = [];
-  let currentIndex  = 0;
-  let correctCount  = 0;
-  let results       = [];
-  let attempted     = 0;
+  let questions   = [];
+  let currentIdx  = 0;
+  let correctCnt  = 0;
+  let results     = [];
+  let attempted   = 0;
   let startTime, timerInterval;
 
-  // Start button
+  // Start the test when the user clicks
   startBtn.addEventListener('click', () => {
     overlay.classList.add('hidden');
     testContainer.classList.remove('hidden');
-
-    // reset
-    currentIndex = 0;
-    correctCount = 0;
-    results      = [];
-    attempted    = 0;
+    attempted = 0;
+    correctCnt = 0;
+    results = [];
     attemptedEl.textContent = 'Attempted: 0';
-    timerEl.textContent     = '10:00';
-
-    loadQuestions()
-      .then(() => {
-        showQuestion();
-        startTimer();
-      });
+    timerEl.textContent = '10:00';
+    // load questions then show first
+    loadQuestions().then(() => {
+      showQuestion();
+      startTimer();
+    });
   });
 
-  // Load JSON bank
+  // Fetch the JSON and begin timing
   async function loadQuestions() {
-    try {
-      const res = await fetch('questions.json');
-      questions = await res.json();
-    } catch (err) {
-      alert('Failed to load questions.json');
-      console.error(err);
+    const res = await fetch('questions.json');
+    questions = await res.json();
+    startTime = Date.now();
+    timerInterval = setInterval(updateTimer, 500);
+  }
+
+  function updateTimer() {
+    const elapsed = Math.floor((Date.now() - startTime) / 1000);
+    const remain = 600 - elapsed;  // 10min=600s
+    if (remain <= 0) {
+      clearInterval(timerInterval);
+      timerEl.textContent = '00:00';
+      return endTest();
     }
+    const m = String(Math.floor(remain/60)).padStart(2,'0');
+    const s = String(remain%60).padStart(2,'0');
+    timerEl.textContent = `${m}:${s}`;
   }
 
-  // Timer
-  function startTimer() {
-    startTime     = Date.now();
-    timerInterval = setInterval(() => {
-      const elapsed = Math.floor((Date.now() - startTime)/1000);
-      const remain  = 600 - elapsed; // 10min
-      if (remain <= 0) {
-        clearInterval(timerInterval);
-        endTest();
-      } else {
-        const m = String(Math.floor(remain/60)).padStart(2,'0');
-        const s = String(remain%60).padStart(2,'0');
-        timerEl.textContent = `${m}:${s}`;
-      }
-    }, 500);
-  }
-
-  // Show one question
   function showQuestion() {
-    const q = questions[currentIndex];
-    if (!q) return endTest();
-
-    // prompt + options
-    promptEl.textContent = q.prompt;
-    optionsEl.innerHTML  = '';
-
-    q.options.forEach((opt,i) => {
+    if (questions.length === 0) return;
+    // pick next random question
+    const idx = Math.floor(Math.random() * questions.length);
+    currentIdx++;
+    attempted++;
+    attemptedEl.textContent = `Attempted: ${attempted}`;
+    const q = questions[idx];
+    promptEl.textContent = q.text;
+    optionsEl.innerHTML = '';
+    q.choices.forEach((choice,i) => {
       const btn = document.createElement('button');
-      btn.textContent = opt;
-      btn.className   = 'option-btn';
-      btn.addEventListener('click', () => {
-        attempted++;
-        attemptedEl.textContent = `Attempted: ${attempted}`;
-
-        const isCorrect     = (i === q.correctIndex);
-        if (isCorrect) correctCount++;
-        const correctAnswer = q.options[q.correctIndex];
-        const rationaleText = Array.isArray(q.rationale)
-          ? q.rationale[i]
-          : q.rationale;
-
-        results.push({
-          text:      q.prompt,
-          user:      opt,
-          correct:   correctAnswer,
-          rationale: rationaleText,
-          isCorrect: isCorrect
-        });
-
-        currentIndex++;
-        showQuestion();
-      });
+      btn.textContent = choice;
+      btn.className = 'option-btn';
+      btn.addEventListener('click', () => handleAnswer(q, choice));
       optionsEl.appendChild(btn);
     });
   }
 
-  // End
-  function endTest() {
-    clearInterval(timerInterval);
-    testContainer.classList.add('hidden');
-    correctEl.textContent = correctCount;
-    totalEl.textContent   = questions.length;
+  function handleAnswer(q, userAns) {
+    const isCorrect = userAns === q.correct;
+    if (isCorrect) correctCnt++;
+    results.push({
+      text: q.text,
+      user: userAns,
+      correct: q.correct,
+      rationale: q.rationale,
+      isCorrect
+    });
+    // continue until time up
+    showQuestion();
+  }
 
-    // detailed results (for now leave empty; you can adjust layout later)
+  function endTest() {
+    testContainer.classList.add('hidden');
+    correctEl.textContent = correctCnt;
+    totalEl.textContent   = results.length;
     detailsEl.innerHTML = '';
+    results.forEach((res,i) => {
+      const div = document.createElement('div');
+      div.className = 'item ' + (res.isCorrect ? 'correct' : 'incorrect');
+      div.innerHTML = `
+        <strong>Q${i+1}:</strong> ${res.text}
+        <br><em>Your answer:</em> ${res.user}
+        <br><em>${res.isCorrect ? '✔ Correct!' : '✘ Correct was:'}</em> ${res.correct}
+        ${!res.isCorrect ? `<br><small>${res.rationale}</small>` : ''}
+      `;
+      detailsEl.appendChild(div);
+    });
     resultsOverlay.classList.remove('hidden');
   }
 
-  // Retake & Home
-  retakeBtn.addEventListener('click', () => {
-    resultsOverlay.classList.add('hidden');
-    overlay.classList.remove('hidden');
-  });
-  homeBtn.addEventListener('click', () => location.href = '/');
+  // Retake resets page
+  retakeBtn.addEventListener('click', () => location.reload());
+  homeBtn.addEventListener('click', () => window.location = '/');
+
 });
 
