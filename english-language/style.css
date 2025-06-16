@@ -1,62 +1,72 @@
-/* ----------------------------------------
-   Overlay (instructions pop-up)
-   ---------------------------------------- */
+/* ===== Overlay Wrappers ===== */
 .overlay {
   position: fixed;
   top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.75);
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
-   /* NAVY BANNER ABOVE OVERLAY CONTENT */
-.overlay-header {
-  background: #1a1f3a;        /* your site-header navy */
-  padding: 16px 0;
-  text-align: center;
-}
-.overlay-header .logo-instructions {
-  display: inline-block;
+  z-index: 999;
 }
 
-/* REST OF THE OVERLAY */
-.overlay-body {
-  padding: 24px 32px;
-}
-
-}
-.overlay-content {
+.overlay-inner {
   background: #fff;
-  color: #333;
-  max-width: 600px;
-  width: 90%;
-  padding: 30px 40px;
   border-radius: 8px;
-  text-align: left;
+  overflow: hidden;
+  width: 90%;
+  max-width: 600px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
-.logo-instructions {
-  display: block;
-  margin: 0 auto 20px;
+
+.overlay-header {
+  background: #0b1c3f;  /* your navy */
+  text-align: center;
+  padding: 1rem;
 }
-.overlay-content p {
-  margin: 12px 0;
+
+.overlay-header .logo-instructions {
+  max-height: 60px;
 }
-.overlay-content .btn {
-  display: block;
-  margin: 20px auto 0;
-  padding: 10px 24px;
-  font-size: 1rem;
-  background: #ff7043;
+
+.overlay-body {
+  padding: 2rem 1.5rem;
+  color: #333;
+}
+
+.overlay-body h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.instructions-list {
+  margin: 1rem 0;
+  padding-left: 1.25rem;
+}
+
+.instructions-list li {
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+  list-style-type: disc;
+  color: #333;
+}
+
+.btn–start {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 2rem;
+  background: #ff5722;
   color: #fff;
+  font-size: 1rem;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
-.overlay-content .btn:hover {
-  background: #ff5722;
+
+.btn–start:hover {
+  background: #e64a19;
 }
+
 
 /* ----------------------------------------
    Site Header
