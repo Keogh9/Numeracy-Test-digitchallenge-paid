@@ -17,29 +17,32 @@
     </div>
   </header>
 
-  <!-- ===== Instructions Overlay ===== -->
-  <div id="overlay" class="overlay">
-    <div class="overlay-header">
-      <img
-        src="/logo.png"
-        alt="999 Recruitment Ready logo"
-        class="logo-instructions"
-        height="60"
-      />
-    </div>
-    <div class="overlay-body">
-      <h2>English Language Skills Test</h2>
-      <p>This test measures your fluency, vocabulary, and spelling skills.</p>
-      <ul>
-        <li>Select the correct word to fill each blank (4 choices).</li>
-        <li>Select the word that matches the definition (4 choices).</li>
-        <li>Choose the correctly spelled word (2 choices).</li>
-        <li>You have <strong>10 minutes</strong> and must answer each question to proceed.</li>
-      </ul>
-      <button id="startBtn" class="btn">Start Test</button>
-    </div>
+ <!-- ===== Instructions Overlay ===== -->
+<div id="overlay" class="overlay">
+  <!-- navy header bar with centered logo -->
+  <div class="overlay-header">
+    <img
+      src="/logo.png"
+      alt="999 Recruitment Ready logo"
+      class="logo-instructions"
+      height="60"
+    />
   </div>
 
+  <!-- white body, nicely padded -->
+  <div class="overlay-body">
+    <h2>English Language Skills Test</h2>
+    <p>This test measures your fluency, vocabulary, and spelling skills for Dublin Fire Brigade.</p>
+    <ul class="instruction-list">
+      <li>Part 1: Fill in the blank (4 choices).</li>
+      <li>Part 2: Match the definition (4 choices).</li>
+      <li>Part 3: Choose the correct spelling (2 choices).</li>
+      <li>You have <strong>10 minutes</strong> to answer as many as you can.</li>
+      <li>You must answer each question to proceed.</li>
+    </ul>
+    <button id="startBtn" class="btn">Start Test</button>
+  </div>
+</div>
   <!-- ===== Test Area (hidden until start) ===== -->
   <div id="test-container" class="test-container hidden">
     <div id="prompt" class="prompt"></div>
