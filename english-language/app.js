@@ -65,55 +65,48 @@ document.addEventListener('DOMContentLoaded', () => {
   retakeBtn.addEventListener('click', () => window.location.reload());
   homeBtn.addEventListener('click', () => window.location.href = '/');
 
- function showQuestion() {
-  // bail out when done
-  if (remainingSec <= 0 || currentIndex >= questions.length) {
-    return showResults();
-  }
-
-  const q = questions[currentIndex];
-
-  // 1) DISPLAY TEXT (was q.text, now q.prompt)
+function showQuestion(q) {
+  // 1) show the text
   promptEl.textContent = q.prompt;
 
-  // 2) CLEAR & RENDER OPTIONS
+  // 2) clear out any old options
   optionsEl.innerHTML = '';
+
+  // 3) for each choice, build a button
   q.options.forEach((opt, i) => {
-  const btn = document.createElement('button');
-  btn.textContent = opt;
-  btn.className = 'option-btn';
+    const btn = document.createElement('button');
+    btn.textContent = opt;
+    btn.className = 'option-btn';
 
-  btn.addEventListener('click', () => {
-    // 1) figure out if the user was right
-    const isCorrect = (i === q.correctIndex);
+    // 4) when clicked:
+    btn.addEventListener('click', () => {
+      // determine correctness
+      const isCorrect     = (i === q.correctIndex);
+      const correctAnswer = q.options[q.correctIndex];
 
-    // 2) fetch the *correct* answer text
-    const correctAnswer = q.options[q.correctIndex];
+      // grab rationale (array of strings)
+      const rationaleText = Array.isArray(q.rationale)
+        ? q.rationale[i]
+        : q.rationale;
 
-    // 3) grab the rationale for *this* option
-    //    (we assume q.rationale is either an array or an object keyed by index)
-    let rationaleText;
-    if (Array.isArray(q.rationale)) {
-      rationaleText = q.rationale[q.correctIndex];
-    } else {
-      rationaleText = q.rationale[i] || q.rationale;
-    }
+      // push into results[]
+      results.push({
+        text:      q.prompt,
+        user:      opt,
+        correct:   correctAnswer,
+        rationale: rationaleText,
+        isCorrect: isCorrect
+      });
 
-    // 4) push a fully-populated record into your results[]
-    results.push({
-      text:      q.prompt,
-      user:      opt,
-      correct:   correctAnswer,
-      rationale: rationaleText,
-      isCorrect: isCorrect
+      // advance
+      nextQuestion();
     });
 
-    // 5) move on to the next question
-    nextQuestion();
+    // 5) add the button to the page
+    optionsEl.appendChild(btn);
   });
+}
 
-  optionsEl.appendChild(btn);
-});
 }
 
   // ——— Countdown timer ———
