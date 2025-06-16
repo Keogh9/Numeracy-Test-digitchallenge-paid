@@ -78,32 +78,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2) CLEAR & RENDER OPTIONS
   optionsEl.innerHTML = '';
-  q.options.forEach((choice, i) => {
-    const btn = document.createElement('button');
-    btn.textContent = choice;
-    btn.className   = 'option-btn';
-    btn.addEventListener('click', () => {
-      // 3) RECORD CORRECTNESS using correctIndex
-      const isCorrect     = i === q.correctIndex;
-      const correctValue = q.options[q.correctIndex];
+  q.options.forEach((opt, i) => {
+  const btn = document.createElement('button');
+  btn.textContent = opt;
+  btn.className = 'option-btn';
 
-      if (isCorrect) correctCount++;
-      results.push({
-        text      : q.prompt,
-        user      : choice,
-        correct   : correctValue,
-        rationale : q.rationale,    // or whatever your JSON calls it
-        isCorrect
-      });
+  btn.addEventListener('click', () => {
+    // 1) figure out if the user was right
+    const isCorrect = (i === q.correctIndex);
 
-      // 4) UPDATE ATTEMPTED + MOVE ON
-      attempted++;
-      attemptedEl.textContent = `Attempted: ${attempted}`;
-      currentIndex++;
-      showQuestion();
+    // 2) fetch the *correct* answer text
+    const correctAnswer = q.options[q.correctIndex];
+
+    // 3) grab the rationale for *this* option
+    //    (we assume q.rationale is either an array or an object keyed by index)
+    let rationaleText;
+    if (Array.isArray(q.rationale)) {
+      rationaleText = q.rationale[q.correctIndex];
+    } else {
+      rationaleText = q.rationale[i] || q.rationale;
+    }
+
+    // 4) push a fully-populated record into your results[]
+    results.push({
+      text:      q.prompt,
+      user:      opt,
+      correct:   correctAnswer,
+      rationale: rationaleText,
+      isCorrect: isCorrect
     });
-    optionsEl.appendChild(btn);
+
+    // 5) move on to the next question
+    nextQuestion();
   });
+
+  optionsEl.appendChild(btn);
+});
 }
 
   // ——— Countdown timer ———
