@@ -122,27 +122,34 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ——— Show results overlay ———
-  function showResults() {
-    clearInterval(timerId);
-    testContainer.classList.add('hidden');
+function showResults() {
+  // 1) hide the test area
+  testContainer.classList.add('hidden');
 
-    correctEl.textContent = String(correctCount);
-    totalEl.textContent   = String(attempted);
+  // 2) fill in your totals
+  correctEl.textContent = correctCount;
+  totalEl.textContent   = results.length;   // number attempted
 
-    detailsEl.innerHTML = '';
-    results.forEach((res, i) => {
-      const div = document.createElement('div');
-      div.className = `item ${res.isCorrect ? 'correct' : 'incorrect'}`;
-      div.innerHTML = `
-        <strong>Q${i+1}:</strong> ${res.text}<br>
-        <em>Your answer:</em> ${res.user}<br>
-        <em>${res.isCorrect ? 'Well done!' : 'Correct was:'}</em> ${res.correct}<br>
-        <small>${res.rationale}</small>
-      `;
-      detailsEl.appendChild(div);
-    });
+  // 3) build the detailed-results list
+  detailsEl.innerHTML = '';  // clear any old content
 
-    resultsOverlay.classList.remove('hidden');
-  }
+  results.forEach((res, idx) => {
+    const div = document.createElement('div');
+    div.className = 'item ' + (res.isCorrect ? 'correct' : 'incorrect');
+
+    // question text
+    div.innerHTML = `
+      <strong>Q${idx + 1}:</strong> ${res.text}
+      <em>Your answer:</em> ${res.user}
+      <em>${res.isCorrect ? '✔ Correct!' : '✘ Correct was:'}</em> ${res.correct}
+      <small>${res.rationale}</small>
+    `;
+
+    detailsEl.appendChild(div);
+  });
+
+  // 4) show the overlay
+  resultsOverlay.classList.remove('hidden');
+}
 });
 
