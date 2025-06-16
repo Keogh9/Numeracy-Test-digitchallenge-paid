@@ -1,158 +1,132 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // ——— Element references ———
-  const overlay        = document.getElementById('overlay');
-  const startBtn       = document.getElementById('startBtn');
-  const testContainer  = document.getElementById('test-container');
-  const promptEl       = document.getElementById('prompt');
-  const optionsEl      = document.getElementById('options');
-  const timerEl        = document.getElementById('timer');
-  const attemptedEl    = document.getElementById('attempted');
+  // Elements
+  const overlay       = document.getElementById('overlay');
+  const startBtn      = document.getElementById('startBtn');
+  const testContainer = document.getElementById('test-container');
+  const timerEl       = document.getElementById('timer');
+  const attemptedEl   = document.getElementById('attempted');
+  const promptEl      = document.getElementById('prompt');
+  const optionsEl     = document.getElementById('options');
 
-  const resultsOverlay = document.getElementById('results-overlay');
-  const correctEl      = document.getElementById('correct-count');
-  const totalEl        = document.getElementById('total-count');
-  const detailsEl      = document.getElementById('detailed-results');
-  const retakeBtn      = document.getElementById('retake-btn');
-  const homeBtn        = document.getElementById('home-btn');
+  const resultsOverlay= document.getElementById('results-overlay');
+  const correctEl     = document.getElementById('correct-count');
+  const totalEl       = document.getElementById('total-count');
+  const detailsEl     = document.getElementById('detailed-results');
+  const retakeBtn     = document.getElementById('retake-btn');
+  const homeBtn       = document.getElementById('home-btn');
 
-  // ——— State ———
-  let questions    = [];
-  let currentIndex = 0;
-  let correctCount = 0;
-  let results      = [];
-  let timerId      = null;
-  let remainingSec = 600;  // 10 minutes
-  let attempted    = 0;
+  // State
+  let questions     = [];
+  let currentIndex  = 0;
+  let correctCount  = 0;
+  let results       = [];
+  let attempted     = 0;
+  let startTime, timerInterval;
 
-  // ——— Start Test ———
-  startBtn.addEventListener('click', async () => {
+  // Start button
+  startBtn.addEventListener('click', () => {
     overlay.classList.add('hidden');
     testContainer.classList.remove('hidden');
 
-    // reset state
+    // reset
     currentIndex = 0;
     correctCount = 0;
     results      = [];
     attempted    = 0;
-    remainingSec = 600;
-    timerEl.textContent     = '10:00';
     attemptedEl.textContent = 'Attempted: 0';
-    detailsEl.innerHTML     = '';
-    correctEl.textContent   = '0';
-    totalEl.textContent     = '0';
-    resultsOverlay.classList.add('hidden');
+    timerEl.textContent     = '10:00';
 
-    // load questions.json from the same folder
-    const base = window.location.pathname.replace(/\/$/, '');
-    const url  = `${base}/questions.json`;
+    loadQuestions()
+      .then(() => {
+        showQuestion();
+        startTimer();
+      });
+  });
 
+  // Load JSON bank
+  async function loadQuestions() {
     try {
-      const resp = await fetch(url);
-      if (!resp.ok) throw new Error(resp.statusText);
-      questions = await resp.json();
+      const res = await fetch('questions.json');
+      questions = await res.json();
     } catch (err) {
       alert('Failed to load questions.json');
       console.error(err);
-      return;
     }
-
-    totalEl.textContent = questions.length;
-    showQuestion();
-    startTimer();
-  });
-
-  // ——— Retake & Home buttons ———
-  retakeBtn.addEventListener('click', () => window.location.reload());
-  homeBtn.addEventListener('click', () => window.location.href = '/');
-
-function showQuestion(q) {
-  // 1) show the text
-  promptEl.textContent = q.prompt;
-
-  // 2) clear out any old options
-  optionsEl.innerHTML = '';
-
-  // 3) for each choice, build a button
-  q.options.forEach((opt, i) => {
-    const btn = document.createElement('button');
-    btn.textContent = opt;
-    btn.className = 'option-btn';
-
-    // 4) when clicked:
-    btn.addEventListener('click', () => {
-      // determine correctness
-      const isCorrect     = (i === q.correctIndex);
-      const correctAnswer = q.options[q.correctIndex];
-
-      // grab rationale (array of strings)
-      const rationaleText = Array.isArray(q.rationale)
-        ? q.rationale[i]
-        : q.rationale;
-
-      // push into results[]
-      results.push({
-        text:      q.prompt,
-        user:      opt,
-        correct:   correctAnswer,
-        rationale: rationaleText,
-        isCorrect: isCorrect
-      });
-
-      // advance
-      nextQuestion();
-    });
-
-    // 5) add the button to the page
-    optionsEl.appendChild(btn);
-  });
-}
-
-}
-
-  // ——— Countdown timer ———
-  function startTimer() {
-    clearInterval(timerId);
-    timerId = setInterval(() => {
-      remainingSec--;
-      if (remainingSec < 0) {
-        clearInterval(timerId);
-        return showResults();
-      }
-      const m = String(Math.floor(remainingSec/60)).padStart(2,'0');
-      const s = String(remainingSec%60).padStart(2,'0');
-      timerEl.textContent = `${m}:${s}`;
-    }, 1000);
   }
 
-  // ——— Show results overlay ———
-function showResults() {
-  // 1) hide the test area
-  testContainer.classList.add('hidden');
+  // Timer
+  function startTimer() {
+    startTime     = Date.now();
+    timerInterval = setInterval(() => {
+      const elapsed = Math.floor((Date.now() - startTime)/1000);
+      const remain  = 600 - elapsed; // 10min
+      if (remain <= 0) {
+        clearInterval(timerInterval);
+        endTest();
+      } else {
+        const m = String(Math.floor(remain/60)).padStart(2,'0');
+        const s = String(remain%60).padStart(2,'0');
+        timerEl.textContent = `${m}:${s}`;
+      }
+    }, 500);
+  }
 
-  // 2) fill in your totals
-  correctEl.textContent = correctCount;
-  totalEl.textContent   = results.length;   // number attempted
+  // Show one question
+  function showQuestion() {
+    const q = questions[currentIndex];
+    if (!q) return endTest();
 
-  // 3) build the detailed-results list
-  detailsEl.innerHTML = '';  // clear any old content
+    // prompt + options
+    promptEl.textContent = q.prompt;
+    optionsEl.innerHTML  = '';
 
-  results.forEach((res, idx) => {
-    const div = document.createElement('div');
-    div.className = 'item ' + (res.isCorrect ? 'correct' : 'incorrect');
+    q.options.forEach((opt,i) => {
+      const btn = document.createElement('button');
+      btn.textContent = opt;
+      btn.className   = 'option-btn';
+      btn.addEventListener('click', () => {
+        attempted++;
+        attemptedEl.textContent = `Attempted: ${attempted}`;
 
-    // question text
-    div.innerHTML = `
-      <strong>Q${idx + 1}:</strong> ${res.text}
-      <em>Your answer:</em> ${res.user}
-      <em>${res.isCorrect ? '✔ Correct!' : '✘ Correct was:'}</em> ${res.correct}
-      <small>${res.rationale}</small>
-    `;
+        const isCorrect     = (i === q.correctIndex);
+        if (isCorrect) correctCount++;
+        const correctAnswer = q.options[q.correctIndex];
+        const rationaleText = Array.isArray(q.rationale)
+          ? q.rationale[i]
+          : q.rationale;
 
-    detailsEl.appendChild(div);
+        results.push({
+          text:      q.prompt,
+          user:      opt,
+          correct:   correctAnswer,
+          rationale: rationaleText,
+          isCorrect: isCorrect
+        });
+
+        currentIndex++;
+        showQuestion();
+      });
+      optionsEl.appendChild(btn);
+    });
+  }
+
+  // End
+  function endTest() {
+    clearInterval(timerInterval);
+    testContainer.classList.add('hidden');
+    correctEl.textContent = correctCount;
+    totalEl.textContent   = questions.length;
+
+    // detailed results (for now leave empty; you can adjust layout later)
+    detailsEl.innerHTML = '';
+    resultsOverlay.classList.remove('hidden');
+  }
+
+  // Retake & Home
+  retakeBtn.addEventListener('click', () => {
+    resultsOverlay.classList.add('hidden');
+    overlay.classList.remove('hidden');
   });
-
-  // 4) show the overlay
-  resultsOverlay.classList.remove('hidden');
-}
+  homeBtn.addEventListener('click', () => location.href = '/');
 });
 
