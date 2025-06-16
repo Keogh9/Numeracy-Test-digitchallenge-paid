@@ -75,36 +75,3 @@ footer {
   font-size: 0.9rem;
   color: #666;
 }
-/* ==== DETAILED RESULTS ==== */
-.detailed-results {
-  margin: 1rem 0;
-  border-top: 1px solid #ddd;
-  padding-top: 1rem;
-  max-height: 50vh;
-  overflow-y: auto;
-  text-align: left;
-}
-
-.detailed-results .item {
-  padding: .5rem 0;
-  border-bottom: 1px solid #eee;
-}
-
-.detailed-results .item.correct {
-  color: #0a1;       /* nice green */
-}
-
-.detailed-results .item.incorrect {
-  color: #a10;      /* nice red */
-}
-
-.detailed-results .item em {
-  display: block;
-  margin: .25rem 0;
-}
-
-.detailed-results .item small {
-  display: block;
-  margin-top: .25rem;
-  color: #555;
-}
