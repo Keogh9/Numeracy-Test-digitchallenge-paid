@@ -145,7 +145,7 @@ const sections = [
     correct: 'to have',
     rationale: '“important to do” uses the infinitive.'
   }
-      {
+{
   id: 'f21',
   prompt: 'She managed to finish the report ____ the tight deadline.',
   options: ['despite', 'although', 'even', 'in spite', '?'],
