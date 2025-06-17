@@ -1,6 +1,6 @@
 /* NAV BAR */
 .nav {
-  background: #1e3a8a;
+  background: #160f2a;
   color: white;
   display: flex;
   align-items: center;
@@ -47,11 +47,11 @@ button {
   cursor: pointer;
 }
 #start-btn {
-  background: #2563eb;
+  background: #fb6e43;
   color: white;
 }
 #next-btn {
-  background: #16a34a;
+  background: #fb6e43;
   color: white;
   margin-top: 1rem;
 }
