@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>English Language Skills Test</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAV BAR -->
+  <header class="nav">
+    <img src="../assets/logo.svg" alt="Logo" class="logo" />
+    <h1>English Language Skills Test</h1>
+    <div id="timer">10:00</div>
+  </header>
+
+  <!-- INSTRUCTIONS -->
+  <section id="instructions" class="panel">
+    <h2>Instructions</h2>
+    <ul>
+      <li>Total duration: <strong>10 minutes</strong> (4 fluency / 4 vocabulary / 2 spelling).</li>
+      <li>Select the best answer or “?” to skip with no penalty.</li>
+      <li>A countdown timer will appear; when time expires you advance automatically.</li>
+      <li>You may move to the next section early if you finish before the timer.</li>
+    </ul>
+    <button id="start-btn">Start Test</button>
+  </section>
+
+  <!-- TEST AREA -->
+  <section id="test-area" class="panel hidden">
+    <h2 id="section-title"></h2>
+    <div id="questions"></div>
+    <button id="next-btn">Next Section</button>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="results-area" class="panel hidden">
+    <h2>Your Results</h2>
+    <div id="results"></div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
