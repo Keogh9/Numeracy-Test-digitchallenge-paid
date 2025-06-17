@@ -596,11 +596,7 @@ function showResults() {
   timerD.textContent = '';
 }
 
-// --- EVENT LISTENERS ---
-startB.addEventListener('click', () => {
-  showPanel(testA);
-  initSection();
-});
++window.initSection = initSection;
 
 nextB.addEventListener('click', () => {
   clearInterval(timerInterval);
