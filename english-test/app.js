@@ -429,9 +429,8 @@ key: 'vocab',
       options: ['listless', 'animated', 'spirited', 'energetic'],
       correct: 'listless',
       rationale: '"Listless" means lacking energy or enthusiasm.'
-    },
-  ]
-};
+      ]
+  },
   { 
     key: 'spelling',
     title: 'Spelling Skills',
