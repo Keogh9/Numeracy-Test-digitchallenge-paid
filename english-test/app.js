@@ -5,18 +5,216 @@ const sections = [
     title: 'Fluency Skills',
     duration: 240,
     questions: [
-      { id:'f1', prompt:'Where did you get the money ____?', 
-        options:['for','out','from','away'], correct:'from', 
-        rationale:"‘Get money from’ indicates source." },
-      { id:'f2', prompt:'If ____ snowing, we will go skiing.', 
-        options:['will','it is','it was','it will'], correct:'it is', 
-        rationale:"First conditional: 'if it is snowing'." },
-      { id:'f3', prompt:'I offered several times, but ____ was interested.', 
-        options:['nobody','anybody','someone','everybody'], correct:'nobody', 
-        rationale:"Negative context needs 'nobody'." },
-      { id:'f4', prompt:'____ knows what the future holds.', 
-        options:['Anybody','Nobody','Somebody','Everybody'], correct:'Nobody', 
-        rationale:"'Nobody knows' expresses uncertainty." }
+     {
+  id: 'f1',
+  prompt: 'They relocated to Canada ____ the early seventies.',
+  options: ['in', 'at', 'during', 'on', '?'],
+  correct: 'during',
+  rationale: 'We say “during the early seventies” to refer to that period.'
+},
+{
+  id: 'f2',
+  prompt: 'Unless you ____ action soon, the opportunity will be lost.',
+  options: ['take', 'took', 'taken', 'taking', '?'],
+  correct: 'take',
+  rationale: 'First conditional uses base verb after “unless”—“unless you take action.”'
+},
+        {
+    id: 'f3',
+    prompt: 'She’s used to ____ up early every morning.',
+    options: ['getting', 'to get', 'get', 'having gotten', '?'],
+    correct: 'getting',
+    rationale: '“used to” is followed by a gerund (-ing form).'
+  },
+  {
+    id: 'f4',
+    prompt: 'He apologized ____ arriving late.',
+    options: ['for', 'to', 'at', 'with', '?'],
+    correct: 'for',
+    rationale: 'You “apologize for” an action or mistake.'
+  },
+  {
+    id: 'f5',
+    prompt: 'I can’t stand ____ in long lines.',
+    options: ['to wait', 'waiting', 'wait', 'having waited', '?'],
+    correct: 'waiting',
+    rationale: '“can’t stand” takes an -ing form.'
+  },
+  {
+    id: 'f6',
+    prompt: 'They succeeded ____ securing the contract.',
+    options: ['in', 'at', 'on', 'to', '?'],
+    correct: 'in',
+    rationale: 'You “succeed in” doing something.'
+  },
+  {
+    id: 'f7',
+    prompt: 'We are committed ____ reducing our carbon footprint.',
+    options: ['in', 'to', 'for', 'on', '?'],
+    correct: 'to',
+    rationale: '“committed to” expresses dedication to an action.'
+  },
+  {
+    id: 'f8',
+    prompt: 'If I ____ you, I would take the job.',
+    options: ['was', 'were', 'am', 'would be', '?'],
+    correct: 'were',
+    rationale: 'Second-conditional “if I were … I would …”.'
+  },
+  {
+    id: 'f9',
+    prompt: 'He’s considering ____ to Australia next year.',
+    options: ['move', 'moving', 'to move', 'having moved', '?'],
+    correct: 'moving',
+    rationale: '“consider” is followed by a gerund.'
+  },
+  {
+    id: 'f10',
+    prompt: 'She denied ____ the money.',
+    options: ['stealing', 'to steal', 'steal', 'stole', '?'],
+    correct: 'stealing',
+    rationale: '“deny” is followed by a gerund.'
+  },
+  {
+    id: 'f11',
+    prompt: 'The project will commence ____ approval from the board.',
+    options: ['until', 'after', 'before', 'unless', '?'],
+    correct: 'after',
+    rationale: 'You “commence after” something has occurred.'
+  },
+  {
+    id: 'f12',
+    prompt: 'Unless we ____ now, we will be late.',
+    options: ['leave', 'leaves', 'leaving', 'left', '?'],
+    correct: 'leave',
+    rationale: 'First conditional: “unless we leave now …”.'
+  },
+  {
+    id: 'f13',
+    prompt: 'She insisted ____ with the original plan.',
+    options: ['on going', 'going', 'to go', 'go', '?'],
+    correct: 'on going',
+    rationale: '“insist on doing” requires “on” + gerund.'
+  },
+  {
+    id: 'f14',
+    prompt: 'He ended up ____ his resignation.',
+    options: ['submitting', 'to submit', 'submit', 'having submitted', '?'],
+    correct: 'submitting',
+    rationale: '“end up” is followed by a gerund.'
+  },
+  {
+    id: 'f15',
+    prompt: 'I look forward to ____ you again.',
+    options: ['seeing', 'see', 'to see', 'seen', '?'],
+    correct: 'seeing',
+    rationale: '“look forward to” takes a gerund.'
+  },
+  {
+    id: 'f16',
+    prompt: 'They postponed ____ the meeting until next week.',
+    options: ['hold', 'to hold', 'holding', 'held', '?'],
+    correct: 'holding',
+    rationale: '“postpone” is followed by a gerund.'
+  },
+  {
+    id: 'f17',
+    prompt: 'She’s capable ____ handling the workload.',
+    options: ['in', 'for', 'of', 'to', '?'],
+    correct: 'of',
+    rationale: 'You are “capable of” something.'
+  },
+  {
+    id: 'f18',
+    prompt: 'We need to focus ____ quality rather than quantity.',
+    options: ['on', 'in', 'for', 'at', '?'],
+    correct: 'on',
+    rationale: 'You “focus on” a topic or goal.'
+  },
+  {
+    id: 'f19',
+    prompt: 'He was accused ____ fraud.',
+    options: ['for', 'of', 'by', 'with', '?'],
+    correct: 'of',
+    rationale: 'You “accuse someone of” wrongdoing.'
+  },
+  {
+    id: 'f20',
+    prompt: 'It’s important ____ a backup plan.',
+    options: ['to have', 'have', 'having', 'had', '?'],
+    correct: 'to have',
+    rationale: '“important to do” uses the infinitive.'
+  }
+      {
+  id: 'f21',
+  prompt: 'She managed to finish the report ____ the tight deadline.',
+  options: ['despite', 'although', 'even', 'in spite', '?'],
+  correct: 'despite',
+  rationale: 'Use “despite” + noun phrase to show contrast.'
+},
+{
+  id: 'f22',
+  prompt: 'I’m responsible ____ training new team members.',
+  options: ['for', 'to', 'of', 'in', '?'],
+  correct: 'for',
+  rationale: '“Responsible for” indicates duty or obligation.'
+},
+{
+  id: 'f23',
+  prompt: 'He promised ____ the documents by Friday.',
+  options: ['to send', 'sending', 'sent', 'send', '?'],
+  correct: 'to send',
+  rationale: '“Promise” is followed by the infinitive form.'
+},
+{
+  id: 'f24',
+  prompt: 'They congratulated her ____ winning the award.',
+  options: ['on', 'for', 'about', 'with', '?'],
+  correct: 'on',
+  rationale: 'You “congratulate someone on” their achievement.'
+},
+{
+  id: 'f25',
+  prompt: 'If she ____ harder, she would have passed the exam.',
+  options: ['studied', 'had studied', 'studies', 'would study', '?'],
+  correct: 'had studied',
+  rationale: 'Third conditional: “if she had studied … would have …”.'
+},
+{
+  id: 'f26',
+  prompt: 'We decided ____ early to avoid rush-hour traffic.',
+  options: ['to leave', 'leaving', 'left', 'leave', '?'],
+  correct: 'to leave',
+  rationale: '“Decide” is followed by the infinitive.'
+},
+{
+  id: 'f27',
+  prompt: 'I can’t help ____ when I hear that song.',
+  options: ['smile', 'smiling', 'to smile', 'smiled', '?'],
+  correct: 'smiling',
+  rationale: '“Can’t help” takes the -ing form.'
+},
+{
+  id: 'f28',
+  prompt: 'She looks forward ____ her promotion.',
+  options: ['to', 'for', 'at', 'in', '?'],
+  correct: 'to',
+  rationale: '“Look forward to” uses “to” + noun/gerund.'
+},
+{
+  id: 'f29',
+  prompt: 'They agreed ____ the meeting until next week.',
+  options: ['to postpone', 'postponing', 'postpone', 'having postponed', '?'],
+  correct: 'to postpone',
+  rationale: '“Agree” is followed by the infinitive.'
+},
+{
+  id: 'f30',
+  prompt: 'He’s keen ____ improving his presentation skills.',
+  options: ['on', 'in', 'about', 'at', '?'],
+  correct: 'on',
+  rationale: '“Keen on” means enthusiastic about something.'
+}
     ]
   },
   { 
