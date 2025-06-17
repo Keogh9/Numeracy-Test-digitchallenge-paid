@@ -144,7 +144,7 @@ const sections = [
     options: ['to have', 'have', 'having', 'had', '?'],
     correct: 'to have',
     rationale: '“important to do” uses the infinitive.'
-  }
+  },
 {
   id: 'f21',
   prompt: 'She managed to finish the report ____ the tight deadline.',
@@ -214,7 +214,7 @@ const sections = [
   options: ['on', 'in', 'about', 'at', '?'],
   correct: 'on',
   rationale: '“Keen on” means enthusiastic about something.'
-}
+},
 key: 'vocab',
   title: 'Vocabulary Skills',
   duration: 240,
@@ -428,9 +428,9 @@ key: 'vocab',
       options: ['listless', 'animated', 'spirited', 'energetic'],
       correct: 'listless',
       rationale: '"Listless" means lacking energy or enthusiasm.'
-    }
+    },
   ]
-}
+};
   { 
     key: 'spelling',
     title: 'Spelling Skills',
