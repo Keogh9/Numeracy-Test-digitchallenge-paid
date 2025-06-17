@@ -603,8 +603,7 @@ nextB.addEventListener('click', () => {
   clearInterval(timerInterval);
   nextSection();
 });
-// expose startTest to HTML
-window.startTest = () => {
+document.getElementById('start-btn').addEventListener('click', () => {
   showPanel(testA);
   initSection();
-};
+});
