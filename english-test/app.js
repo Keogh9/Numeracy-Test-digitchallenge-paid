@@ -215,6 +215,7 @@ const sections = [
   correct: 'on',
   rationale: '“Keen on” means enthusiastic about something.'
 },
+{
 key: 'vocab',
   title: 'Vocabulary Skills',
   duration: 240,
