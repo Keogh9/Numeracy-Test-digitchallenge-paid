@@ -208,14 +208,17 @@ const sections = [
   correct: 'to postpone',
   rationale: '“Agree” is followed by the infinitive.'
 },
-{
-  id: 'f30',
-  prompt: 'He’s keen ____ improving his presentation skills.',
-  options: ['on', 'in', 'about', 'at', '?'],
-  correct: 'on',
-  rationale: '“Keen on” means enthusiastic about something.'
-},
-{
+     {
+        id: 'f30',
+        prompt: 'Marked by lack of interest, energy, or spirit',
+        options: ['listless', 'animated', 'spirited', 'energetic'],
+        correct: 'listless',
+        rationale: '"Listless" means lacking energy or enthusiasm.'
+      }
+    ]  // end fluency questions
+  },   // end fluency section
+
+  { 
 key: 'vocab',
   title: 'Vocabulary Skills',
   duration: 240,
